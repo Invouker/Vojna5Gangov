@@ -12,21 +12,21 @@ PRÕKAZY PRI EVENTOCH
  VLVL PLATINUM: BANKA;500K
 
  *BANKA;XXX == KAéDY DEN XXX $ do banky *
- **HVH VLASTNIç VIP DOMY
+ **HVH VLASTNI? VIP DOMY
 slay, samotka, var, event, dotazy, ajail, freeze, respawn, akill, explode, ban,
 ====================[BUG & TO-DO LIST]=======================
-- JednoduchÈ nastavenÌ NEDOKON»ENO
-- Help co je vöe na serveru NEDOKON»ENO
-- Spraviù dynamick˝ systÈm jobov otvaranie dialogov a pod.
-- Spraviù Inventory,  zobrazovanie itemov v dialogu - NEDOKON»EN…
-- Vymyslieù prÌbeh/˙lohy - NEDOKON»EN…
-- Ukladanie Farby hr·Ëa do sloûky - NEDOKON»EN…
+- JednoduchÈ nastavenÌ NEDOKONEENO
+- Help co je vöe na serveru NEDOKONEENO
+- Spravi? dynamick˝ systÈm jobov otvaranie dialogov a pod.
+- Spravi? Inventory,  zobrazovanie itemov v dialogu - NEDOKONEEN…
+- Vymyslie? prÌbeh/˙lohy - NEDOKONEEN…
+- Ukladanie Farby hr·ea do sloûky - NEDOKONEEN…
 - Opravit autoökolu
 - House System
 {
 	|_ Vstup za pomocÌ kl·vesy Y (nebo F) - OPRAVIT PORT Z DOMU!!!
-	|_ Upraviù ukladanie podæa ID, a dorobiù ukladanie ! - NEDOKON»EN…
-	|_ Prerobiù kompletne House SystÈm
+	|_ Upravi? ukladanie pod3a ID, a dorobi? ukladanie ! - NEDOKONEEN…
+	|_ Prerobi? kompletne House SystÈm
 }
 ===================== ADMIN PRIKAZY =======================
 Offline SetLevel
@@ -36,7 +36,7 @@ SetName
 Fake ID TEXT
 Admin PM for Player
 ============================================================
-JednotlivÈ kolonky nemazat, ale p¯esunout DOKON»EN… ˙plnÏ dol˘!
+JednotlivÈ kolonky nemazat, ale poesunout DOKONEEN… ˙plni dolu!
 *************************************************/
 
 #include <a_samp>
@@ -109,7 +109,7 @@ AntiDeAMX()
 #define COL_GREEN "{00FF22}"
 #define COL_LIGHTBLUE "{00CED1}"
 
-#define VERSION "v0.45 alpha"
+#define VERSION "v0.025 alpha"
 
 #define ClearChat(%0) for(new i=0; i<60; i++) SendClientMessage(%0, -1, " ")
 
@@ -159,7 +159,7 @@ AntiDeAMX()
 #define JOB_VOJAK 22
 #define JOB_TERRORISTA 23
 
-#define JOB_BALLAS 24 // <-- osobitne do GANGSYSTEMU zapracovaù
+#define JOB_BALLAS 24 // <-- osobitne do GANGSYSTEMU zapracova?
 #define JOB_AZTECAS 25
 #define JOB_GROVE 26
 #define JOB_VAGOS 27
@@ -464,10 +464,10 @@ public CheckPosition(playerid)
 public CAFK(playerid)
 {
   new Float:Pos[3];
-  for(new i = 0; i < MAX_PLAYERS; i++) 
+  for(new i = 0; i < MAX_PLAYERS; i++)
   {
      GetPlayerPos(i,Pos[0],Pos[1],Pos[2]);
-     if(IsPlayerInRangeOfPoint(i,2,Pos[0],Pos[1],Pos[2])) 
+     if(IsPlayerInRangeOfPoint(i,2,Pos[0],Pos[1],Pos[2]))
      {
         new string[40];
         format(string, sizeof(string), "[AFK] %d sekund", AFK[i]);
@@ -552,7 +552,7 @@ public RandomText()
 {
     RandomString(RandText);
     new str[144];
-    format(str,sizeof(str),""COL_RED"[!] "COL_WHITE"Kdo jako prvnÌ napÌöe text "COL_RED"%s"COL_WHITE" zÌsk· n·hodn˝ poËet penÏz.",RandText);
+    format(str,sizeof(str),""COL_RED"[!] "COL_WHITE"Kdo jako prvnÌ napÌöe text "COL_RED"%s"COL_WHITE" zÌsk· n·hodn˝ poeet peniz.",RandText);
     SendClientMessageToAll(-1,str);
     return 1;
 }
@@ -949,7 +949,7 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 	{
 	    if(IsPlayerInSphere(playerid,Bankomat[ids0][Bankx],Bankomat[ids0][Banky],Bankomat[ids0][Bankz],3)==1)
 		{
-			ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "Bankomat", "Stav\nVybrat\nVloûit\nVybraù vöetko\nVloûiù vöetko", "Vybraù", "Storno");
+			ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "Bankomat", "Stav\nVybrat\nVloûit\nVybra? vöetko\nVloûi? vöetko", "Vybra?", "Storno");
 		}
 	}
 	for(new ids0=0; ids0<MAX_BANK; ids0++)
@@ -986,12 +986,12 @@ public OnPlayerEnterDynamicCP(playerid,checkpointid)
 	{
 	    if(IsPlayerInSphere(playerid,Bankomat[ids0][Bankx],Bankomat[ids0][Banky],Bankomat[ids0][Bankz],3)==1)
 		{
-			ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "Bankomat", "Stav\nVybrat\nVloûit\nVybraù vöetko\nVloûiù vöetko", "Vybraù", "Storno");
+			ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "Bankomat", "Stav\nVybrat\nVloûit\nVybra? vöetko\nVloûi? vöetko", "Vybra?", "Storno");
 		}
 	}
     if(IsPlayerInSphere(playerid,2315.7192,-7.2789,26.7422,3)==1)
 	{
-		ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "Banka", "Stav\nVybrat\nVloûit\nVybraù vöetko\nVloûiù vöetko", "Vybraù", "Storno");
+		ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "Banka", "Stav\nVybrat\nVloûit\nVybra? vöetko\nVloûi? vöetko", "Vybra?", "Storno");
 	}
 	return 1;
 }
@@ -1024,16 +1024,16 @@ public OnGameModeInit()
 
 
     CreateJob(JOB_POLICIA, "Policia", -1605.6229,711.8320,13.8672, 6);
-    CreateJob(JOB_HASIC, "HasiË", 2026.4365,67.0827,28.6916, 6);
+    CreateJob(JOB_HASIC, "Hasie", 2026.4365,67.0827,28.6916, 6);
     CreateJob(JOB_ZACHRANAR, "Zachran·r", -2655.3120,638.9794,14.4531, 6);
     CreateJob(JOB_SERIF, "äerif", 217.7919,979.0998,19.5037, 6);
     CreateJob(JOB_PILOT,"Pilot", -1541.1945,-441.0560,6.1000,5); //DOROBIT U PILOTA VSTUP/VYSTUP
     //CreateJob(JOB_ROPNY_VRT,"PracovnÌk ropnÈho vrtu", X,9);
     //CreateJob(JOB_OPRAVAR_MOSTOV,"Oprav·r mostov", X,9);
     CreateJob(JOB_RYBAR,"Ryb·r", -1552.1914,1276.2831,7.1853,9);
-    CreateJob(JOB_UPRATOVAC,"UpratovaË", -2109.5649,0.6681,35.3203,16);
+    CreateJob(JOB_UPRATOVAC,"Upratovae", -2109.5649,0.6681,35.3203,16);
     CreateJob(JOB_SMETIAR,"Smetiar", -1832.2394,-69.1689,15.1094,40);
-    CreateJob(JOB_UMYVAC_OKIEN,"Um˝vaË okien", -2054.1487,379.4349,35.1719,40);
+    CreateJob(JOB_UMYVAC_OKIEN,"Um˝vae okien", -2054.1487,379.4349,35.1719,40);
     CreateJob(JOB_HORNIK,"HornÌk",-2816.2969,-1527.1433,140.8438,57);
 
     //DOROBIT CreateJob(JOB_ROZVOZ_PIZZE,"Rozvoz Pizze", X,29);
@@ -1052,7 +1052,7 @@ public OnGameModeInit()
     CreateJob(JOB_PRIEKUPNIK_ZBRANI,"Priekupnik zbranÌ", -2491.4497,2363.0718,10.2726,18);
     CreateJob(JOB_KAMIONISTA,"Kamionista", 125.1815,-285.4176,1.5781,51);
     CreateJob(JOB_FARMAR,"Farm·r", -103.9826,9.4240,3.1172,23);
-    CreateJob(JOB_KOSIC_TRAVY,"KosiË Tr·vy", -2317.2280,245.7105,35.3203,8);
+    CreateJob(JOB_KOSIC_TRAVY,"Kosie Tr·vy", -2317.2280,245.7105,35.3203,8);
     CreateJob(JOB_PRIEKUPNIK_DROG,"Priekupnik Drog", -1111.1167,-1637.4613,76.3672,23);
     //CreateJob(JOB_OPRAVAR,"XX", X,6);
     CreateJob(JOB_MECHANIK,"Mechanik", -1873.3951,-218.3538,18.3750,48);
@@ -1061,7 +1061,7 @@ public OnGameModeInit()
     CreateJob(JOB_KUCHAR,"Kuch·r", -2430.3091,-183.0481,35.3203,40);
     CreateJob(JOB_MESTSTKA_POLICIA,"Mestsk· PolÌcia", -1607.6158,713.2224,13.5962,6);
     /*CreateJob(JOB_HOTDOG,"Hodogar", X,6);
-    CreateJob(JOB_PREDAJCA,"PredavaË", X,6);
+    CreateJob(JOB_PREDAJCA,"Predavae", X,6);
     CreateJob(JOB_PRAVNIK,"Pr·vnik", X,6);
     CreateJob(JOB_EXEKUTOR,"Exek˙tor", X,6);
     CreateJob(JOB_TRAMVAJ,"Tramvajar", X,6);
@@ -1137,7 +1137,7 @@ public OnPlayerConnect(playerid)
 {
     logged[playerid] = 0;
     IsDead[playerid] = 0;
-    
+
     CheckRegister(playerid);
 
     PlayerTextDraw(playerid);
@@ -1146,7 +1146,7 @@ public OnPlayerConnect(playerid)
 
 	LoadPunishments(playerid);
 
-	SCMFTA(-1, "{B3B3B3}** Hr·Ë %s(%d) sa pripojil do hry.", PlayerName(playerid), playerid);
+	SCMFTA(-1, "{B3B3B3}** Hr·e %s(%d) sa pripojil do hry.", PlayerName(playerid), playerid);
 
 	TogglePlayerSpectating(playerid, true);
 
@@ -1172,9 +1172,9 @@ public OnPlayerDisconnect(playerid, reason)
 	}
 	switch(reason)
 	{
- 		case 0: SCMFTA(-1, "{B3B3B3}** Hr·Ë %s(%d) opustil hru. D˘vod: Timeout",PlayerName(playerid), playerid);
- 		case 1: SCMFTA(-1, "{B3B3B3}** Hr·Ë %s(%d) opustil hru. D˘vod: Odeöel", PlayerName(playerid),playerid);
-	    case 2: SCMFTA(-1, "{B3B3B3}** Hr·Ë %s(%d) opustil hru. D˘vod: Kick / Ban", PlayerName(playerid),playerid);
+ 		case 0: SCMFTA(-1, "{B3B3B3}** Hr·e %s(%d) opustil hru. Duvod: Timeout",PlayerName(playerid), playerid);
+ 		case 1: SCMFTA(-1, "{B3B3B3}** Hr·e %s(%d) opustil hru. Duvod: Odeöel", PlayerName(playerid),playerid);
+	    case 2: SCMFTA(-1, "{B3B3B3}** Hr·e %s(%d) opustil hru. Duvod: Kick / Ban", PlayerName(playerid),playerid);
 	}
 	for(new t=0;t<MAX_TIMERS; t++) KillTimer(Timers[playerid][t]);
 	return 1;
@@ -1196,14 +1196,14 @@ public OnPlayerText(playerid, text[])
 	if(RandText[0] && strcmp(text,RandText,true) == 0)
 	{
 		new string[144],penize = random(50000);
-		format(string,sizeof(string),""COL_RED"[!]"COL_WHITE" PrvnÌ napsal text "COL_RED"%s"COL_WHITE" hr·Ë "COL_GREEN"%s"COL_WHITE" a zÌskal "COL_LIGHTBLUE"%d{FFFFFF} penÏz.",RandText,PlayerName(playerid),penize);
+		format(string,sizeof(string),""COL_RED"[!]"COL_WHITE" PrvnÌ napsal text "COL_RED"%s"COL_WHITE" hr·e "COL_GREEN"%s"COL_WHITE" a zÌskal "COL_LIGHTBLUE"%d{FFFFFF} peniz.",RandText,PlayerName(playerid),penize);
 		SendClientMessageToAll(-1,string);
 		GivePlayerMoneyEx(playerid, penize);
 		PlayerInfo[playerid][Exp]+=50;
 		RandText[0] = 0;
 		return 0;
 	}
-	
+
 	if(PlayerInfo[playerid][VIP] == 0)
 	{
 	    new str[144];
@@ -1248,7 +1248,7 @@ public OnPlayerSpawn(playerid)
 			SetSpawnInfo(playerid, 0, PlayerInfo[playerid][Skinn], RandomSpawns[Random][0], RandomSpawns[Random][1], RandomSpawns[Random][2], RandomSpawns[Random][3], 0, 0, 0, 0,0,0);
 			SpawnPlayer(playerid);
 			SetPlayerHealth(playerid, 100);
-			Message(playerid, "Za poskytnutÌ naöich sluûeb jsme v·m z vaöeho ˙Ëtu strhnuli 1 000$!");
+			Message(playerid, "Za poskytnutÌ naöich sluûeb jsme v·m z vaöeho ˙etu strhnuli 1 000$!");
 			if(PlayerInfo[playerid][Bank] >= 1000)
 			{
 				PlayerInfo[playerid][Bank]-=1000;
@@ -1271,7 +1271,7 @@ public OnPlayerSpawn(playerid)
 	        PlayerInfo[playerid][HP]+=100;
 		}
 
-			
+
 		TextDrawShowForPlayer(playerid, Day),
 		TextDrawShowForPlayer(playerid, Date),
 		TextDrawShowForPlayer(playerid, Time),
@@ -1279,14 +1279,14 @@ public OnPlayerSpawn(playerid)
 	    TextDrawShowForPlayer(playerid, of_title),
 	    TextDrawShowForPlayer(playerid, SF_title),
 		TextDrawShowForPlayer(playerid, txtcas);
-		
+
 		WasSpawned[playerid] = 1;
-		
+
 		logged[playerid] = 1;
 		TogglePlayerSpectating(playerid, false);
 		SetPlayerHealth(playerid, PlayerInfo[playerid][HP]);
 		SetPlayerArmour(playerid, PlayerInfo[playerid][ARM]);
-		
+
  		GivePlayerWeapon(playerid,PlayerInfo[playerid][Weapon1],PlayerInfo[playerid][Ammo1]/2);
 		GivePlayerWeapon(playerid,PlayerInfo[playerid][Weapon2],PlayerInfo[playerid][Ammo2]/2);
 		GivePlayerWeapon(playerid,PlayerInfo[playerid][Weapon3],PlayerInfo[playerid][Ammo3]/2);
@@ -1299,12 +1299,12 @@ public OnPlayerSpawn(playerid)
 	 	GivePlayerWeapon(playerid,PlayerInfo[playerid][Weapon10],PlayerInfo[playerid][Ammo10]/2);
 	 	GivePlayerWeapon(playerid,PlayerInfo[playerid][Weapon11],PlayerInfo[playerid][Ammo11]/2);
 	 	GivePlayerWeapon(playerid,PlayerInfo[playerid][Weapon12],PlayerInfo[playerid][Ammo12]/2);
-	 	
+
 		Timers[playerid][0] = SetTimerEx("SaveData", AUTO_SAVE * 1000, true, "i", playerid);
 		Timers[playerid][1] = SetTimerEx("CAFK",1000,true, "i", playerid);
 		Timers[playerid][2] = SetTimerEx("CheckPosition", 1000, true, "i", playerid);
 		Timers[playerid][3] = SetTimerEx("LevelUp", 1000, true, "i", playerid);
-		
+
 		SetPlayerColor(playerid, PlayerInfo[playerid][Color]);
 	}
 	return 1;
@@ -1418,23 +1418,23 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	                case 0:
 					{
 					    new string[70];
-					    format(string, sizeof(string), "V·ö z˘statek na ˙Ëtu je %d$", PlayerInfo[playerid][Bank]);
-						ShowPlayerDialog(playerid, DIALOG_STAV, DIALOG_STYLE_MSGBOX, "Stav ˙Ëtu", string, "Zav¯Ìt", "");
+					    format(string, sizeof(string), "V·ö zustatek na ˙etu je %d$", PlayerInfo[playerid][Bank]);
+						ShowPlayerDialog(playerid, DIALOG_STAV, DIALOG_STYLE_MSGBOX, "Stav ˙etu", string, "ZavoÌt", "");
 					}
 	                case 1:
 					{
-						ShowPlayerDialog(playerid, DIALOG_VYBRAT, DIALOG_STYLE_INPUT, "Banka", "Zadaj Ë·stku pre v˝ber", "Confirm", "Storno");
+						ShowPlayerDialog(playerid, DIALOG_VYBRAT, DIALOG_STYLE_INPUT, "Banka", "Zadaj e·stku pre v˝ber", "Confirm", "Storno");
 	 				}
 				    case 2:
 					{
-						ShowPlayerDialog(playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "Banka", "Zadaj Ëiastku pre vloûenie", "Confirm", "Storno");
+						ShowPlayerDialog(playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "Banka", "Zadaj eiastku pre vloûenie", "Confirm", "Storno");
 					}
 					case 3:
 					{
 					    GivePlayerMoneyEx(playerid, PlayerInfo[playerid][Bank]);
 					    PlayerInfo[playerid][Bank] = 0;
 					    new string[80];
-						format(string, sizeof(string), "Nov˝ z˘statok na ˙Ëte: %d", PlayerInfo[playerid][Bank]);
+						format(string, sizeof(string), "Nov˝ zustatok na ˙ete: %d", PlayerInfo[playerid][Bank]);
 						Message(playerid, string);
 					}
 	                case 4:
@@ -1443,7 +1443,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						PlayerInfo[playerid][Money] = 0;
 						ResetMoney(playerid);
 						new string[80];
-						format(string, sizeof(string), "Nov˝ z˘statok na ˙Ëte: %d", PlayerInfo[playerid][Bank]);
+						format(string, sizeof(string), "Nov˝ zustatok na ˙ete: %d", PlayerInfo[playerid][Bank]);
 						Message(playerid, string);
 					}
 	            }
@@ -1452,7 +1452,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	    }
 	    if(dialogid == DIALOG_STAV)
 	    {
-	        if(!response) ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "BANK", "Stav\nVybrat\nVloûit\nVybraù vöetko\nVloûiù vöetko", "Vybrat", "Storno");
+	        if(!response) ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "BANK", "Stav\nVybrat\nVloûit\nVybra? vöetko\nVloûi? vöetko", "Vybrat", "Storno");
 		}
      	if(dialogid == DIALOG_VYBRAT)
 	    {
@@ -1461,16 +1461,16 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	            new text = strval(inputtext);
 	        	if(text < 0 || text > 999999999999)
 	         	{
-		             if (! strlen (inputtext)) return ShowPlayerDialog (playerid, DIALOG_VYBRAT, DIALOG_STYLE_INPUT, "BANKA - V˝bÏr Ë·stky", "Zadej Ë·stku, kterou chceö z banky vybrat!\n{FF0000}ZADAL SI NEPLATNOU »¡STKU!" , "zadat" , "zruöit" ) ;
-		             if (GetPlayerMoney (playerid) < strval(inputtext)) return ShowPlayerDialog(playerid, DIALOG_VYBRAT, DIALOG_STYLE_INPUT, "Vybrat", "tolik penÌzk˘ nem·ö v bance :(" , "zadat" , "zruöit" ) ;
+		             if (! strlen (inputtext)) return ShowPlayerDialog (playerid, DIALOG_VYBRAT, DIALOG_STYLE_INPUT, "BANKA - V˝bir e·stky", "Zadej e·stku, kterou chceö z banky vybrat!\n{FF0000}ZADAL SI NEPLATNOU E¡STKU!" , "zadat" , "zruöit" ) ;
+		             if (GetPlayerMoney (playerid) < strval(inputtext)) return ShowPlayerDialog(playerid, DIALOG_VYBRAT, DIALOG_STYLE_INPUT, "Vybrat", "tolik penÌzku nem·ö v bance :(" , "zadat" , "zruöit" ) ;
 		             GivePlayerMoneyEx(playerid, strval(inputtext));
 		             PlayerInfo[playerid][Bank] += strval(inputtext);
-		             SCMF(playerid, -1, "Nov˝ zostatok na ˙Ëte: %d", PlayerInfo[playerid][Bank]);
+		             SCMF(playerid, -1, "Nov˝ zostatok na ˙ete: %d", PlayerInfo[playerid][Bank]);
 				}else{
-					ShowPlayerDialog (playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "BANKA - V˝bÏr Ë·stky", "Zadej Ë·stku, kterou chceö z banky vybrat!\n{FF0000}ZADAL SI NEPLATNOU »¡STKU!" , "zadat" , "zruöit" ) ;
+					ShowPlayerDialog (playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "BANKA - V˝bir e·stky", "Zadej e·stku, kterou chceö z banky vybrat!\n{FF0000}ZADAL SI NEPLATNOU E¡STKU!" , "zadat" , "zruöit" ) ;
 				}
 			}else{
-                ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "BANK", "Stav\nVybrat\nVloûit\nVybraù vöetko\nVloûiù vöetko", "Vybrat", "Storno");
+                ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "BANK", "Stav\nVybrat\nVloûit\nVybra? vöetko\nVloûi? vöetko", "Vybrat", "Storno");
 			}
 	        return 1;
 	    }
@@ -1481,16 +1481,16 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	            new text = strval(inputtext);
 	        	if(text < 0 || text > 999999999999)
 	         	{
-	             	if (! strlen (inputtext)) return ShowPlayerDialog (playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "»·stka", "neplatna Ë·stka! " , "zadat" , "zruöit" ) ;
-	             	if (GetPlayerMoney (playerid) < strval (inputtext)) return ShowPlayerDialog(playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "vloûit", "tolik penÌzk˘ nem·ö :(" , "zadat" , "zruöit" ) ;
+	             	if (! strlen (inputtext)) return ShowPlayerDialog (playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "E·stka", "neplatna e·stka! " , "zadat" , "zruöit" ) ;
+	             	if (GetPlayerMoney (playerid) < strval (inputtext)) return ShowPlayerDialog(playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "vloûit", "tolik penÌzku nem·ö :(" , "zadat" , "zruöit" ) ;
 	             	GivePlayerMoneyEx(playerid,-strval (inputtext));
 	             	PlayerInfo [playerid] [Bank] += strval (inputtext);
-	             	SCMF(playerid, -1, "Nov˝ zostatok na ˙Ëte: %d", PlayerInfo[playerid][Bank]);
+	             	SCMF(playerid, -1, "Nov˝ zostatok na ˙ete: %d", PlayerInfo[playerid][Bank]);
 				}else{
-					ShowPlayerDialog (playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "»·stka", "Lze pouûÌt jenom ËÌsla!" , "zadat" , "zruöit" ) ;
+					ShowPlayerDialog (playerid, DIALOG_VLOZIT, DIALOG_STYLE_INPUT, "E·stka", "Lze pouûÌt jenom eÌsla!" , "zadat" , "zruöit" ) ;
 				}
 			}else{
-                ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "BANK", "Stav\nVybrat\nVloûit\nVybraù vöetko\nVloûiù vöetko", "Vybrat", "Storno");
+                ShowPlayerDialog(playerid, DIALOG_BANK, DIALOG_STYLE_LIST, "BANK", "Stav\nVybrat\nVloûit\nVybra? vöetko\nVloûi? vöetko", "Vybrat", "Storno");
 			}
 	        return 1;
 	    }
@@ -1541,10 +1541,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 								acp[playerid] = 1;
 							 	SetPlayerRaceCheckpoint(playerid,0,-2049.3713,-68.1456,34.8693,-2152.8745,-67.7842,34.8691,5.0);
 							}else{
-								SendClientMessage(playerid, -1, "Nem·ö bohuûel dostatek penÏz.");
+								SendClientMessage(playerid, -1, "Nem·ö bohuûel dostatek peniz.");
 							}
 						}else{
-							SendClientMessage(playerid, -1, "Jiû m·ö ¯idiË·k!");
+							SendClientMessage(playerid, -1, "Jiû m·ö oidie·k!");
 						}
 					}
 	            }
@@ -1557,11 +1557,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
             {
                 if(!strlen(inputtext))
                 {
-					ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "REGISTER","VÌtej ve h¯e, nov·Ëku!\nZadej prosÌm svÈ novÈ heslo!", "Zvolit", "Zruöit");
+					ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "REGISTER","VÌtej ve hoe, nov·eku!\nZadej prosÌm svÈ novÈ heslo!", "Zvolit", "Zruöit");
 				}
 				if(36 > strlen(inputtext) > 4)
 				{
-                    ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "REGISTER","VÌtej ve h¯e, nov·Ëku!\nZadej prosÌm svÈ novÈ heslo!", "Zvolit", "Zruöit");
+                    ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "REGISTER","VÌtej ve hoe, nov·eku!\nZadej prosÌm svÈ novÈ heslo!", "Zvolit", "Zruöit");
 				}
 				//new hashpass[250];
 				//WP_Hash(hashpass,sizeof(hashpass),inputtext);
@@ -1579,7 +1579,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
                 SetTimerEx("Cas", 1000, true, "i", playerid);
                 //PlayerInfo[playerid][Logins]++;
 				new string[120];
-				format(string, sizeof(string), "VÌtej ve h¯e, {FF3300}%s{FFFFFF}! Pokud bys pot¯eboval s nÏËÌm pomoct, zadej /help", PlayerName(playerid));
+				format(string, sizeof(string), "VÌtej ve hoe, {FF3300}%s{FFFFFF}! Pokud bys potoeboval s nieÌm pomoct, zadej /help", PlayerName(playerid));
 				SendClientMessage(playerid, -1, string);
 
 			}
@@ -1602,7 +1602,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					PlayerInfo[playerid][Logins]++;
 					PlayerInfo[playerid][Exp]++;
 					SetTimerEx("Cas", 1000, true, "i", playerid);
-					SendClientMessage(playerid, -1, "⁄spÏönÏ si se {FF0000}PÿIHL¡SIL{FFFFFF}!");
+					SendClientMessage(playerid, -1, "⁄spiöni si se {FF0000}POIHL¡SIL{FFFFFF}!");
                 }else{
                     BadPass[playerid]++;
 					if(BadPass[playerid] < 3)
@@ -1615,11 +1615,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
 					    BadPass[playerid] = 0;
 					    new string[120];
-					    format(string, sizeof(string), "Hr·Ë %s zadal 3x zlÈ heslo a bÛl vyhoden˝ !", PlayerName(playerid));
+					    format(string, sizeof(string), "Hr·e %s zadal 3x zlÈ heslo a bÛl vyhoden˝ !", PlayerName(playerid));
 					    MessageTA(string);
 						KickEx(playerid);
 					}
-					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "LOGIN","VÌtej zp·tky ve h¯e!\n\nZadej prosÌm svÈ heslo pro potvrzenÌ.", "Zvolit", "Zruöit");
+					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "LOGIN","VÌtej zp·tky ve hoe!\n\nZadej prosÌm svÈ heslo pro potvrzenÌ.", "Zvolit", "Zruöit");
                 }
             }else{
                 Kick(playerid);
@@ -1790,7 +1790,7 @@ public OnPlayerEnterRaceCheckpoint(playerid)
 			SetPlayerPos(playerid, -2026.7332,-114.9335,1035.1719);
 			SetPlayerInterior(playerid,3);
 			SetPlayerVirtualWorld(playerid, 0);
-			ShowPlayerDialog(playerid, DIALOG_EVERYTHING, DIALOG_STYLE_MSGBOX, "Autoökola", "Naöe pr·ce je zde jiû hotova. ⁄spÏönÏ si sloûil test.", "Zav¯Ìt", "");
+			ShowPlayerDialog(playerid, DIALOG_EVERYTHING, DIALOG_STYLE_MSGBOX, "Autoökola", "Naöe pr·ce je zde jiû hotova. ⁄spiöni si sloûil test.", "ZavoÌt", "");
             PlayerInfo[playerid][RidicakB]++;
 		}
 	}
@@ -1899,17 +1899,17 @@ CMD:alarm(playerid)
 }
 CMD:auto(playerid)
 {
-//nabÌdka vöech vÏcÌ, motor, svÏtla, alarm, dve¯e, kapota, kufr
+//nabÌdka vöech vicÌ, motor, svitla, alarm, dveoe, kapota, kufr
 }
 
 CMD:givecash(playerid, params[])
 {
     new pid,money;
-	if(sscanf(params, "ii",pid, money)) return SCM(playerid, -1, "ERROR: /givecash <ID> <»IASTKA>");
+	if(sscanf(params, "ii",pid, money)) return SCM(playerid, -1, "ERROR: /givecash <ID> <EIASTKA>");
 	if(PlayerInfo[playerid][Money] > 0) return SCM(playerid, -1, "Nem·ö dostatok penazÌ !");
 	GivePlayerMoneyEx(pid, money);
     GivePlayerMoneyEx(playerid, -money);
-    SCMF(playerid, -1, "Poslal si hr·Ëovy %s[%d] penaûnu Ëiastku v hodnote %d", PlayerName(pid), pid, money);
+    SCMF(playerid, -1, "Poslal si hr·eovy %s[%d] penaûnu eiastku v hodnote %d", PlayerName(pid), pid, money);
     //PlayerInfo[playerid][Money] =- money;
 	return 1;
 }
@@ -1934,7 +1934,7 @@ CMD:vheal(playerid,params[])
     if (PlayerInfo[playerid][VIP] >= 1) //POTOM UPRAVIT, ABY TO FUNGOVALO AJ PRO ADMINY
     {
 	    SetPlayerHealth(playerid, 100);
-        SendClientMessage(playerid, -1, "[{FF0000}!{FFFFFF}] Byl si vylÈËen!");
+        SendClientMessage(playerid, -1, "[{FF0000}!{FFFFFF}] Byl si vylÈeen!");
 	}
     return 1;
 }
@@ -1953,12 +1953,12 @@ CMD:vips(playerid)
             }
         }
 	}
-    if (count == 0) ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "VIP Online", "é·dn˝ VIP moment·lnÏ nejsou online!", "Zav¯Ìt", "");
-    else ShowPlayerDialog(playerid, 800, DIALOG_STYLE_MSGBOX, "VIP Online", string, "Zav¯Ìt", "");
+    if (count == 0) ShowPlayerDialog(playerid, 1000, DIALOG_STYLE_MSGBOX, "VIP Online", "é·dn˝ VIP moment·lni nejsou online!", "ZavoÌt", "");
+    else ShowPlayerDialog(playerid, 800, DIALOG_STYLE_MSGBOX, "VIP Online", string, "ZavoÌt", "");
     return 1;
 }
 ///////////////////////////////
-//=====[HRA»SKE PRÕKAZY]======
+//=====[HRAESKE PRÕKAZY]======
 CMD:admins(playerid)
 {
     new count = 0, string[600];
@@ -1988,13 +1988,13 @@ CMD:nastaveni(playerid)
 CMD:pomoc(playerid) return cmd_help(playerid);
 CMD:help(playerid)
 {
-	ShowPlayerDialog(playerid, DIALOG_HELP, DIALOG_STYLE_LIST, "HELP", "ZaËÌn·m\nPr·ce\nBanka", "Select", "Cancel");
+	ShowPlayerDialog(playerid, DIALOG_HELP, DIALOG_STYLE_LIST, "HELP", "ZaeÌn·m\nPr·ce\nBanka", "Select", "Cancel");
 	return 1;
 }
 
 CMD:serverinfo(playerid)
 {
-	ShowPlayerDialog(playerid, DIALOG_SERVERINFO, DIALOG_STYLE_MSGBOX, "SERVER INFO","Auto¯i mÛdu: Daniels & XpresS\nZaË·tek v˝voje: 8.4.2017\nVerze: "VERSION"", "Cancel","");
+	ShowPlayerDialog(playerid, DIALOG_SERVERINFO, DIALOG_STYLE_MSGBOX, "SERVER INFO","Autooi mÛdu: Daniels & XpresS\nZae·tek v˝voje: 8.4.2017\nVerze: "VERSION"", "Cancel","");
 	return 1;
 }
 
@@ -2002,16 +2002,16 @@ CMD:stats(playerid)
 {
 	SendClientMessage(playerid, -1, "{CC6600}-- STATS --");
 	new string[200], str[200];
-	format(string, sizeof(string), "{00CCFF}| JmÈno: {FFFFFF}%s{00CCFF} || Nahran˝ Ëas: {FFFFFF}%dh:%dm:%ds{00CCFF} || Vraûd: {FFFFFF}%d{00CCFF} || ⁄mrtÌ: {FFFFFF}%d{00CCFF} |", PlayerName(playerid), PlayerInfo[playerid][Hour], PlayerInfo[playerid][Min], PlayerInfo[playerid][Sec], PlayerInfo[playerid][Kills], PlayerInfo[playerid][Deaths]);
+	format(string, sizeof(string), "{00CCFF}| JmÈno: {FFFFFF}%s{00CCFF} || Nahran˝ eas: {FFFFFF}%dh:%dm:%ds{00CCFF} || Vraûd: {FFFFFF}%d{00CCFF} || ⁄mrtÌ: {FFFFFF}%d{00CCFF} |", PlayerName(playerid), PlayerInfo[playerid][Hour], PlayerInfo[playerid][Min], PlayerInfo[playerid][Sec], PlayerInfo[playerid][Kills], PlayerInfo[playerid][Deaths]);
 	SendClientMessage(playerid, -1, string);
-	format(str, sizeof(str), "{00CCFF}| PoËet p¯ihl·öenÌ: {FFFFFF}%d{00CCFF} || AdminLevel: {FFFFFF}%d{00CCFF} || Level: {FFFFFF}%d{00CCFF} || Exp: {FFFFFF}%d{00CCFF} |", PlayerInfo[playerid][Logins], PlayerInfo[playerid][Admin],PlayerInfo[playerid][Level],PlayerInfo[playerid][Exp]);
+	format(str, sizeof(str), "{00CCFF}| Poeet poihl·öenÌ: {FFFFFF}%d{00CCFF} || AdminLevel: {FFFFFF}%d{00CCFF} || Level: {FFFFFF}%d{00CCFF} || Exp: {FFFFFF}%d{00CCFF} |", PlayerInfo[playerid][Logins], PlayerInfo[playerid][Admin],PlayerInfo[playerid][Level],PlayerInfo[playerid][Exp]);
 	SendClientMessage(playerid, -1, str);
 	return 1;
 }
 CMD:trestani(playerid)
 {
 	new string[400];
-    strcat(string,"===============[ HRA»SKE TRESTY ]===============");
+    strcat(string,"===============[ HRAESKE TRESTY ]===============");
 	strcat(string,"\n|{00CCFF}| Elek. öokov: {FFFFFF}%d{00CCFF} || Faciek: {FFFFFF}%d{00CCFF} || Samotka: {FFFFFF}%d{00CCFF} || VarovanÌ: {FFFFFF}%d{00CCFF} |");
 	strcat(string,"\n| Vstupov na Event: {FFFFFF}%d{00CCFF} || Dotazov: {FFFFFF}%d{00CCFF} || Admin V‰zenie: {FFFFFF}%d{00CCFF} || ZamrazenÌ: {FFFFFF}%d{00CCFF} |");
 	strcat(string,"\n| VykopnutÌ: {FFFFFF}%d{00CCFF} || Admin Respawnov: {FFFFFF}%d{00CCFF} || Admin-ZabitÌ: {FFFFFF}%d{00CCFF} || ExploziÌ: {FFFFFF}%d{00CCFF}");
@@ -2064,7 +2064,7 @@ CMD:infobox(playerid, params[])
 	new text[34],time;
 	if(sscanf(params, "is", time, text)) return SCM(playerid, -1, "/infobox <cas v sek.> <text>");
 	InfoBox(playerid, text, time);
-	SCMF(playerid, -1, "Text: %s, »as: %d", text, time);
+	SCMF(playerid, -1, "Text: %s, Eas: %d", text, time);
 	return 1;
 }
 
@@ -2157,12 +2157,12 @@ stock GetALevel(playerid)
 
 stock HaveAdmin(playerid)
 {
-	SendClientMessage(playerid, COLOR_ADMIN, "ERROR: Nem·ö dostateËn˝ pr·va na tento p¯Ìkaz!");
+	SendClientMessage(playerid, COLOR_ADMIN, "ERROR: Nem·ö dostateen˝ pr·va na tento poÌkaz!");
 	return 1;
 }
 stock IsOnline(playerid)
 {
-    SendClientMessage(playerid, COLOR_ADMIN, "ERROR: Tento hr·Ë nenÌ moment·lnÏ online!");
+    SendClientMessage(playerid, COLOR_ADMIN, "ERROR: Tento hr·e nenÌ moment·lni online!");
 	return 1;
 }
 stock GetNameALevel(playerid)
@@ -2170,7 +2170,7 @@ stock GetNameALevel(playerid)
 	new ranka[24+1];
 	switch(GetALevel(playerid))
 	{
-		case 0: ranka = "Hr·Ë";
+		case 0: ranka = "Hr·e";
 		case 1: ranka = "PomocnÌk";
 		case 2: ranka = "Moder·tor";
 		case 3: ranka = "Administr·tor";
@@ -2334,7 +2334,7 @@ if(tstring[ln-1] == '\n')tstring[ln-1] = '\0';
 }
 
 
-//Ëi je "text" ËÌseln˝
+//ei je "text" eÌseln˝
 stock IsNumeric(const string[])
 {
    new length=strlen(string);
@@ -2354,11 +2354,11 @@ stock CheckRegister(playerid)
 		if(fexist(UserPath(playerid)))
 		{
 			LoadUserData(playerid);
-			ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "LOGIN","VÌtej zp·tky ve h¯e!\n\nZadej prosÌm svÈ heslo pro potvrzenÌ.", "Zvolit", "Zruöit");
+			ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_INPUT, "LOGIN","VÌtej zp·tky ve hoe!\n\nZadej prosÌm svÈ heslo pro potvrzenÌ.", "Zvolit", "Zruöit");
 		}
 		else
 		{
-			ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "REGISTER","VÌtej ve h¯e, nov·Ëku!\n\nZadej prosÌm svÈ novÈ heslo!", "Zvolit", "Zruöit");
+			ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_INPUT, "REGISTER","VÌtej ve hoe, nov·eku!\n\nZadej prosÌm svÈ novÈ heslo!", "Zvolit", "Zruöit");
 		}
 	}
 	return 1;
@@ -2786,7 +2786,7 @@ stock LevelUp(playerid)
 	    PlayerInfo[playerid][Level] ++;
 	    PlayerInfo[playerid][Exp] = 0;
 	    GivePlayerMoney(playerid, 50000);
-	    SCMF(playerid, -1, "[ "COL_RED" ! "COL_WHITE" ] ⁄spÏönÏ si dos·hnul levelu "COL_RED"%d"COL_WHTE"!",PlayerInfo[playerid][level);
+	    SCMF(playerid, -1, "[ "COL_RED" ! "COL_WHITE" ] ⁄spiöni si dos·hnul levelu "COL_RED"%d"COL_WHTE"!",PlayerInfo[playerid][level);
 	}
 }
 
@@ -2823,7 +2823,7 @@ CMD:goto(playerid, params[])
 		GetPlayerPos(playerid, pos[0], pos[1], pos[2]);
 		WARP(playerid, pos[0], pos[1], pos[2], GetPlayerInterior(pid), GetPlayerVirtualWorld(pid));
 
-		format(string, sizeof(string), "Administr·tor %s[%d] sa portÛl na hr·Ëa %s[%d]",PlayerName(playerid),playerid, PlayerName(pid), pid);
+		format(string, sizeof(string), "Administr·tor %s[%d] sa portÛl na hr·ea %s[%d]",PlayerName(playerid),playerid, PlayerName(pid), pid);
 		MessageTA(string);
 	}else{
         HaveAdmin(playerid);
@@ -2839,7 +2839,7 @@ CMD:spec(playerid, params[])
 	    if(sscanf(params, "u", pid)) return InfoBox(playerid, "SYNTAX: /spec <ID>", 7);
 	    if(pid == playerid || pid == INVALID_PLAYER_ID) return IsOnline(playerid);
 
-		format(string, sizeof(string), "Administr·tor %s(%d) zaËal pozorovaù hr·Ëa %s(%d)",PlayerName(playerid),playerid,PlayerName(pid),pid);
+		format(string, sizeof(string), "Administr·tor %s(%d) zaeal pozorova? hr·ea %s(%d)",PlayerName(playerid),playerid,PlayerName(pid),pid);
 		SendAdminMessage(string);
 		GetPlayerPos(playerid, Sx,Sy,Sz);
 
@@ -2932,8 +2932,8 @@ CMD:facka(playerid, params[])
 		GivePlayerHealth(playerid, -10);
 		GetPlayerPos(playerid, pos[0],pos[1],pos[2]);
 		SetPlayerPos(playerid, pos[0],pos[1]+10,pos[2]);
-		format(string, sizeof(string), "Administr·tor %s(%d) dal facku hr·Ëovy %s(%d) za %s",PlayerName(playerid), playerid, PlayerName(pid),pid, reason);
-		//SCMFTA(COLOR_ADMIN, "{FF0000}[ ! ] {FFFFFF}Administr·tor %s(%d) dal facku hr·Ëovy %s(%d) za %s",PlayerName(playerid), playerid, PlayerName(pid),pid, reason);
+		format(string, sizeof(string), "Administr·tor %s(%d) dal facku hr·eovy %s(%d) za %s",PlayerName(playerid), playerid, PlayerName(pid),pid, reason);
+		//SCMFTA(COLOR_ADMIN, "{FF0000}[ ! ] {FFFFFF}Administr·tor %s(%d) dal facku hr·eovy %s(%d) za %s",PlayerName(playerid), playerid, PlayerName(pid),pid, reason);
 		MessageTA(string);
 	}else{
         HaveAdmin(playerid);
@@ -2975,12 +2975,12 @@ CMD:var(playerid, params[])
 		PlayerPun[pid][aVar]++;
 
 		new string[256];
-		format(string, sizeof(string), "Administrator %s[%d] varoval hr·Ëa %s[%d], %d/3 za %s", PlayerName(playerid),playerid,PlayerName(pid), pid, PlayerPun[pid][aVar], reason);
+		format(string, sizeof(string), "Administrator %s[%d] varoval hr·ea %s[%d], %d/3 za %s", PlayerName(playerid),playerid,PlayerName(pid), pid, PlayerPun[pid][aVar], reason);
 		MessageTA(string);
 
 		if(PlayerPun[id][aVar] == 3)
 		{
-			SCMF(playerid, -1, "Server vyhodil hr·Ëa %s[%d] za 3/3 varaovania !",PlayerName(pid), pid);
+			SCMF(playerid, -1, "Server vyhodil hr·ea %s[%d] za 3/3 varaovania !",PlayerName(pid), pid);
 			KickEx(playerid);
 		}
 	}else{
@@ -3018,7 +3018,7 @@ CMD:say(playerid, params[])
 }
 CMD:cevent(playerid)
 {
-	Message(playerid, "DOROBIç"); //DOROBIT
+	Message(playerid, "DOROBI?"); //DOROBIT
 	return 1;
 }
 
@@ -3038,7 +3038,7 @@ CMD:esok(playerid, params[])
 		ApplyAnimation(playerid,"CRACK","crckdeth2",4.1,1,1,1,7,1);
 
 		new string[256];
-		format(string, sizeof(string), "Administr·tor %s(%d) dal facku hr·Ëovy %s(%d) za %s",PlayerName(playerid), playerid, PlayerName(pid),pid, reason);
+		format(string, sizeof(string), "Administr·tor %s(%d) dal facku hr·eovy %s(%d) za %s",PlayerName(playerid), playerid, PlayerName(pid),pid, reason);
 		MessageTA(string);
 	}else{
         HaveAdmin(playerid);
@@ -3046,7 +3046,7 @@ CMD:esok(playerid, params[])
 	return 1;
 }
 
-//ADMINCHAT / VIPCHAT Dotazy a dotazr dorobiù
+//ADMINCHAT / VIPCHAT Dotazy a dotazr dorobi?
 CMD:ajail(playerid, params[])
 {
     if(GetALevel(playerid) >= 2 || IsPlayerAdmin(playerid))
@@ -3092,13 +3092,13 @@ CMD:setlevel(playerid, params[])
  	{
 		new pID, slvl;
 		if(sscanf(params, "ud", pID,slvl)) return SendClientMessage(playerid, -1, "SYNTAX: /setlevel [id] [0-6]");
-		//if(!IsPlayerConnected(pID)) return SendClientMessage(playerid, -1, "ERROR: Tento hr·Ë nenÌ pripojen˝ na servery!");
-		//if(pID != INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "ERROR: Tento hr·Ë nenÌ pripojen˝ na servery!");
-		if(!(0 <= slvl <= 6)) return SendClientMessage(playerid, -1, "ERROR: Rozmedzie levelu musÌ byù 0-6!");
+		//if(!IsPlayerConnected(pID)) return SendClientMessage(playerid, -1, "ERROR: Tento hr·e nenÌ pripojen˝ na servery!");
+		//if(pID != INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "ERROR: Tento hr·e nenÌ pripojen˝ na servery!");
+		if(!(0 <= slvl <= 6)) return SendClientMessage(playerid, -1, "ERROR: Rozmedzie levelu musÌ by? 0-6!");
 		PlayerInfo[pID][Admin] = slvl;
-		SCMFTA(COLOR_ADMIN, "Administr·tor %s(%d), nastavil hr·Ëovy %s(%d) Admin-Level: %d", PlayerName(playerid),playerid, PlayerName(pID), pID,slvl);
+		SCMFTA(COLOR_ADMIN, "Administr·tor %s(%d), nastavil hr·eovy %s(%d) Admin-Level: %d", PlayerName(playerid),playerid, PlayerName(pID), pID,slvl);
  	}else{
-        SCM(playerid, -1, "{FF0000}Nem·ö dostatoËnÈ opravnene !");
+        SCM(playerid, -1, "{FF0000}Nem·ö dostatoenÈ opravnene !");
  	}
 	return 1;
 }
@@ -3127,37 +3127,38 @@ CMD:setlevel(playerid, params[])
  VLVL PLATINUM: BANKA;500K
 
  *BANKA;XXX == KAéDY DEN XXX $ do banky *
- **HVH VLASTNIç VIP DOMY
+ **HVH VLASTNI? VIP DOMY
 */
 
 
 /*
 
-DOKON»EN… VÃCI
+DOKONEEN… VICI
 
-- Opravit spawn aut u total_vehicles_from_files DOKON»ENO - DNLS
-- PrvnÌ register = v˝bÏr jazyku, po loginu uû automaticky jazyk ten kter˝ m·ö. DOKON»EN… - XpresS
-- P¯idat mÌsta, kde budou banky, n·slednÏ tam funkËnÌ p¯Ìkaz /banka DOKON»EN…
-- Spraviù dynamick˝ systÈm b·nk - DOKON»EN… XpresS
-- P¯idat bankomaty, stejnÈ jako banky, akor·t ne v interiÈru. DOKON»EN…
-- Escape v /banka u stavu, nebo v˝bÏru Ëi vkladu = zpÏt do hlavnÌho menu DOKON»ENO - XpresS, ˙prava DNLS
-- Z·kladnÌ Admin System rozdÏlen na skupiny Helper, Moder·tor, Administr·tor, HlavnÌ Administr·tor, Spolumajitel, Majitel DOKON»EN… - XpresS
-- Exp systÈm , +10 exp˘ kaûdou odehranou hodinu, za p¯ihl·öenÌ 1 exp a za xxx exp˘ dalöÌ level - DOKON»ENO, DNLS
-- Level systÈm nap¯. 1000 exp˘ = 2 level, 10 000 exp = 3 level atp.. - DOKON»ENO, DNLS
-- P¯idat textdraw Ëasu tvar: (18:52:58), dn˘ tvar:( PO ⁄T ST »T P¡ {BARVA}SO) a data (8.4.2017) - DOKO»ENO, DNLS - PREROBIç POZICIU
-- Po naps·nÌ Ëehokoliv do chatu se napÌöe za jmÈno ID - DOKON»ENO, DNLS - DOROBIç Farby hr·Ëov
-- Infobox DOKON»ENO - TD DNLS, pawno XpresS
-- ZaË·teËnÌ kamera v connectu DOKON»ENO, DNLS
-- R¡DIO - DOKON»ENO, DNLS
-- ZaËaù na House systÈme (basic) - DOKON»EN…, DNLS
-- Spraviù tachometer - DOKON»EN…, DNLS
-- Dorobiù ukladanie na ûivoty / brnenie, zbranÌ a skinu - DOKON»EN…, DNLS - ûivoty a brnenie - OPRAVENE XpresS
-- Ve scriptfiles sloûku logs, kam ukl·dat CHAT - DOKON»ENO, DNLS
-- OdpoËet /timer - DOKON»EN› XpresS
-- House System p¯edÏlat na pickup (arrow pickup 1318 nebo 1317) - DOKON»EN…, DANIELS
-- VIP System na levely -> Premium , VIP - DOKON»ENO, DNLS
-- moûnost zamknout vozidlo, otev¯Ìt kufr a kapotu - DOKO»EN…, DNLS
+- Opravit spawn aut u total_vehicles_from_files DOKONEENO - DNLS
+- PrvnÌ register = v˝bir jazyku, po loginu uû automaticky jazyk ten kter˝ m·ö. DOKONEEN… - XpresS
+- Poidat mÌsta, kde budou banky, n·sledni tam funkenÌ poÌkaz /banka DOKONEEN…
+- Spravi? dynamick˝ systÈm b·nk - DOKONEEN… XpresS
+- Poidat bankomaty, stejnÈ jako banky, akor·t ne v interiÈru. DOKONEEN…
+- Escape v /banka u stavu, nebo v˝biru ei vkladu = zpit do hlavnÌho menu DOKONEENO - XpresS, ˙prava DNLS
+- Z·kladnÌ Admin System rozdilen na skupiny Helper, Moder·tor, Administr·tor, HlavnÌ Administr·tor, Spolumajitel, Majitel DOKONEEN… - XpresS
+- Exp systÈm , +10 expu kaûdou odehranou hodinu, za poihl·öenÌ 1 exp a za xxx expu dalöÌ level - DOKONEENO, DNLS
+- Level systÈm napo. 1000 expu = 2 level, 10 000 exp = 3 level atp.. - DOKONEENO, DNLS
+- Poidat textdraw easu tvar: (18:52:58), dnu tvar:( PO ⁄T ST ET P¡ {BARVA}SO) a data (8.4.2017) - DOKOEENO, DNLS - PREROBI? POZICIU
+- Po naps·nÌ eehokoliv do chatu se napÌöe za jmÈno ID - DOKONEENO, DNLS - DOROBI? Farby hr·eov
+- Infobox DOKONEENO - TD DNLS, pawno XpresS
+- Zae·teenÌ kamera v connectu DOKONEENO, DNLS
+- R¡DIO - DOKONEENO, DNLS
+- Zaea? na House systÈme (basic) - DOKONEEN…, DNLS
+- Spravi? tachometer - DOKONEEN…, DNLS
+- Dorobi? ukladanie na ûivoty / brnenie, zbranÌ a skinu - DOKONEEN…, DNLS - ûivoty a brnenie - OPRAVENE XpresS
+- Ve scriptfiles sloûku logs, kam ukl·dat CHAT - DOKONEENO, DNLS
+- Odpoeet /timer - DOKONEEN› XpresS
+- House System poedilat na pickup (arrow pickup 1318 nebo 1317) - DOKONEEN…, DANIELS
+- VIP System na levely -> Premium , VIP - DOKONEENO, DNLS
+- moûnost zamknout vozidlo, otevoÌt kufr a kapotu - DOKOEEN…, DNLS
 
-JednotlivÈ kolonky nemazat, ale zmÏnit NEDOKON»ENO na DOKON»ENO !!!
+JednotlivÈ kolonky nemazat, ale zminit NEDOKONEENO na DOKONEENO !!!
 */
+
 
