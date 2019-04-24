@@ -1077,6 +1077,9 @@ public OnGameModeInit()
 	EnableStuntBonusForAll(0);
 
 	TextDraw();
+		///////////////////
+			AntiDeAMX();
+			//////////////////
 
 	total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/trains.txt");
  	total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/pilots.txt");
@@ -1258,11 +1261,7 @@ public OnPlayerSpawn(playerid)
 	   			    GivePlayerMoneyEx(playerid, -1000);
 	   			}
 			}
-		}else{
-			///////////////////
-			AntiDeAMX();
-			//////////////////
-	 	}
+		}
 	}else{
 	    new Float:health;
  		GetPlayerHealth(playerid,health);

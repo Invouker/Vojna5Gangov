@@ -1,7 +1,7 @@
 #include <a_samp>
 #include <zcmd>
 #include <xFunction>
-//#include <sscanf>
+#include <sscanf>
 #include <DOF2>
 #include <xColor>
 
@@ -157,12 +157,12 @@ public OnPlayerDisconnect(playerid, reason){
     DOF2_Exit();
 	return 1;
 }
-main () { return 1; }
-public OnGameModeInit(){
-	SetGameModeText("High Life");
+
+public OnFilterScriptInit(){
+
 	return 1;
 }
-public OnGameModeExit(){
+public OnFilterScripteExit(){
     for(new i = 0; i < MAX_PLAYERS; i++) SaveData(i);
 	return 1;
 }
