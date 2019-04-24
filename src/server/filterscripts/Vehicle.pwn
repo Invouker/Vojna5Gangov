@@ -202,19 +202,6 @@ stock CreateVeh(model, Float:X, Float:Y, Float:Z, Float:rot)
 	return 1;
 }
 
-CMD:testvote(playerid)
-{
-    new m = cellmin, array[] = {100,2220,30,4,80,90};
-	for (new i = 0; i != sizeof (array); ++i)
-	{
-	    m = max(m, array[i]);
-	}
-	
-	printf("%d", m);
-	return 0;
-}
-
-
 forward LVeh(id);
 public LVeh(id)
 {
@@ -258,5 +245,6 @@ stock CarPath(carid)
 	format(string, sizeof(string), CAR_PATH, carid);
 	return string;
 }
+
 stock minrandom(min, max) return random(max - min) + min;
 

@@ -1,0 +1,122 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:54:10] 
+[16:54:10] Server Plugins
+[16:54:10] --------------
+[16:54:10]  Loading plugin: nativechecker
+[16:54:10]   Loaded.
+[16:54:10]  Loading plugin: sscanf
+[16:54:10] 
+
+[16:54:10]  ===============================
+
+[16:54:10]       sscanf plugin loaded.     
+
+[16:54:10]          Version:  2.8.2        
+
+[16:54:10]    (c) 2012 Alex "Y_Less" Cole  
+
+[16:54:10]  ===============================
+
+[16:54:10]   Loaded.
+[16:54:10]  Loading plugin: streamer
+[16:54:10] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[16:54:10]   Loaded.
+[16:54:10]  Loaded 3 plugins.
+
+[16:54:10] 
+[16:54:10] Filterscripts
+[16:54:10] ---------------
+[16:54:10]   Loading filterscript 'Houses.amx'...
+[16:54:10]    Error: Function not registered: 'SSCANF_Init'
+[16:54:10]    Error: Function not registered: 'SSCANF_Join'
+[16:54:10]    Error: Function not registered: 'SSCANF_Leave'
+[16:54:10]    Error: Function not registered: 'CreateDynamicPickup'
+[16:54:10]    Error: Function not registered: 'CreateDynamic3DTextLabel'
+[16:54:10]    Error: Function not registered: 'CreateDynamicCP'
+[16:54:10]    Error: Function not registered: 'UpdateDynamic3DTextLabelText'
+[16:54:10]    Error: Function not registered: 'DestroyDynamic3DTextLabel'
+[16:54:10]    Error: Function not registered: 'DestroyDynamicPickup'
+[16:54:10]    Error: Function not registered: 'sscanf'
+[16:54:10] Naèítanie FilterScriptu - ,,Houses
+[16:54:10] [Houses] Loaded/MaxHouses - 33/167
+[16:54:10]   Loading filterscript 'Inventory.amx'...
+[16:54:10]    Error: Function not registered: 'SSCANF_Init'
+[16:54:10]    Error: Function not registered: 'SSCANF_Join'
+[16:54:10]    Error: Function not registered: 'SSCANF_Leave'
+[16:54:10]    Error: Function not registered: 'sscanf'
+[16:54:10]   Loading filterscript 'SavePos2.amx'...
+[16:54:10]    Error: Function not registered: 'SSCANF_Init'
+[16:54:10]    Error: Function not registered: 'SSCANF_Join'
+[16:54:10]    Error: Function not registered: 'SSCANF_Leave'
+[16:54:10]    Error: Function not registered: 'CreateDynamicMapIcon'
+[16:54:10]    Error: Function not registered: 'sscanf'
+[16:54:10]    Error: Function not registered: 'DestroyDynamicMapIcon'
+[16:54:10] OnFilter
+[16:54:10]   Loading filterscript 'Vehicle.amx'...
+[16:54:10]    Error: Function not registered: 'SSCANF_Init'
+[16:54:10]    Error: Function not registered: 'SSCANF_Join'
+[16:54:10]    Error: Function not registered: 'SSCANF_Leave'
+[16:54:10]    Error: Function not registered: 'sscanf'
+[16:54:10] MDL: 522, X:166.330078, Y:-35.565135, Z:1.143724, rZ:91.557601, c1:190, c2:0.000000
+[16:54:10] MDL: 522, X:166.609390, Y:-33.004245, Z:1.144156, rZ:62.264106, c1:226, c2:0.000000
+[16:54:10] MDL: 522, X:163.149963, Y:-25.471973, Z:1.142424, rZ:21.450679, c1:187, c2:0.000000
+[16:54:10] MDL: 522, X:161.924270, Y:-22.354259, Z:1.143899, rZ:21.446750, c1:154, c2:0.000000
+[16:54:10] MDL: 522, X:161.273849, Y:-20.883535, Z:1.142744, rZ:24.253025, c1:132, c2:0.000000
+[16:54:10] MDL: 522, X:166.211700, Y:-17.627035, Z:1.142201, rZ:314.090332, c1:233, c2:0.000000
+[16:54:10] MDL: 522, X:168.026229, Y:-15.866951, Z:1.143566, rZ:314.081909, c1:164, c2:0.000000
+[16:54:10] MDL: 522, X:169.032913, Y:-14.891458, Z:1.143561, rZ:314.079803, c1:230, c2:0.000000
+[16:54:10] MDL: 522, X:169.282836, Y:-14.649395, Z:1.142485, rZ:314.079315, c1:172, c2:0.000000
+[16:54:10]   Loading filterscript 'xAdmin.amx'...
+[16:54:10]   Loading filterscript 'VehicleSystem.amx'...
+[16:54:10]    Error: Function not registered: 'SSCANF_Init'
+[16:54:10]    Error: Function not registered: 'SSCANF_IsConnected'
+[16:54:10]    Error: Function not registered: 'SSCANF_Join'
+[16:54:10]    Error: Function not registered: 'SSCANF_Leave'
+[16:54:10]    Error: Function not registered: 'sscanf'
+[16:54:10] 
+--------------------------------------
+[16:54:10]  Blank Filterscript by your name here
+[16:54:10] --------------------------------------
+
+[16:54:10]   Loaded 6 filterscripts.
+
+[16:54:10]    Error: Function not registered: 'SSCANF_Init'
+[16:54:10]    Error: Function not registered: 'SSCANF_Join'
+[16:54:10]    Error: Function not registered: 'SSCANF_Leave'
+[16:54:10]    Error: Function not registered: 'CreateDynamicRectangle'
+[16:54:10]    Error: Function not registered: 'CreateDynamicMapIcon'
+[16:54:10]    Error: Function not registered: 'CreateDynamic3DTextLabel'
+[16:54:10]    Error: Function not registered: 'CreateDynamicPickup'
+[16:54:10]    Error: Function not registered: 'CreateDynamicCP'
+[16:54:10]    Error: Function not registered: 'sscanf'
+[16:54:10]  
+[16:54:10]  
+[16:54:10]  
+[16:54:10]  ======================================= 
+[16:54:10]  |                                     | 
+[16:54:10]  |        YSI version 1.06.0002        | 
+[16:54:10]  |        By Alex "Y_Less" Cole        | 
+[16:54:10]  |                                     | 
+[16:54:10]  ======================================= 
+[16:54:10]  
+[16:54:10] *** Streamer Plugin: CreateDynamicRectangle: Expecting 7 parameter(s), but found 8
+[16:54:10] OnGameo
+[16:54:10]  ------------------------------------
+[16:54:10]        Liberty of Los Santos       	
+[16:54:10] Creators:       Daniels & XpresS		
+[16:54:10] SA-MP Version:      0.3.7            
+[16:54:10] GM Version:        v0.75 alpha			
+[16:54:10] Work Started:        8.4.2017       	
+[16:54:10]  ------------------------------------
+[16:54:10] Number of vehicle models: 1
