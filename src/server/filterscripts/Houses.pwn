@@ -2,11 +2,15 @@
 #include <a_samp>
 #include <sscanf2>
 #include <izcmd>
+#include <a_mysql>
+#include <vg5>
 
 #undef MAX_PLAYERS
 #define MAX_PLAYERS 100
 
-#define MAX_HOUSES
+#define MAX_HOUSES 75
+
+new MySQL: Database;
 
 enum pInfo { //  enum, èo všetko sa bude uklada
 	Money
@@ -16,20 +20,30 @@ new PlayerInfo[MAX_PLAYERS][pInfo]; // premenná, kde sa budú uklada hráèove dát
 
 
 enum hInfo {
-	Price,
 	owner,
+	Price,
+	
 	float:x,
 	float:y,
-	float:z
+	float:z,
+	
+	Cache: cache
 }
 
 new HouseInfo[MAX_HOUSES][hInfo];
 
+forward LoadHouse(houseid);
+public LoadHouse(houseid){
+new String[150];
 
-
-stock LoadHouse(houseid){
-
-
+	if(cache_num_rows() > 0)
+	{
+		cache_get_value_index(0, 1, HouseInfo[houseid][owner], 65);
+		cache_get_value(0, "price", HouseInfo[houseid][owner], 65);
+		cache_get_value(0, "x", HouseInfo[houseid][owner], 65);
+		cache_get_value(0, "y", HouseInfo[houseid][owner], 65);
+		cache_get_value(0, "z", HouseInfo[houseid][owner], 65);
+	}
 }
 
 stock SaveHouse(houseid){
@@ -37,12 +51,25 @@ stock SaveHouse(houseid){
 
 }
 
-CMD:test(playerid, params[]){
-return 1;
-}
-
 public OnFilterScriptInit()
 {
+    new MySQLOpt: option_id = mysql_init_options();
+    mysql_set_option(option_id, AUTO_RECONNECT, true);
+    Database = mysql_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE, option_id);
+
+    if(Database == MYSQL_INVALID_HANDLE || mysql_errno(Database) != 0)
+	{
+		print("I couldn't connect to the MySQL server, closing.");
+		SendRconCommand("exit");
+		return 1;
+	}
+	
+	for(new id = 0; id < MAX_HOUSES; id++){
+		new string[128];
+	 	mysql_format(Database, string, sizeof(string), "SELECT * FROM `houses` WHERE `id` = '%i' LIMIT 1", id);
+	    mysql_tquery(Database, string, "LoadHouse", "i", id);
+    }
+
 	print("\n--------------------------------------");
 	print(" House system loading...");
 	print("--------------------------------------\n");
@@ -222,4 +249,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 public OnPlayerClickPlayer(playerid, clickedplayerid, source)
 {
 	return 1;
+}
+
+stock PlayerName(playerid)
+{
+	new name[MAX_PLAYER_NAME];
+	GetPlayerName(playerid,name,sizeof(name));
+	return name;
 }
