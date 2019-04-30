@@ -1242,3 +1242,103 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [20:00:13] Number of vehicle models: 0
 [20:00:13] LOADING HOUSE ID: 1
 [20:00:13] HOUSE ID 0, OWNER:  Mesto, CENA: 12456
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:22:28] filterscripts = ""  (string)
+[21:22:28] 
+[21:22:28] Server Plugins
+[21:22:28] --------------
+[21:22:28]  Loading plugin: mysql
+[21:22:29]  >> plugin.mysql: R41-4 successfully loaded.
+[21:22:29]   Loaded.
+[21:22:29]  Loading plugin: streamer
+[21:22:29] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[21:22:29]   Loaded.
+[21:22:29]  Loading plugin: sscanf
+[21:22:29] 
+
+[21:22:29]  ===============================
+
+[21:22:29]       sscanf plugin loaded.     
+
+[21:22:29]          Version:  2.8.2        
+
+[21:22:29]    (c) 2012 Alex "Y_Less" Cole  
+
+[21:22:29]  ===============================
+
+[21:22:29]   Loaded.
+[21:22:29]  Loading plugin: nativechecker
+[21:22:29]   Loaded.
+[21:22:29]  Loaded 4 plugins.
+
+[21:22:29] 
+[21:22:29] Filterscripts
+[21:22:29] ---------------
+[21:22:29]   Loaded 0 filterscripts.
+
+[21:22:29] [Server] Uspesne pripojeno k DB!
+[21:22:29] Hello World!
+[21:22:29] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:23:43] filterscripts = ""  (string)
+[21:23:43] 
+[21:23:43] Server Plugins
+[21:23:43] --------------
+[21:23:43]  Loading plugin: mysql
+[21:23:43]  >> plugin.mysql: R41-4 successfully loaded.
+[21:23:43]   Loaded.
+[21:23:43]  Loading plugin: streamer
+[21:23:43] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[21:23:43]   Loaded.
+[21:23:43]  Loading plugin: sscanf
+[21:23:43] 
+
+[21:23:43]  ===============================
+
+[21:23:43]       sscanf plugin loaded.     
+
+[21:23:43]          Version:  2.8.2        
+
+[21:23:43]    (c) 2012 Alex "Y_Less" Cole  
+
+[21:23:43]  ===============================
+
+[21:23:43]   Loaded.
+[21:23:43]  Loading plugin: nativechecker
+[21:23:43]   Loaded.
+[21:23:43]  Loaded 4 plugins.
+
+[21:23:44] 
+[21:23:44] Filterscripts
+[21:23:44] ---------------
+[21:23:44]   Loaded 0 filterscripts.
+
+[21:23:44] [Server] Uspesne pripojeno k DB!
+[21:23:44] Hello World!
+[21:23:44] Number of vehicle models: 0
+[21:24:03] [connection] 127.0.0.1:51458 requests connection cookie.
+[21:24:04] [connection] incoming connection: 127.0.0.1:51458 id: 0
+[21:24:04] [join] dasd has joined the server (0:127.0.0.1)
+[21:24:14] [part] dasd has left the server (0:1)

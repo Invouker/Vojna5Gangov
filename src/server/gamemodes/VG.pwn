@@ -20,6 +20,7 @@ main()
 
 public OnGameModeInit()
 {
+	SetGameModeText("Vojna 5 Gangov");
 	new MySQLOpt: option_id = mysql_init_options();
 	mysql_set_option(option_id, AUTO_RECONNECT, true);
 	Database = mysql_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE, option_id);
