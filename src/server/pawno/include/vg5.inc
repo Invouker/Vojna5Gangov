@@ -8,6 +8,9 @@
 
 #define strcpy(%0,%1,%2) strcat((%0[0] = '\0', %0), %1, %2)
 
+#define isnull(%1) \
+    ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
+
 #define SCM SendClientMessage
 #define SCMTA SendClientMessageToAll
 
