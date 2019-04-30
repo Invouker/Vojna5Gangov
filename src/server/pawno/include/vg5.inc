@@ -3,6 +3,7 @@
 #define MYSQL_PASS "123456"
 #define MYSQL_DATABASE "294332_mysql_db"
 
+#undef MAX_PLAYERS
 #define MAX_PLAYERS 	100
 
 
