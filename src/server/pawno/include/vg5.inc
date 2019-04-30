@@ -8,6 +8,9 @@
 
 #define strcpy(%0,%1,%2) strcat((%0[0] = '\0', %0), %1, %2)
 
+#define SCM SendClientMessage
+#define SCMTA SendClientMessageToAll
+
 #pragma unused ret_memcpy
 
 

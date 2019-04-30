@@ -11,6 +11,11 @@
 
 new MySQL: Database, Corrupt_Check[MAX_PLAYERS];
 
+main()
+{
+	print("Hello World!");
+	return 1;
+}
 
 
 public OnGameModeInit()
@@ -289,7 +294,7 @@ Dialog:DIALOG_LOGIN(playerid, response, listitem, inputtext[])
 		cache_delete(PlayerInfo[playerid][Player_Cache]);
 		PlayerInfo[playerid][Player_Cache] = MYSQL_INVALID_CACHE;
 		PlayerInfo[playerid][LoggedIn] = true;
-		SendClientMessage(playerid, 0x00FF00FF, "Logged in to the account.");
+		SCM(playerid, 0x00FF00FF, "Prihlasen!");
 	}else{
 		new String[150];
 		PlayerInfo[playerid][PasswordFails] += 1;
@@ -297,11 +302,11 @@ Dialog:DIALOG_LOGIN(playerid, response, listitem, inputtext[])
 		if (PlayerInfo[playerid][PasswordFails] >= 3)
 		{
 			format(String, sizeof(String), "%s has been kicked Reason: {FF0000}(%d/3) Login fails.", PlayerInfo[playerid][PName], PlayerInfo[playerid][PasswordFails]);
-			SendClientMessageToAll(0x969696FF, String);
+			SCMTA(0x969696FF, String);
 			Kick(playerid);
 		}else{
 			format(String, sizeof(String), "Wrong password, you have %d out of 3 tries.", PlayerInfo[playerid][PasswordFails]);
-			SendClientMessage(playerid, 0xFF0000FF, String);
+			SCM(playerid, 0xFF0000FF, String);
 			format(String, sizeof(String), "{FFFFFF}Welcome back, %s.\n\n{0099FF}This account is already registered.\n\
 			{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][PName]);
 			Dialog_Show(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login System", String, "Login", "Leave");
@@ -315,7 +320,7 @@ Dialog:DIALOG_REGISTER(playerid, response, listitem, inputtext[])
 	if(!response) return Kick(playerid);
 	if(strlen(inputtext) <= 5 || strlen(inputtext) > 60)
 	{
-		SendClientMessage(playerid, 0x969696FF, "Invalid password length, should be 5 - 60.");
+		SCM(playerid, 0x969696FF, "Invalid password length, should be 5 - 60.");
 		new String[150];
     	format(String, sizeof(String), "{FFFFFF}Welcome %s.\n\n{0099FF}This account is not registered.\n\
      	{0099FF}Please, input your password below to proceed.\n\n", PlayerInfo[playerid][PName]);
@@ -338,7 +343,7 @@ Dialog:DIALOG_REGISTER(playerid, response, listitem, inputtext[])
 forward public OnPlayerRegister(playerid);
 public OnPlayerRegister(playerid)
 {
-	SendClientMessage(playerid, 0x00FF00FF, "You are now registered and has been logged in.");
+	SCM(playerid, 0x00FF00FF, "You are now registered and has been logged in.");
     PlayerInfo[playerid][LoggedIn] = true;
     return 1;
 }
