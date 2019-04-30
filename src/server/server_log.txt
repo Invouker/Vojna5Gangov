@@ -689,3 +689,556 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [19:34:06] LOADING HOUSE ID: 1
 [19:34:06] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: 
 Console input: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:48:55] 
+[19:48:55] Server Plugins
+[19:48:55] --------------
+[19:48:55]  Loading plugin: mysql
+[19:48:55]  >> plugin.mysql: R41-4 successfully loaded.
+[19:48:55]   Loaded.
+[19:48:55]  Loading plugin: streamer
+[19:48:55] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:48:55]   Loaded.
+[19:48:55]  Loading plugin: sscanf
+[19:48:55] 
+
+[19:48:55]  ===============================
+
+[19:48:55]       sscanf plugin loaded.     
+
+[19:48:55]          Version:  2.8.2        
+
+[19:48:55]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:48:55]  ===============================
+
+[19:48:55]   Loaded.
+[19:48:55]  Loading plugin: nativechecker
+[19:48:55]   Loaded.
+[19:48:55]  Loaded 4 plugins.
+
+[19:48:55] 
+[19:48:55] Filterscripts
+[19:48:55] ---------------
+[19:48:55]   Loading filterscript 'Houses.amx'...
+[19:48:55] successfully connected
+[19:48:55] 
+--------------------------------------
+[19:48:55]  House system loading...
+[19:48:55] --------------------------------------
+
+[19:48:55]   Loaded 1 filterscripts.
+
+[19:48:55] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:48:55] Number of vehicle models: 0
+[19:48:55] LOADING HOUSE ID: 1
+[19:48:55] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: 
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:51:56] 
+[19:51:56] Server Plugins
+[19:51:56] --------------
+[19:51:56]  Loading plugin: mysql
+[19:51:56]  >> plugin.mysql: R41-4 successfully loaded.
+[19:51:56]   Loaded.
+[19:51:56]  Loading plugin: streamer
+[19:51:56] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:51:56]   Loaded.
+[19:51:56]  Loading plugin: sscanf
+[19:51:56] 
+
+[19:51:56]  ===============================
+
+[19:51:56]       sscanf plugin loaded.     
+
+[19:51:56]          Version:  2.8.2        
+
+[19:51:56]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:51:56]  ===============================
+
+[19:51:56]   Loaded.
+[19:51:56]  Loading plugin: nativechecker
+[19:51:56]   Loaded.
+[19:51:56]  Loaded 4 plugins.
+
+[19:51:56] 
+[19:51:56] Filterscripts
+[19:51:56] ---------------
+[19:51:56]   Loading filterscript 'Houses.amx'...
+[19:51:57] successfully connected
+[19:51:57] 
+--------------------------------------
+[19:51:57]  House system loading...
+[19:51:57] --------------------------------------
+
+[19:51:57]   Loaded 1 filterscripts.
+
+[19:51:57] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:51:57] Number of vehicle models: 0
+[19:51:57] LOADING HOUSE ID: 1
+[19:51:57] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:53:23] 
+[19:53:23] Server Plugins
+[19:53:23] --------------
+[19:53:23]  Loading plugin: mysql
+[19:53:23]  >> plugin.mysql: R41-4 successfully loaded.
+[19:53:23]   Loaded.
+[19:53:23]  Loading plugin: streamer
+[19:53:23] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:53:23]   Loaded.
+[19:53:23]  Loading plugin: sscanf
+[19:53:23] 
+
+[19:53:23]  ===============================
+
+[19:53:23]       sscanf plugin loaded.     
+
+[19:53:23]          Version:  2.8.2        
+
+[19:53:23]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:53:23]  ===============================
+
+[19:53:23]   Loaded.
+[19:53:23]  Loading plugin: nativechecker
+[19:53:23]   Loaded.
+[19:53:23]  Loaded 4 plugins.
+
+[19:53:23] 
+[19:53:23] Filterscripts
+[19:53:23] ---------------
+[19:53:23]   Loading filterscript 'Houses.amx'...
+[19:53:23] successfully connected
+[19:53:23] 
+--------------------------------------
+[19:53:23]  House system loading...
+[19:53:23] --------------------------------------
+
+[19:53:23]   Loaded 1 filterscripts.
+
+[19:53:23] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:53:23] Number of vehicle models: 0
+[19:53:23] LOADING HOUSE ID: 1
+[19:53:23] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: 
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:53:56] 
+[19:53:56] Server Plugins
+[19:53:56] --------------
+[19:53:56]  Loading plugin: mysql
+[19:53:56]  >> plugin.mysql: R41-4 successfully loaded.
+[19:53:56]   Loaded.
+[19:53:56]  Loading plugin: streamer
+[19:53:56] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:53:56]   Loaded.
+[19:53:56]  Loading plugin: sscanf
+[19:53:56] 
+
+[19:53:56]  ===============================
+
+[19:53:56]       sscanf plugin loaded.     
+
+[19:53:56]          Version:  2.8.2        
+
+[19:53:56]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:53:56]  ===============================
+
+[19:53:56]   Loaded.
+[19:53:56]  Loading plugin: nativechecker
+[19:53:56]   Loaded.
+[19:53:56]  Loaded 4 plugins.
+
+[19:53:56] 
+[19:53:56] Filterscripts
+[19:53:56] ---------------
+[19:53:56]   Loading filterscript 'Houses.amx'...
+[19:53:56] successfully connected
+[19:53:56] 
+--------------------------------------
+[19:53:56]  House system loading...
+[19:53:56] --------------------------------------
+
+[19:53:56]   Loaded 1 filterscripts.
+
+[19:53:56] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:53:56] Number of vehicle models: 0
+[19:53:56] LOADING HOUSE ID: 1
+[19:53:56] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:55:18] 
+[19:55:18] Server Plugins
+[19:55:18] --------------
+[19:55:18]  Loading plugin: mysql
+[19:55:18]  >> plugin.mysql: R41-4 successfully loaded.
+[19:55:18]   Loaded.
+[19:55:18]  Loading plugin: streamer
+[19:55:18] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:55:18]   Loaded.
+[19:55:18]  Loading plugin: sscanf
+[19:55:18] 
+
+[19:55:18]  ===============================
+
+[19:55:18]       sscanf plugin loaded.     
+
+[19:55:18]          Version:  2.8.2        
+
+[19:55:18]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:55:18]  ===============================
+
+[19:55:18]   Loaded.
+[19:55:18]  Loading plugin: nativechecker
+[19:55:18]   Loaded.
+[19:55:18]  Loaded 4 plugins.
+
+[19:55:18] 
+[19:55:18] Filterscripts
+[19:55:18] ---------------
+[19:55:18]   Loading filterscript 'Houses.amx'...
+[19:55:19] successfully connected
+[19:55:19] 
+--------------------------------------
+[19:55:19]  House system loading...
+[19:55:19] --------------------------------------
+
+[19:55:19]   Loaded 1 filterscripts.
+
+[19:55:19] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:55:19] Number of vehicle models: 0
+[19:55:19] LOADING HOUSE ID: 1
+[19:55:19] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:55:50] 
+[19:55:50] Server Plugins
+[19:55:50] --------------
+[19:55:50]  Loading plugin: mysql
+[19:55:50]  >> plugin.mysql: R41-4 successfully loaded.
+[19:55:50]   Loaded.
+[19:55:50]  Loading plugin: streamer
+[19:55:50] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:55:50]   Loaded.
+[19:55:50]  Loading plugin: sscanf
+[19:55:50] 
+
+[19:55:50]  ===============================
+
+[19:55:50]       sscanf plugin loaded.     
+
+[19:55:50]          Version:  2.8.2        
+
+[19:55:50]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:55:50]  ===============================
+
+[19:55:50]   Loaded.
+[19:55:50]  Loading plugin: nativechecker
+[19:55:50]   Loaded.
+[19:55:50]  Loaded 4 plugins.
+
+[19:55:50] 
+[19:55:50] Filterscripts
+[19:55:50] ---------------
+[19:55:50]   Loading filterscript 'Houses.amx'...
+[19:55:50] successfully connected
+[19:55:50] 
+--------------------------------------
+[19:55:50]  House system loading...
+[19:55:50] --------------------------------------
+
+[19:55:50]   Loaded 1 filterscripts.
+
+[19:55:50] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:55:50] Number of vehicle models: 0
+[19:55:50] LOADING HOUSE ID: 1
+[19:55:50] HOUSE ID 1, OWNER:  , CENA: 12456,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:56:58] 
+[19:56:58] Server Plugins
+[19:56:58] --------------
+[19:56:58]  Loading plugin: mysql
+[19:56:58]  >> plugin.mysql: R41-4 successfully loaded.
+[19:56:58]   Loaded.
+[19:56:58]  Loading plugin: streamer
+[19:56:58] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:56:58]   Loaded.
+[19:56:58]  Loading plugin: sscanf
+[19:56:58] 
+
+[19:56:58]  ===============================
+
+[19:56:58]       sscanf plugin loaded.     
+
+[19:56:58]          Version:  2.8.2        
+
+[19:56:58]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:56:58]  ===============================
+
+[19:56:58]   Loaded.
+[19:56:58]  Loading plugin: nativechecker
+[19:56:58]   Loaded.
+[19:56:58]  Loaded 4 plugins.
+
+[19:56:58] 
+[19:56:58] Filterscripts
+[19:56:58] ---------------
+[19:56:58]   Loading filterscript 'Houses.amx'...
+[19:56:58] successfully connected
+[19:56:58] 
+--------------------------------------
+[19:56:58]  House system loading...
+[19:56:58] --------------------------------------
+
+[19:56:58]   Loaded 1 filterscripts.
+
+[19:56:58] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:56:58] Number of vehicle models: 0
+[19:56:58] LOADING HOUSE ID: 1
+[19:56:58] HOUSE ID 0, OWNER:  , CENA: 12456,   STRING TEST: Mesto
+[19:56:58] HOUSE ID 1, OWNER:  Mesto, CENA: 12456,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:58:30] 
+[19:58:30] Server Plugins
+[19:58:30] --------------
+[19:58:30]  Loading plugin: mysql
+[19:58:30]  >> plugin.mysql: R41-4 successfully loaded.
+[19:58:30]   Loaded.
+[19:58:30]  Loading plugin: streamer
+[19:58:30] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:58:30]   Loaded.
+[19:58:30]  Loading plugin: sscanf
+[19:58:30] 
+
+[19:58:30]  ===============================
+
+[19:58:30]       sscanf plugin loaded.     
+
+[19:58:30]          Version:  2.8.2        
+
+[19:58:30]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:58:30]  ===============================
+
+[19:58:30]   Loaded.
+[19:58:30]  Loading plugin: nativechecker
+[19:58:30]   Loaded.
+[19:58:30]  Loaded 4 plugins.
+
+[19:58:30] 
+[19:58:30] Filterscripts
+[19:58:30] ---------------
+[19:58:30]   Loading filterscript 'Houses.amx'...
+[19:58:30] successfully connected
+[19:58:30] 
+--------------------------------------
+[19:58:30]  House system loading...
+[19:58:30] --------------------------------------
+
+[19:58:30]   Loaded 1 filterscripts.
+
+[19:58:30] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:58:30] Number of vehicle models: 0
+[19:58:30] LOADING HOUSE ID: 1
+[19:58:30] HOUSE ID 0, OWNER:  , CENA: 0,   STRING TEST: Mesto
+[19:58:30] HOUSE ID 1, OWNER:  Mesto, CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:58:47] 
+[19:58:47] Server Plugins
+[19:58:47] --------------
+[19:58:47]  Loading plugin: mysql
+[19:58:47]  >> plugin.mysql: R41-4 successfully loaded.
+[19:58:47]   Loaded.
+[19:58:47]  Loading plugin: streamer
+[19:58:47] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:58:47]   Loaded.
+[19:58:47]  Loading plugin: sscanf
+[19:58:47] 
+
+[19:58:47]  ===============================
+
+[19:58:47]       sscanf plugin loaded.     
+
+[19:58:47]          Version:  2.8.2        
+
+[19:58:47]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:58:47]  ===============================
+
+[19:58:47]   Loaded.
+[19:58:47]  Loading plugin: nativechecker
+[19:58:47]   Loaded.
+[19:58:47]  Loaded 4 plugins.
+
+[19:58:47] 
+[19:58:47] Filterscripts
+[19:58:47] ---------------
+[19:58:47]   Loading filterscript 'Houses.amx'...
+[19:58:47] successfully connected
+[19:58:47] 
+--------------------------------------
+[19:58:47]  House system loading...
+[19:58:47] --------------------------------------
+
+[19:58:47]   Loaded 1 filterscripts.
+
+[19:58:47] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:58:47] Number of vehicle models: 0
+[19:58:47] LOADING HOUSE ID: 1
+[19:58:47] HOUSE ID 0, OWNER:  , CENA: 0,   STRING TEST: Mesto
+[19:58:47] HOUSE ID 1, OWNER:  Mesto, CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:00:13] 
+[20:00:13] Server Plugins
+[20:00:13] --------------
+[20:00:13]  Loading plugin: mysql
+[20:00:13]  >> plugin.mysql: R41-4 successfully loaded.
+[20:00:13]   Loaded.
+[20:00:13]  Loading plugin: streamer
+[20:00:13] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[20:00:13]   Loaded.
+[20:00:13]  Loading plugin: sscanf
+[20:00:13] 
+
+[20:00:13]  ===============================
+
+[20:00:13]       sscanf plugin loaded.     
+
+[20:00:13]          Version:  2.8.2        
+
+[20:00:13]    (c) 2012 Alex "Y_Less" Cole  
+
+[20:00:13]  ===============================
+
+[20:00:13]   Loaded.
+[20:00:13]  Loading plugin: nativechecker
+[20:00:13]   Loaded.
+[20:00:13]  Loaded 4 plugins.
+
+[20:00:13] 
+[20:00:13] Filterscripts
+[20:00:13] ---------------
+[20:00:13]   Loading filterscript 'Houses.amx'...
+[20:00:13] successfully connected
+[20:00:13] 
+--------------------------------------
+[20:00:13]  House system loading...
+[20:00:13] --------------------------------------
+
+[20:00:13]   Loaded 1 filterscripts.
+
+[20:00:13] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[20:00:13] Number of vehicle models: 0
+[20:00:13] LOADING HOUSE ID: 1
+[20:00:13] HOUSE ID 0, OWNER:  Mesto, CENA: 12456

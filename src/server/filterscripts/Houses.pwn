@@ -5,22 +5,13 @@
 #include <a_mysql>
 #include <vg5>
 
-#undef MAX_PLAYERS
-#define MAX_PLAYERS 100
 
 #define MAX_HOUSES 5
 
 new MySQL: Database;
 
-enum pInfo { //  enum, Ëo vöetko sa bude ukladaù
-	Money
-}
-
-new PlayerInfo[MAX_PLAYERS][pInfo]; // premenn·, kde sa bud˙ ukladaù hr·Ëove d·ta
-
-
 enum hInfo {
-	owner,
+	owner[24+1],
 	price,
 	
 	Float:x,
@@ -40,16 +31,16 @@ public LoadHouse(houseid){
 	{
 		printf("LOADING HOUSE ID: %d", houseid);
 	 	HouseInfo[houseid][cache] = cache_save();
-		new string[MAX_PLAYER_NAME+1];
 		
 	 	cache_set_active(HouseInfo[houseid][cache]);
-		cache_get_value(0, "owner", HouseInfo[houseid][owner], MAX_PLAYER_NAME+1);
+	 	
+		cache_get_value(0, 1, HouseInfo[houseid][owner], 24+1);
 		cache_get_value_int(0, "price", HouseInfo[houseid][price]);
-		cache_get_value_float(0, "x", HouseInfo[houseid][x]);
-		cache_get_value_float(0, "y", HouseInfo[houseid][y]);
-		cache_get_value_float(0, "z", HouseInfo[houseid][z]);
-		cache_get_value_index(0, 1, string, MAX_PLAYER_NAME+1);
-		printf("HOUSE ID 1, OWNER:  %s, CENA: %d,   STRING TEST: ",HouseInfo[0][owner],HouseInfo[0][price], string);
+		cache_get_value_float(0, 3, HouseInfo[houseid][x]);
+		cache_get_value_float(0, 4, HouseInfo[houseid][y]);
+		cache_get_value_float(0, 5, HouseInfo[houseid][z]);
+
+		printf("HOUSE ID 0, OWNER:  %s, CENA: %d",HouseInfo[houseid][owner],HouseInfo[houseid][price]);
 		
 		cache_unset_active();
 	}
