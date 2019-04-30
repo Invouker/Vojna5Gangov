@@ -1,12 +1,11 @@
 #include <a_samp>
+#undef MAX_PLAYERS
+#include <vg5>
 #include <a_mysql>
 #include <sscanf2>
 #include <foreach>
 #include <izcmd>
 #include <easyDialog>
-
-#undef MAX_PLAYERS
-#include <vg5>
 
 new MySQL: Database, Corrupt_Check[MAX_PLAYERS];
 
