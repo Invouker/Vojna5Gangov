@@ -1,11 +1,13 @@
 #include <a_samp>
-#undef MAX_PLAYERS
 #include <vg5>
+#include <vg5callbacks>
+#include <vg5languages>
 #include <a_mysql>
 #include <sscanf2>
 #include <foreach>
 #include <izcmd>
 #include <easyDialog>
+#include <dutils>
 
 new MySQL: Database, Corrupt_Check[MAX_PLAYERS];
 
@@ -52,9 +54,9 @@ public OnPlayerConnect(playerid)
 {
 	new DB_Query[115];
 	PlayerInfo[playerid][PasswordFails] = 0;
-	GetPlayerName(playerid, PlayerInfo[playerid][Name], MAX_PLAYER_NAME);
+	GetPlayerName(playerid, PlayerInfo[playerid][PName], MAX_PLAYER_NAME);
 	Corrupt_Check[playerid]++;
-	mysql_format(Database, DB_Query, sizeof(DB_Query), "SELECT * FROM `PLAYERS` WHERE `USERNAME` = '%e' LIMIT 1", PlayerInfo[playerid][Name]);
+	mysql_format(Database, DB_Query, sizeof(DB_Query), "SELECT * FROM `PLAYERS` WHERE `USERNAME` = '%e' LIMIT 1", PlayerInfo[playerid][PName]);
 	mysql_tquery(Database, DB_Query, "OnPlayerDataCheck", "ii", playerid, Corrupt_Check[playerid]);
 	return 1;
 }
@@ -254,13 +256,13 @@ public OnPlayerDataCheck(playerid, corrupt_check)
 		PlayerInfo[playerid][Player_Cache] = cache_save();
 
 		format(String, sizeof(String), "{FFFFFF}Welcome back, %s.\n\n{0099FF}This account is already registered.\n\
-		{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][Name]);
+		{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][PName]);
 		Dialog_Show(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login System", String, "Login", "Leave");
 	}
 	else
 	{
 		format(String, sizeof(String), "{FFFFFF}Welcome %s.\n\n{0099FF}This account is not registered.\n\
-		{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][Name]);
+		{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][PName]);
 		Dialog_Show(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Registration System", String, "Register", "Leave");
 	}
 	return 1;
@@ -291,17 +293,17 @@ Dialog:DIALOG_LOGIN(playerid, response, listitem, inputtext[])
 	}else{
 		new String[150];
 		PlayerInfo[playerid][PasswordFails] += 1;
-		printf("%s has been failed to login. (%d)", PlayerInfo[playerid][Name], PlayerInfo[playerid][PasswordFails]);
+		printf("%s has been failed to login. (%d)", PlayerInfo[playerid][PName], PlayerInfo[playerid][PasswordFails]);
 		if (PlayerInfo[playerid][PasswordFails] >= 3)
 		{
-			format(String, sizeof(String), "%s has been kicked Reason: {FF0000}(%d/3) Login fails.", PlayerInfo[playerid][Name], PlayerInfo[playerid][PasswordFails]);
+			format(String, sizeof(String), "%s has been kicked Reason: {FF0000}(%d/3) Login fails.", PlayerInfo[playerid][PName], PlayerInfo[playerid][PasswordFails]);
 			SendClientMessageToAll(0x969696FF, String);
 			Kick(playerid);
 		}else{
 			format(String, sizeof(String), "Wrong password, you have %d out of 3 tries.", PlayerInfo[playerid][PasswordFails]);
 			SendClientMessage(playerid, 0xFF0000FF, String);
 			format(String, sizeof(String), "{FFFFFF}Welcome back, %s.\n\n{0099FF}This account is already registered.\n\
-			{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][Name]);
+			{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][PName]);
 			Dialog_Show(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login System", String, "Login", "Leave");
 		}
 	}
@@ -316,7 +318,7 @@ Dialog:DIALOG_REGISTER(playerid, response, listitem, inputtext[])
 		SendClientMessage(playerid, 0x969696FF, "Invalid password length, should be 5 - 60.");
 		new String[150];
     	format(String, sizeof(String), "{FFFFFF}Welcome %s.\n\n{0099FF}This account is not registered.\n\
-     	{0099FF}Please, input your password below to proceed.\n\n", PlayerInfo[playerid][Name]);
+     	{0099FF}Please, input your password below to proceed.\n\n", PlayerInfo[playerid][PName]);
        	Dialog_Show(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Registration System", String, "Register", "Leave");
 	}else{
 	    for (new i = 0; i < 10; i++)
@@ -327,7 +329,7 @@ Dialog:DIALOG_REGISTER(playerid, response, listitem, inputtext[])
     	SHA256_PassHash(inputtext, PlayerInfo[playerid][Salt], PlayerInfo[playerid][Password], 65);
     	new DB_Query[225];
     	mysql_format(Database, DB_Query, sizeof(DB_Query), "INSERT INTO `PLAYERS` (`USERNAME`, `PASSWORD`, `SALT`, `SCORE`, `KILLS`, `CASH`, `DEATHS`)\
-    	VALUES ('%e', '%s', '%e', '20', '0', '0', '0')", PlayerInfo[playerid][Name], PlayerInfo[playerid][Password], PlayerInfo[playerid][Salt]);
+    	VALUES ('%e', '%s', '%e', '20', '0', '0', '0')", PlayerInfo[playerid][PName], PlayerInfo[playerid][Password], PlayerInfo[playerid][Salt]);
      	mysql_tquery(Database, DB_Query, "OnPlayerRegister", "d", playerid);
 	}
 	return 1;
