@@ -8,7 +8,7 @@
 #undef MAX_PLAYERS
 #define MAX_PLAYERS 100
 
-#define MAX_HOUSES 75
+#define MAX_HOUSES 5
 
 new MySQL: Database;
 
@@ -21,11 +21,11 @@ new PlayerInfo[MAX_PLAYERS][pInfo]; // premenná, kde sa budú uklada hráèove dát
 
 enum hInfo {
 	owner,
-	Price,
+	price,
 	
-	float:x,
-	float:y,
-	float:z,
+	Float:x,
+	Float:y,
+	Float:z,
 	
 	Cache: cache
 }
@@ -34,16 +34,27 @@ new HouseInfo[MAX_HOUSES][hInfo];
 
 forward LoadHouse(houseid);
 public LoadHouse(houseid){
-new String[150];
-
-	if(cache_num_rows() > 0)
+//new String[150];
+	
+	if(cache_num_rows() > 0) // ak neobsahuje niè, nenaèíta sa niè...
 	{
-		cache_get_value_index(0, 1, HouseInfo[houseid][owner], 65);
-		cache_get_value(0, "price", HouseInfo[houseid][owner], 65);
-		cache_get_value(0, "x", HouseInfo[houseid][owner], 65);
-		cache_get_value(0, "y", HouseInfo[houseid][owner], 65);
-		cache_get_value(0, "z", HouseInfo[houseid][owner], 65);
+		printf("LOADING HOUSE ID: %d", houseid);
+	 	HouseInfo[houseid][cache] = cache_save();
+		new string[MAX_PLAYER_NAME+1];
+		
+	 	cache_set_active(HouseInfo[houseid][cache]);
+		cache_get_value(0, "owner", HouseInfo[houseid][owner], MAX_PLAYER_NAME+1);
+		cache_get_value_int(0, "price", HouseInfo[houseid][price]);
+		cache_get_value_float(0, "x", HouseInfo[houseid][x]);
+		cache_get_value_float(0, "y", HouseInfo[houseid][y]);
+		cache_get_value_float(0, "z", HouseInfo[houseid][z]);
+		cache_get_value_index(0, 1, string, MAX_PLAYER_NAME+1);
+		printf("HOUSE ID 1, OWNER:  %s, CENA: %d,   STRING TEST: ",HouseInfo[0][owner],HouseInfo[0][price], string);
+		
+		cache_unset_active();
 	}
+	
+
 }
 
 stock SaveHouse(houseid){
@@ -73,6 +84,10 @@ public OnFilterScriptInit()
 	print("\n--------------------------------------");
 	print(" House system loading...");
 	print("--------------------------------------\n");
+	
+	
+	
+
 	return 1;
 }
 
@@ -251,9 +266,4 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source)
 	return 1;
 }
 
-stock PlayerName(playerid)
-{
-	new name[MAX_PLAYER_NAME];
-	GetPlayerName(playerid,name,sizeof(name));
-	return name;
-}
+
