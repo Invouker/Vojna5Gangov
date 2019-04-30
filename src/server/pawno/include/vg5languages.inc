@@ -9,8 +9,13 @@ native GetLanguageId(const Name[]);
 native SetPlayerLanguage(playerid,languageid);
 native InstallLanguage(LangName[],LangFile[]);
 native GetStringFromLangKey(languageid,const key[]);
+
 native GetPlayerLangKey(playerid,const key[]);
+SendClientMessage(playerid, COLOR_WHITE, GetPlayerLangKey(playerid,"LANG_ALRDYLOGGED"));
+
 native SendClientLangKeyMessageToAll(color,const key[],{Float,_}:...);
+SendClientLangKeyMessageToAll(COLOR_GREY,"PLAYER_JOINED_SERVER",PlayerName(playerid));
+
 */
 
 #define MAX_LANGUAGES 5//maximalny pocet nacitatelnych jazykovych suborov
