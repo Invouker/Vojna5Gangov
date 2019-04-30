@@ -21,3 +21,11 @@ enum E_PLAYER_DATA
     bool:LoggedIn
 }
 new PlayerInfo[MAX_PLAYERS][E_PLAYER_DATA];
+
+stock PlayerName(playerid)
+{
+	new name[MAX_PLAYER_NAME];
+	GetPlayerName(playerid,name,sizeof(name));
+	return name;
+}
+
