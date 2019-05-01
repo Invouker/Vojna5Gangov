@@ -2,6 +2,7 @@
 #include <vg5>
 #include <vg5callbacks>
 #include <vg5languages>
+#include <vg5gui>
 #include <a_mysql>
 #include <sscanf2>
 #include <foreach>
@@ -9,30 +10,71 @@
 #include <easyDialog>
 #include <dutils>
 
+#define SERVER_HASH 52
+
+new total_vehicles_from_files=0;
+
 new MySQL: Database, Corrupt_Check[MAX_PLAYERS];
 
 main()
 {
-	print("Hello World!");
-	return 1;
+	print("+---------------------------+");
+	print("|                           |");
+	print("|   Vojna 5 Gangov loaded!  |");
+	print("|                           |");
+	print("+---------------------------+");
 }
-
 
 public OnGameModeInit()
 {
+    GUI_Initialize();
+    
+    SetTimer("SecondTimer", 1000, true);
+    
 	SetGameModeText("Vojna 5 Gangov");
-	new MySQLOpt: option_id = mysql_init_options();
+	
+   	// LAS VENTURAS
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/lv_law.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/lv_airport.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/lv_gen.txt");
+
+    // SAN FIERRO
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/sf_law.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/sf_airport.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/sf_gen.txt");
+
+    // LOS SANTOS
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/ls_law.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/ls_airport.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/ls_gen_inner.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/ls_gen_outer.txt");
+
+    // OTHER AREAS
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/whetstone.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/bone.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/flint.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/tierra.txt");
+    total_vehicles_from_files += LoadStaticVehiclesFromFile("vehicles/red_county.txt");
+
+    printf("Total vehicles from files: %d",total_vehicles_from_files);
+    
+   	new MySQLOpt: option_id = mysql_init_options();
 	mysql_set_option(option_id, AUTO_RECONNECT, true);
+
 	Database = mysql_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE, option_id);
+
 	if(Database == MYSQL_INVALID_HANDLE || mysql_errno(Database) != 0)
 	{
-		print("[Server] Nelze pripojit k DB!");
+		print("I couldn't connect to the MySQL server, closing.");
 
 		SendRconCommand("exit");
 		return 1;
 	}
-	print("[Server] Uspesne pripojeno k DB!");
-	mysql_tquery(Database, "CREATE TABLE IF NOT EXISTS `PLAYERS` (`ID` int(11) NOT NULL AUTO_INCREMENT,`USERNAME` varchar(24) NOT NULL,`PASSWORD` char(65) NOT NULL,`SALT` char(11) NOT NULL,`SCORE` mediumint(7), `KILLS` mediumint(7), `CASH` mediumint(7) NOT NULL DEFAULT '0',`DEATHS` mediumint(7) NOT NULL DEFAULT '0', PRIMARY KEY (`ID`), UNIQUE KEY `USERNAME` (`USERNAME`))");
+
+	print("I have connected to the MySQL server.");
+
+	mysql_tquery(Database, "CREATE TABLE IF NOT EXISTS `PLAYERS` (`ID` int(11) NOT NULL AUTO_INCREMENT,`USERNAME` varchar(24) NOT NULL,`PASSWORD` char(65) NOT NULL,`SCORE` mediumint(7), `KILLS` mediumint(7), `CASH` mediumint(7) NOT NULL DEFAULT '0',`DEATHS` mediumint(7) NOT NULL DEFAULT '0', PRIMARY KEY (`ID`), UNIQUE KEY `USERNAME` (`USERNAME`))");
+
 	return 1;
 }
 
@@ -59,9 +101,14 @@ public OnPlayerRequestClass(playerid, classid)
 public OnPlayerConnect(playerid)
 {
 	new DB_Query[115];
+	
+	PlayerInfo[playerid][Kills] = 0;
+	PlayerInfo[playerid][Deaths] = 0;
 	PlayerInfo[playerid][PasswordFails] = 0;
+
 	GetPlayerName(playerid, PlayerInfo[playerid][PName], MAX_PLAYER_NAME);
 	Corrupt_Check[playerid]++;
+
 	mysql_format(Database, DB_Query, sizeof(DB_Query), "SELECT * FROM `PLAYERS` WHERE `USERNAME` = '%e' LIMIT 1", PlayerInfo[playerid][PName]);
 	mysql_tquery(Database, DB_Query, "OnPlayerDataCheck", "ii", playerid, Corrupt_Check[playerid]);
 	return 1;
@@ -70,16 +117,21 @@ public OnPlayerConnect(playerid)
 public OnPlayerDisconnect(playerid, reason)
 {
 	Corrupt_Check[playerid]++;
+
 	new DB_Query[256];
 	mysql_format(Database, DB_Query, sizeof(DB_Query), "UPDATE `PLAYERS` SET `SCORE` = %d, `CASH` = %d, `KILLS` = %d, `DEATHS` = %d WHERE `ID` = %d LIMIT 1",
 	PlayerInfo[playerid][Score], PlayerInfo[playerid][Cash], PlayerInfo[playerid][Kills], PlayerInfo[playerid][Deaths], PlayerInfo[playerid][ID]);
+
 	mysql_tquery(Database, DB_Query);
+
 	if(cache_is_valid(PlayerInfo[playerid][Player_Cache]))
 	{
 		cache_delete(PlayerInfo[playerid][Player_Cache]);
 		PlayerInfo[playerid][Player_Cache] = MYSQL_INVALID_CACHE;
 	}
+
 	PlayerInfo[playerid][LoggedIn] = false;
+	print("OnPlayerDisconnect has been called.");
 	return 1;
 }
 
@@ -257,10 +309,8 @@ public OnPlayerDataCheck(playerid, corrupt_check)
 
 	if(cache_num_rows() > 0)
 	{
-		cache_get_value(0, "PASSWORD", PlayerInfo[playerid][Password], 129);
-
+		cache_get_value(0, "PASSWORD", PlayerInfo[playerid][Password], 65);
 		PlayerInfo[playerid][Player_Cache] = cache_save();
-
 		format(String, sizeof(String), "{FFFFFF}Welcome back, %s.\n\n{0099FF}This account is already registered.\n\
 		{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][PName]);
 		Dialog_Show(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login System", String, "Login", "Leave");
@@ -277,43 +327,45 @@ public OnPlayerDataCheck(playerid, corrupt_check)
 Dialog:DIALOG_LOGIN(playerid, response, listitem, inputtext[])
 {
 	if(!response) return Kick(playerid);
-	new Salted_Key[65];
-	SHA256_PassHash(inputtext, PlayerInfo[playerid][Salt], Salted_Key, 65);
-	if(strcmp(Salted_Key, PlayerInfo[playerid][Password]) == 0)
+	new Hash_Key[65];
+	SHA256_PassHash(inputtext, SERVER_SALT, Hash_Key, 65);
+	if(strcmp(Hash_Key, PlayerInfo[playerid][Password]) == 0)
 	{
 		cache_set_active(PlayerInfo[playerid][Player_Cache]);
-		cache_get_value_int(0, "ID", PlayerInfo[playerid][ID]);
-
-		cache_get_value_int(0, "KILLS", PlayerInfo[playerid][Kills]);
-		cache_get_value_int(0, "DEATHS", PlayerInfo[playerid][Deaths]);
-
-		SetPlayerScore(playerid, PlayerInfo[playerid][Score]);
-
-		ResetPlayerMoney(playerid);
-		GivePlayerMoney(playerid, PlayerInfo[playerid][Cash]);
-
+       	cache_get_value_int(0, "ID", PlayerInfo[playerid][ID]);
+   		cache_get_value_int(0, "KILLS", PlayerInfo[playerid][Kills]);
+   		cache_get_value_int(0, "DEATHS", PlayerInfo[playerid][Deaths]);
+   		cache_get_value_int(0, "SCORE", PlayerInfo[playerid][Score]);
+   		cache_get_value_int(0, "CASH", PlayerInfo[playerid][Cash]);
+   		SetPlayerScore(playerid, PlayerInfo[playerid][Score]);
+   		ResetPlayerMoney(playerid);
+   		GivePlayerMoney(playerid, PlayerInfo[playerid][Cash]);
 		cache_delete(PlayerInfo[playerid][Player_Cache]);
 		PlayerInfo[playerid][Player_Cache] = MYSQL_INVALID_CACHE;
 		PlayerInfo[playerid][LoggedIn] = true;
-		SCM(playerid, 0x00FF00FF, "Prihlasen!");
-	}else{
-		new String[150];
+		SendClientMessage(playerid, 0x00FF00FF, "Logged in to the account.");
+	}
+	else
+	{
+ 		new String[150];
 		PlayerInfo[playerid][PasswordFails] += 1;
 		printf("%s has been failed to login. (%d)", PlayerInfo[playerid][PName], PlayerInfo[playerid][PasswordFails]);
-		if (PlayerInfo[playerid][PasswordFails] >= 3)
+		if (PlayerInfo[playerid][PasswordFails] >= 3) // If the fails exceeded the limit we kick the player.
 		{
 			format(String, sizeof(String), "%s has been kicked Reason: {FF0000}(%d/3) Login fails.", PlayerInfo[playerid][PName], PlayerInfo[playerid][PasswordFails]);
-			SCMTA(0x969696FF, String);
+			SendClientMessageToAll(0x969696FF, String);
 			Kick(playerid);
-		}else{
+		}
+		else
+		{
 			format(String, sizeof(String), "Wrong password, you have %d out of 3 tries.", PlayerInfo[playerid][PasswordFails]);
-			SCM(playerid, 0xFF0000FF, String);
-			format(String, sizeof(String), "{FFFFFF}Welcome back, %s.\n\n{0099FF}This account is already registered.\n\
-			{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][PName]);
-			Dialog_Show(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login System", String, "Login", "Leave");
+			SendClientMessage(playerid, 0xFF0000FF, String);
+       		format(String, sizeof(String), "{FFFFFF}Welcome back, %s.\n\n{0099FF}This account is already registered.\n\
+       		{0099FF}Please, input your password below to proceed to the game.\n\n", PlayerInfo[playerid][PName]);
+       		Dialog_Show(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login System", String, "Login", "Leave");
 		}
 	}
-	return 1;
+    return 1;
 }
 
 Dialog:DIALOG_REGISTER(playerid, response, listitem, inputtext[])
@@ -321,30 +373,34 @@ Dialog:DIALOG_REGISTER(playerid, response, listitem, inputtext[])
 	if(!response) return Kick(playerid);
 	if(strlen(inputtext) <= 5 || strlen(inputtext) > 60)
 	{
-		SCM(playerid, 0x969696FF, "Invalid password length, should be 5 - 60.");
+    	SendClientMessage(playerid, 0x969696FF, "Invalid password length, should be 5 - 60.");
 		new String[150];
     	format(String, sizeof(String), "{FFFFFF}Welcome %s.\n\n{0099FF}This account is not registered.\n\
      	{0099FF}Please, input your password below to proceed.\n\n", PlayerInfo[playerid][PName]);
        	Dialog_Show(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Registration System", String, "Register", "Leave");
-	}else{
-	    for (new i = 0; i < 10; i++)
-     	{
-        	PlayerInfo[playerid][Salt][i] = random(79) + 47;
-   		}
-   		PlayerInfo[playerid][Salt][10] = 0;
-    	SHA256_PassHash(inputtext, PlayerInfo[playerid][Salt], PlayerInfo[playerid][Password], 65);
+	}
+	else
+	{
+		SHA256_PassHash(inputtext, SERVER_SALT, PlayerInfo[playerid][Password], 65);
     	new DB_Query[225];
-    	mysql_format(Database, DB_Query, sizeof(DB_Query), "INSERT INTO `PLAYERS` (`USERNAME`, `PASSWORD`, `SALT`, `SCORE`, `KILLS`, `CASH`, `DEATHS`)\
-    	VALUES ('%e', '%s', '%e', '20', '0', '0', '0')", PlayerInfo[playerid][PName], PlayerInfo[playerid][Password], PlayerInfo[playerid][Salt]);
+    	mysql_format(Database, DB_Query, sizeof(DB_Query), "INSERT INTO `PLAYERS` (`USERNAME`, `PASSWORD`, `SCORE`, `KILLS`, `CASH`, `DEATHS`)\
+    	VALUES ('%e', '%s', '0', '0', '0', '0')", PlayerInfo[playerid][PName], PlayerInfo[playerid][Password]);
      	mysql_tquery(Database, DB_Query, "OnPlayerRegister", "d", playerid);
 	}
-	return 1;
+    return 1;
 }
 
 forward public OnPlayerRegister(playerid);
 public OnPlayerRegister(playerid)
 {
-	SCM(playerid, 0x00FF00FF, "You are now registered and has been logged in.");
+	SendClientMessage(playerid, 0x00FF00FF, "You are now registered and has been logged in.");
     PlayerInfo[playerid][LoggedIn] = true;
     return 1;
+}
+
+forward SecondTimer(playerid);
+public SecondTimer(playerid)
+{
+    GUI_SecondTimer(playerid);
+	return 1;
 }
