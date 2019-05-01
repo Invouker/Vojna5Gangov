@@ -1,0 +1,2856 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:19:49] 
+[19:19:49] Server Plugins
+[19:19:49] --------------
+[19:19:49]  Loading plugin: mysql
+[19:19:49]   Failed.
+[19:19:49]  Loading plugin: nativechacker
+[19:19:49]   Failed.
+[19:19:49]  Loading plugin: sscanf
+[19:19:49] 
+
+[19:19:49]  ===============================
+
+[19:19:49]       sscanf plugin loaded.     
+
+[19:19:49]          Version:  2.8.2        
+
+[19:19:49]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:19:49]  ===============================
+
+[19:19:49]   Loaded.
+[19:19:49]  Loaded 1 plugins.
+
+[19:19:49] I couldn't load any gamemode scripts. Please verify your server.cfg
+[19:19:49] It needs a gamemode0 line at the very least.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:20:03] 
+[19:20:03] Server Plugins
+[19:20:03] --------------
+[19:20:03]  Loading plugin: mysql
+[19:20:03]   Failed.
+[19:20:03]  Loading plugin: nativechacker
+[19:20:03]   Failed.
+[19:20:03]  Loading plugin: sscanf
+[19:20:03] 
+
+[19:20:03]  ===============================
+
+[19:20:03]       sscanf plugin loaded.     
+
+[19:20:03]          Version:  2.8.2        
+
+[19:20:03]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:20:03]  ===============================
+
+[19:20:03]   Loaded.
+[19:20:03]  Loaded 1 plugins.
+
+[19:20:03] 
+[19:20:03] Filterscripts
+[19:20:03] ---------------
+[19:20:03]   Loading filterscript 'Houses.amx'...
+[19:20:03]   Loaded 1 filterscripts.
+
+[19:20:03] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:20:03] Number of vehicle models: 0
+Console input: rcon unloadfs Houses
+Console input: unloadfs Houses
+[19:20:31]   Filterscript 'Houses.amx' unloaded.
+Console input: loadfs Houses
+[19:20:35]   Filterscript 'Houses.amx' loaded.
+Console input: plugins
+[19:20:38] plugins = "mysql"  (string, read-only)
+Console input: gamemode0
+[19:20:48] gamemode0 = "VG"  (string)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:22:46] 
+[19:22:46] Server Plugins
+[19:22:46] --------------
+[19:22:46]  Loading plugin: mysql
+[19:22:46]   Failed.
+[19:22:46]  Loading plugin: nativechacker
+[19:22:46]   Failed.
+[19:22:46]  Loading plugin: sscanf
+[19:22:46] 
+
+[19:22:46]  ===============================
+
+[19:22:46]       sscanf plugin loaded.     
+
+[19:22:46]          Version:  2.8.2        
+
+[19:22:46]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:22:46]  ===============================
+
+[19:22:46]   Loaded.
+[19:22:46]  Loaded 1 plugins.
+
+[19:22:46] 
+[19:22:46] Filterscripts
+[19:22:46] ---------------
+[19:22:46]   Loading filterscript 'Houses.amx'...
+[19:22:46]   Loaded 1 filterscripts.
+
+[19:22:46] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:22:46] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:23:38] 
+[19:23:38] Server Plugins
+[19:23:38] --------------
+[19:23:38]  Loading plugin: mysql
+[19:23:38]   Failed.
+[19:23:38]  Loading plugin: sscanf
+[19:23:38] 
+
+[19:23:38]  ===============================
+
+[19:23:38]       sscanf plugin loaded.     
+
+[19:23:38]          Version:  2.8.2        
+
+[19:23:38]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:23:38]  ===============================
+
+[19:23:38]   Loaded.
+[19:23:38]  Loading plugin: nativechecker
+[19:23:38]   Loaded.
+[19:23:38]  Loaded 2 plugins.
+
+[19:23:38] 
+[19:23:38] Filterscripts
+[19:23:38] ---------------
+[19:23:38]   Loading filterscript 'Houses.amx'...
+[19:23:38]    Error: Function not registered: 'cache_get_row_count'
+[19:23:38]    Error: Function not registered: 'cache_save'
+[19:23:38]    Error: Function not registered: 'cache_set_active'
+[19:23:38]    Error: Function not registered: 'cache_get_value_name'
+[19:23:38]    Error: Function not registered: 'cache_get_value_name_int'
+[19:23:38]    Error: Function not registered: 'cache_get_value_name_float'
+[19:23:38]    Error: Function not registered: 'cache_unset_active'
+[19:23:38]    Error: Function not registered: 'mysql_init_options'
+[19:23:38]    Error: Function not registered: 'mysql_set_option'
+[19:23:38]    Error: Function not registered: 'mysql_connect'
+[19:23:38]    Error: Function not registered: 'mysql_errno'
+[19:23:38]    Error: Function not registered: 'mysql_format'
+[19:23:38]    Error: Function not registered: 'mysql_tquery'
+[19:23:38]   Loaded 1 filterscripts.
+
+[19:23:38] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:23:38] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:26:14] 
+[19:26:14] Server Plugins
+[19:26:14] --------------
+[19:26:14]  Loading plugin: mysql
+[19:26:14]   Failed.
+[19:26:14]  Loading plugin: streamer
+[19:26:14] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:26:14]   Loaded.
+[19:26:14]  Loading plugin: sscanf
+[19:26:14] 
+
+[19:26:14]  ===============================
+
+[19:26:14]       sscanf plugin loaded.     
+
+[19:26:14]          Version:  2.8.2        
+
+[19:26:14]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:26:14]  ===============================
+
+[19:26:14]   Loaded.
+[19:26:14]  Loading plugin: nativechecker
+[19:26:14]   Loaded.
+[19:26:14]  Loaded 3 plugins.
+
+[19:26:14] 
+[19:26:14] Filterscripts
+[19:26:14] ---------------
+[19:26:14]   Loading filterscript 'Houses.amx'...
+[19:26:14]    Error: Function not registered: 'cache_get_row_count'
+[19:26:14]    Error: Function not registered: 'cache_save'
+[19:26:14]    Error: Function not registered: 'cache_set_active'
+[19:26:14]    Error: Function not registered: 'cache_get_value_name'
+[19:26:14]    Error: Function not registered: 'cache_get_value_name_int'
+[19:26:14]    Error: Function not registered: 'cache_get_value_name_float'
+[19:26:14]    Error: Function not registered: 'cache_unset_active'
+[19:26:14]    Error: Function not registered: 'mysql_init_options'
+[19:26:14]    Error: Function not registered: 'mysql_set_option'
+[19:26:14]    Error: Function not registered: 'mysql_connect'
+[19:26:14]    Error: Function not registered: 'mysql_errno'
+[19:26:14]    Error: Function not registered: 'mysql_format'
+[19:26:14]    Error: Function not registered: 'mysql_tquery'
+[19:26:14]   Loaded 1 filterscripts.
+
+[19:26:14] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:26:14] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:27:38] 
+[19:27:38] Server Plugins
+[19:27:38] --------------
+[19:27:38]  Loading plugin: mysql
+[19:27:38]  >> plugin.mysql: R41-4 successfully loaded.
+[19:27:38]   Loaded.
+[19:27:38]  Loading plugin: streamer
+[19:27:38] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:27:38]   Loaded.
+[19:27:38]  Loading plugin: sscanf
+[19:27:38] 
+
+[19:27:38]  ===============================
+
+[19:27:38]       sscanf plugin loaded.     
+
+[19:27:38]          Version:  2.8.2        
+
+[19:27:38]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:27:38]  ===============================
+
+[19:27:38]   Loaded.
+[19:27:38]  Loading plugin: nativechecker
+[19:27:38]   Loaded.
+[19:27:38]  Loaded 4 plugins.
+
+[19:27:38] 
+[19:27:38] Filterscripts
+[19:27:38] ---------------
+[19:27:38]   Loading filterscript 'Houses.amx'...
+[19:27:38] 
+--------------------------------------
+[19:27:38]  House system loading...
+[19:27:38] --------------------------------------
+
+[19:27:38] HOUSE ID 1, OWNER:  , CENA: 0
+[19:27:38]   Loaded 1 filterscripts.
+
+[19:27:38] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:27:38] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:29:36] 
+[19:29:36] Server Plugins
+[19:29:36] --------------
+[19:29:36]  Loading plugin: mysql
+[19:29:36]  >> plugin.mysql: R41-4 successfully loaded.
+[19:29:36]   Loaded.
+[19:29:36]  Loading plugin: streamer
+[19:29:36] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:29:36]   Loaded.
+[19:29:36]  Loading plugin: sscanf
+[19:29:36] 
+
+[19:29:36]  ===============================
+
+[19:29:36]       sscanf plugin loaded.     
+
+[19:29:36]          Version:  2.8.2        
+
+[19:29:36]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:29:36]  ===============================
+
+[19:29:36]   Loaded.
+[19:29:36]  Loading plugin: nativechecker
+[19:29:36]   Loaded.
+[19:29:36]  Loaded 4 plugins.
+
+[19:29:36] 
+[19:29:36] Filterscripts
+[19:29:36] ---------------
+[19:29:36]   Loading filterscript 'Houses.amx'...
+[19:29:36] 
+--------------------------------------
+[19:29:36]  House system loading...
+[19:29:36] --------------------------------------
+
+[19:29:36] HOUSE ID 1, OWNER:  , CENA: 0
+[19:29:36]   Loaded 1 filterscripts.
+
+[19:29:36] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:29:36] Number of vehicle models: 0
+[19:29:36] LOADING HOUSE ID: 0
+[19:29:36] LOADING HOUSE ID: 1
+[19:29:36] LOADING HOUSE ID: 2
+[19:29:36] LOADING HOUSE ID: 3
+[19:29:36] LOADING HOUSE ID: 4
+[19:29:36] LOADING HOUSE ID: 5
+[19:29:36] LOADING HOUSE ID: 6
+[19:29:36] LOADING HOUSE ID: 7
+[19:29:36] LOADING HOUSE ID: 8
+[19:29:36] LOADING HOUSE ID: 9
+[19:29:36] LOADING HOUSE ID: 10
+[19:29:36] LOADING HOUSE ID: 11
+[19:29:36] LOADING HOUSE ID: 12
+[19:29:36] LOADING HOUSE ID: 13
+[19:29:36] LOADING HOUSE ID: 14
+[19:29:37] LOADING HOUSE ID: 15
+[19:29:37] LOADING HOUSE ID: 16
+[19:29:37] LOADING HOUSE ID: 17
+[19:29:37] LOADING HOUSE ID: 18
+[19:29:37] LOADING HOUSE ID: 19
+[19:29:37] LOADING HOUSE ID: 20
+[19:29:37] LOADING HOUSE ID: 21
+[19:29:37] LOADING HOUSE ID: 22
+[19:29:37] LOADING HOUSE ID: 23
+[19:29:37] LOADING HOUSE ID: 24
+[19:29:37] LOADING HOUSE ID: 25
+[19:29:37] LOADING HOUSE ID: 26
+[19:29:37] LOADING HOUSE ID: 27
+[19:29:37] LOADING HOUSE ID: 28
+[19:29:37] LOADING HOUSE ID: 29
+[19:29:37] LOADING HOUSE ID: 30
+[19:29:37] LOADING HOUSE ID: 31
+[19:29:37] LOADING HOUSE ID: 32
+[19:29:37] LOADING HOUSE ID: 33
+[19:29:37] LOADING HOUSE ID: 34
+[19:29:37] LOADING HOUSE ID: 35
+[19:29:37] LOADING HOUSE ID: 36
+[19:29:37] LOADING HOUSE ID: 37
+[19:29:37] LOADING HOUSE ID: 38
+[19:29:37] LOADING HOUSE ID: 39
+[19:29:37] LOADING HOUSE ID: 40
+[19:29:37] LOADING HOUSE ID: 41
+[19:29:37] LOADING HOUSE ID: 42
+[19:29:37] LOADING HOUSE ID: 43
+[19:29:37] LOADING HOUSE ID: 44
+[19:29:37] LOADING HOUSE ID: 45
+[19:29:37] LOADING HOUSE ID: 46
+[19:29:37] LOADING HOUSE ID: 47
+[19:29:37] LOADING HOUSE ID: 48
+[19:29:37] LOADING HOUSE ID: 49
+[19:29:37] LOADING HOUSE ID: 50
+[19:29:37] LOADING HOUSE ID: 51
+[19:29:37] LOADING HOUSE ID: 52
+[19:29:37] LOADING HOUSE ID: 53
+[19:29:37] LOADING HOUSE ID: 54
+[19:29:37] LOADING HOUSE ID: 55
+[19:29:37] LOADING HOUSE ID: 56
+[19:29:37] LOADING HOUSE ID: 57
+[19:29:37] LOADING HOUSE ID: 58
+[19:29:37] LOADING HOUSE ID: 59
+[19:29:37] LOADING HOUSE ID: 60
+[19:29:37] LOADING HOUSE ID: 61
+[19:29:37] LOADING HOUSE ID: 62
+[19:29:37] LOADING HOUSE ID: 63
+[19:29:37] LOADING HOUSE ID: 64
+[19:29:37] LOADING HOUSE ID: 65
+[19:29:37] LOADING HOUSE ID: 66
+[19:29:37] LOADING HOUSE ID: 67
+[19:29:37] LOADING HOUSE ID: 68
+[19:29:37] LOADING HOUSE ID: 69
+[19:29:37] LOADING HOUSE ID: 70
+[19:29:37] LOADING HOUSE ID: 71
+[19:29:37] LOADING HOUSE ID: 72
+[19:29:37] LOADING HOUSE ID: 73
+[19:29:37] LOADING HOUSE ID: 74
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:30:02] 
+[19:30:02] Server Plugins
+[19:30:02] --------------
+[19:30:02]  Loading plugin: mysql
+[19:30:02]  >> plugin.mysql: R41-4 successfully loaded.
+[19:30:02]   Loaded.
+[19:30:02]  Loading plugin: streamer
+[19:30:02] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:30:02]   Loaded.
+[19:30:02]  Loading plugin: sscanf
+[19:30:02] 
+
+[19:30:02]  ===============================
+
+[19:30:02]       sscanf plugin loaded.     
+
+[19:30:02]          Version:  2.8.2        
+
+[19:30:02]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:30:02]  ===============================
+
+[19:30:02]   Loaded.
+[19:30:02]  Loading plugin: nativechecker
+[19:30:02]   Loaded.
+[19:30:02]  Loaded 4 plugins.
+
+[19:30:02] 
+[19:30:02] Filterscripts
+[19:30:02] ---------------
+[19:30:02]   Loading filterscript 'Houses.amx'...
+[19:30:02] 
+--------------------------------------
+[19:30:02]  House system loading...
+[19:30:02] --------------------------------------
+
+[19:30:02] HOUSE ID 1, OWNER:  , CENA: 0
+[19:30:02]   Loaded 1 filterscripts.
+
+[19:30:02] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:30:02] Number of vehicle models: 0
+[19:30:02] LOADING HOUSE ID: 1
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:30:21] 
+[19:30:21] Server Plugins
+[19:30:21] --------------
+[19:30:21]  Loading plugin: mysql
+[19:30:21]  >> plugin.mysql: R41-4 successfully loaded.
+[19:30:21]   Loaded.
+[19:30:21]  Loading plugin: streamer
+[19:30:21] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:30:21]   Loaded.
+[19:30:21]  Loading plugin: sscanf
+[19:30:21] 
+
+[19:30:21]  ===============================
+
+[19:30:21]       sscanf plugin loaded.     
+
+[19:30:21]          Version:  2.8.2        
+
+[19:30:21]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:30:21]  ===============================
+
+[19:30:21]   Loaded.
+[19:30:21]  Loading plugin: nativechecker
+[19:30:21]   Loaded.
+[19:30:21]  Loaded 4 plugins.
+
+[19:30:21] 
+[19:30:21] Filterscripts
+[19:30:21] ---------------
+[19:30:21]   Loading filterscript 'Houses.amx'...
+[19:30:21] 
+--------------------------------------
+[19:30:21]  House system loading...
+[19:30:21] --------------------------------------
+
+[19:30:21]   Loaded 1 filterscripts.
+
+[19:30:21] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:30:21] Number of vehicle models: 0
+[19:30:21] HOUSE ID 1, OWNER:  , CENA: 0
+[19:30:21] LOADING HOUSE ID: 1
+[19:30:21] HOUSE ID 1, OWNER:  , CENA: 0
+[19:30:21] HOUSE ID 1, OWNER:  , CENA: 0
+[19:30:21] HOUSE ID 1, OWNER:  , CENA: 0
+[19:30:21] HOUSE ID 1, OWNER:  , CENA: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:30:40] 
+[19:30:40] Server Plugins
+[19:30:40] --------------
+[19:30:40]  Loading plugin: mysql
+[19:30:40]  >> plugin.mysql: R41-4 successfully loaded.
+[19:30:40]   Loaded.
+[19:30:40]  Loading plugin: streamer
+[19:30:40] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:30:40]   Loaded.
+[19:30:40]  Loading plugin: sscanf
+[19:30:40] 
+
+[19:30:40]  ===============================
+
+[19:30:40]       sscanf plugin loaded.     
+
+[19:30:40]          Version:  2.8.2        
+
+[19:30:40]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:30:40]  ===============================
+
+[19:30:40]   Loaded.
+[19:30:40]  Loading plugin: nativechecker
+[19:30:40]   Loaded.
+[19:30:40]  Loaded 4 plugins.
+
+[19:30:40] 
+[19:30:40] Filterscripts
+[19:30:40] ---------------
+[19:30:40]   Loading filterscript 'Houses.amx'...
+[19:30:40] 
+--------------------------------------
+[19:30:40]  House system loading...
+[19:30:40] --------------------------------------
+
+[19:30:40]   Loaded 1 filterscripts.
+
+[19:30:40] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:30:40] Number of vehicle models: 0
+[19:30:40] LOADING HOUSE ID: 1
+[19:30:40] HOUSE ID 1, OWNER:  , CENA: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:32:40] 
+[19:32:40] Server Plugins
+[19:32:40] --------------
+[19:32:40]  Loading plugin: mysql
+[19:32:40]  >> plugin.mysql: R41-4 successfully loaded.
+[19:32:40]   Loaded.
+[19:32:40]  Loading plugin: streamer
+[19:32:40] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:32:40]   Loaded.
+[19:32:40]  Loading plugin: sscanf
+[19:32:40] 
+
+[19:32:40]  ===============================
+
+[19:32:40]       sscanf plugin loaded.     
+
+[19:32:40]          Version:  2.8.2        
+
+[19:32:40]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:32:40]  ===============================
+
+[19:32:40]   Loaded.
+[19:32:40]  Loading plugin: nativechecker
+[19:32:40]   Loaded.
+[19:32:40]  Loaded 4 plugins.
+
+[19:32:40] 
+[19:32:40] Filterscripts
+[19:32:40] ---------------
+[19:32:40]   Loading filterscript 'Houses.amx'...
+[19:32:41] 
+--------------------------------------
+[19:32:41]  House system loading...
+[19:32:41] --------------------------------------
+
+[19:32:41]   Loaded 1 filterscripts.
+
+[19:32:41] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:32:41] Number of vehicle models: 0
+[19:32:41] LOADING HOUSE ID: 1
+[19:32:41] HOUSE ID 1, OWNER:  , CENA: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:34:06] 
+[19:34:06] Server Plugins
+[19:34:06] --------------
+[19:34:06]  Loading plugin: mysql
+[19:34:06]  >> plugin.mysql: R41-4 successfully loaded.
+[19:34:06]   Loaded.
+[19:34:06]  Loading plugin: streamer
+[19:34:06] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:34:06]   Loaded.
+[19:34:06]  Loading plugin: sscanf
+[19:34:06] 
+
+[19:34:06]  ===============================
+
+[19:34:06]       sscanf plugin loaded.     
+
+[19:34:06]          Version:  2.8.2        
+
+[19:34:06]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:34:06]  ===============================
+
+[19:34:06]   Loaded.
+[19:34:06]  Loading plugin: nativechecker
+[19:34:06]   Loaded.
+[19:34:06]  Loaded 4 plugins.
+
+[19:34:06] 
+[19:34:06] Filterscripts
+[19:34:06] ---------------
+[19:34:06]   Loading filterscript 'Houses.amx'...
+[19:34:06] 
+--------------------------------------
+[19:34:06]  House system loading...
+[19:34:06] --------------------------------------
+
+[19:34:06]   Loaded 1 filterscripts.
+
+[19:34:06] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:34:06] Number of vehicle models: 0
+[19:34:06] LOADING HOUSE ID: 1
+[19:34:06] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: 
+Console input: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:48:55] 
+[19:48:55] Server Plugins
+[19:48:55] --------------
+[19:48:55]  Loading plugin: mysql
+[19:48:55]  >> plugin.mysql: R41-4 successfully loaded.
+[19:48:55]   Loaded.
+[19:48:55]  Loading plugin: streamer
+[19:48:55] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:48:55]   Loaded.
+[19:48:55]  Loading plugin: sscanf
+[19:48:55] 
+
+[19:48:55]  ===============================
+
+[19:48:55]       sscanf plugin loaded.     
+
+[19:48:55]          Version:  2.8.2        
+
+[19:48:55]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:48:55]  ===============================
+
+[19:48:55]   Loaded.
+[19:48:55]  Loading plugin: nativechecker
+[19:48:55]   Loaded.
+[19:48:55]  Loaded 4 plugins.
+
+[19:48:55] 
+[19:48:55] Filterscripts
+[19:48:55] ---------------
+[19:48:55]   Loading filterscript 'Houses.amx'...
+[19:48:55] successfully connected
+[19:48:55] 
+--------------------------------------
+[19:48:55]  House system loading...
+[19:48:55] --------------------------------------
+
+[19:48:55]   Loaded 1 filterscripts.
+
+[19:48:55] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:48:55] Number of vehicle models: 0
+[19:48:55] LOADING HOUSE ID: 1
+[19:48:55] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: 
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:51:56] 
+[19:51:56] Server Plugins
+[19:51:56] --------------
+[19:51:56]  Loading plugin: mysql
+[19:51:56]  >> plugin.mysql: R41-4 successfully loaded.
+[19:51:56]   Loaded.
+[19:51:56]  Loading plugin: streamer
+[19:51:56] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:51:56]   Loaded.
+[19:51:56]  Loading plugin: sscanf
+[19:51:56] 
+
+[19:51:56]  ===============================
+
+[19:51:56]       sscanf plugin loaded.     
+
+[19:51:56]          Version:  2.8.2        
+
+[19:51:56]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:51:56]  ===============================
+
+[19:51:56]   Loaded.
+[19:51:56]  Loading plugin: nativechecker
+[19:51:56]   Loaded.
+[19:51:56]  Loaded 4 plugins.
+
+[19:51:56] 
+[19:51:56] Filterscripts
+[19:51:56] ---------------
+[19:51:56]   Loading filterscript 'Houses.amx'...
+[19:51:57] successfully connected
+[19:51:57] 
+--------------------------------------
+[19:51:57]  House system loading...
+[19:51:57] --------------------------------------
+
+[19:51:57]   Loaded 1 filterscripts.
+
+[19:51:57] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:51:57] Number of vehicle models: 0
+[19:51:57] LOADING HOUSE ID: 1
+[19:51:57] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:53:23] 
+[19:53:23] Server Plugins
+[19:53:23] --------------
+[19:53:23]  Loading plugin: mysql
+[19:53:23]  >> plugin.mysql: R41-4 successfully loaded.
+[19:53:23]   Loaded.
+[19:53:23]  Loading plugin: streamer
+[19:53:23] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:53:23]   Loaded.
+[19:53:23]  Loading plugin: sscanf
+[19:53:23] 
+
+[19:53:23]  ===============================
+
+[19:53:23]       sscanf plugin loaded.     
+
+[19:53:23]          Version:  2.8.2        
+
+[19:53:23]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:53:23]  ===============================
+
+[19:53:23]   Loaded.
+[19:53:23]  Loading plugin: nativechecker
+[19:53:23]   Loaded.
+[19:53:23]  Loaded 4 plugins.
+
+[19:53:23] 
+[19:53:23] Filterscripts
+[19:53:23] ---------------
+[19:53:23]   Loading filterscript 'Houses.amx'...
+[19:53:23] successfully connected
+[19:53:23] 
+--------------------------------------
+[19:53:23]  House system loading...
+[19:53:23] --------------------------------------
+
+[19:53:23]   Loaded 1 filterscripts.
+
+[19:53:23] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:53:23] Number of vehicle models: 0
+[19:53:23] LOADING HOUSE ID: 1
+[19:53:23] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: 
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:53:56] 
+[19:53:56] Server Plugins
+[19:53:56] --------------
+[19:53:56]  Loading plugin: mysql
+[19:53:56]  >> plugin.mysql: R41-4 successfully loaded.
+[19:53:56]   Loaded.
+[19:53:56]  Loading plugin: streamer
+[19:53:56] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:53:56]   Loaded.
+[19:53:56]  Loading plugin: sscanf
+[19:53:56] 
+
+[19:53:56]  ===============================
+
+[19:53:56]       sscanf plugin loaded.     
+
+[19:53:56]          Version:  2.8.2        
+
+[19:53:56]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:53:56]  ===============================
+
+[19:53:56]   Loaded.
+[19:53:56]  Loading plugin: nativechecker
+[19:53:56]   Loaded.
+[19:53:56]  Loaded 4 plugins.
+
+[19:53:56] 
+[19:53:56] Filterscripts
+[19:53:56] ---------------
+[19:53:56]   Loading filterscript 'Houses.amx'...
+[19:53:56] successfully connected
+[19:53:56] 
+--------------------------------------
+[19:53:56]  House system loading...
+[19:53:56] --------------------------------------
+
+[19:53:56]   Loaded 1 filterscripts.
+
+[19:53:56] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:53:56] Number of vehicle models: 0
+[19:53:56] LOADING HOUSE ID: 1
+[19:53:56] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:55:18] 
+[19:55:18] Server Plugins
+[19:55:18] --------------
+[19:55:18]  Loading plugin: mysql
+[19:55:18]  >> plugin.mysql: R41-4 successfully loaded.
+[19:55:18]   Loaded.
+[19:55:18]  Loading plugin: streamer
+[19:55:18] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:55:18]   Loaded.
+[19:55:18]  Loading plugin: sscanf
+[19:55:18] 
+
+[19:55:18]  ===============================
+
+[19:55:18]       sscanf plugin loaded.     
+
+[19:55:18]          Version:  2.8.2        
+
+[19:55:18]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:55:18]  ===============================
+
+[19:55:18]   Loaded.
+[19:55:18]  Loading plugin: nativechecker
+[19:55:18]   Loaded.
+[19:55:18]  Loaded 4 plugins.
+
+[19:55:18] 
+[19:55:18] Filterscripts
+[19:55:18] ---------------
+[19:55:18]   Loading filterscript 'Houses.amx'...
+[19:55:19] successfully connected
+[19:55:19] 
+--------------------------------------
+[19:55:19]  House system loading...
+[19:55:19] --------------------------------------
+
+[19:55:19]   Loaded 1 filterscripts.
+
+[19:55:19] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:55:19] Number of vehicle models: 0
+[19:55:19] LOADING HOUSE ID: 1
+[19:55:19] HOUSE ID 1, OWNER:  , CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:55:50] 
+[19:55:50] Server Plugins
+[19:55:50] --------------
+[19:55:50]  Loading plugin: mysql
+[19:55:50]  >> plugin.mysql: R41-4 successfully loaded.
+[19:55:50]   Loaded.
+[19:55:50]  Loading plugin: streamer
+[19:55:50] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:55:50]   Loaded.
+[19:55:50]  Loading plugin: sscanf
+[19:55:50] 
+
+[19:55:50]  ===============================
+
+[19:55:50]       sscanf plugin loaded.     
+
+[19:55:50]          Version:  2.8.2        
+
+[19:55:50]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:55:50]  ===============================
+
+[19:55:50]   Loaded.
+[19:55:50]  Loading plugin: nativechecker
+[19:55:50]   Loaded.
+[19:55:50]  Loaded 4 plugins.
+
+[19:55:50] 
+[19:55:50] Filterscripts
+[19:55:50] ---------------
+[19:55:50]   Loading filterscript 'Houses.amx'...
+[19:55:50] successfully connected
+[19:55:50] 
+--------------------------------------
+[19:55:50]  House system loading...
+[19:55:50] --------------------------------------
+
+[19:55:50]   Loaded 1 filterscripts.
+
+[19:55:50] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:55:50] Number of vehicle models: 0
+[19:55:50] LOADING HOUSE ID: 1
+[19:55:50] HOUSE ID 1, OWNER:  , CENA: 12456,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:56:58] 
+[19:56:58] Server Plugins
+[19:56:58] --------------
+[19:56:58]  Loading plugin: mysql
+[19:56:58]  >> plugin.mysql: R41-4 successfully loaded.
+[19:56:58]   Loaded.
+[19:56:58]  Loading plugin: streamer
+[19:56:58] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:56:58]   Loaded.
+[19:56:58]  Loading plugin: sscanf
+[19:56:58] 
+
+[19:56:58]  ===============================
+
+[19:56:58]       sscanf plugin loaded.     
+
+[19:56:58]          Version:  2.8.2        
+
+[19:56:58]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:56:58]  ===============================
+
+[19:56:58]   Loaded.
+[19:56:58]  Loading plugin: nativechecker
+[19:56:58]   Loaded.
+[19:56:58]  Loaded 4 plugins.
+
+[19:56:58] 
+[19:56:58] Filterscripts
+[19:56:58] ---------------
+[19:56:58]   Loading filterscript 'Houses.amx'...
+[19:56:58] successfully connected
+[19:56:58] 
+--------------------------------------
+[19:56:58]  House system loading...
+[19:56:58] --------------------------------------
+
+[19:56:58]   Loaded 1 filterscripts.
+
+[19:56:58] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:56:58] Number of vehicle models: 0
+[19:56:58] LOADING HOUSE ID: 1
+[19:56:58] HOUSE ID 0, OWNER:  , CENA: 12456,   STRING TEST: Mesto
+[19:56:58] HOUSE ID 1, OWNER:  Mesto, CENA: 12456,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:58:30] 
+[19:58:30] Server Plugins
+[19:58:30] --------------
+[19:58:30]  Loading plugin: mysql
+[19:58:30]  >> plugin.mysql: R41-4 successfully loaded.
+[19:58:30]   Loaded.
+[19:58:30]  Loading plugin: streamer
+[19:58:30] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:58:30]   Loaded.
+[19:58:30]  Loading plugin: sscanf
+[19:58:30] 
+
+[19:58:30]  ===============================
+
+[19:58:30]       sscanf plugin loaded.     
+
+[19:58:30]          Version:  2.8.2        
+
+[19:58:30]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:58:30]  ===============================
+
+[19:58:30]   Loaded.
+[19:58:30]  Loading plugin: nativechecker
+[19:58:30]   Loaded.
+[19:58:30]  Loaded 4 plugins.
+
+[19:58:30] 
+[19:58:30] Filterscripts
+[19:58:30] ---------------
+[19:58:30]   Loading filterscript 'Houses.amx'...
+[19:58:30] successfully connected
+[19:58:30] 
+--------------------------------------
+[19:58:30]  House system loading...
+[19:58:30] --------------------------------------
+
+[19:58:30]   Loaded 1 filterscripts.
+
+[19:58:30] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:58:30] Number of vehicle models: 0
+[19:58:30] LOADING HOUSE ID: 1
+[19:58:30] HOUSE ID 0, OWNER:  , CENA: 0,   STRING TEST: Mesto
+[19:58:30] HOUSE ID 1, OWNER:  Mesto, CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:58:47] 
+[19:58:47] Server Plugins
+[19:58:47] --------------
+[19:58:47]  Loading plugin: mysql
+[19:58:47]  >> plugin.mysql: R41-4 successfully loaded.
+[19:58:47]   Loaded.
+[19:58:47]  Loading plugin: streamer
+[19:58:47] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:58:47]   Loaded.
+[19:58:47]  Loading plugin: sscanf
+[19:58:47] 
+
+[19:58:47]  ===============================
+
+[19:58:47]       sscanf plugin loaded.     
+
+[19:58:47]          Version:  2.8.2        
+
+[19:58:47]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:58:47]  ===============================
+
+[19:58:47]   Loaded.
+[19:58:47]  Loading plugin: nativechecker
+[19:58:47]   Loaded.
+[19:58:47]  Loaded 4 plugins.
+
+[19:58:47] 
+[19:58:47] Filterscripts
+[19:58:47] ---------------
+[19:58:47]   Loading filterscript 'Houses.amx'...
+[19:58:47] successfully connected
+[19:58:47] 
+--------------------------------------
+[19:58:47]  House system loading...
+[19:58:47] --------------------------------------
+
+[19:58:47]   Loaded 1 filterscripts.
+
+[19:58:47] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[19:58:47] Number of vehicle models: 0
+[19:58:47] LOADING HOUSE ID: 1
+[19:58:47] HOUSE ID 0, OWNER:  , CENA: 0,   STRING TEST: Mesto
+[19:58:47] HOUSE ID 1, OWNER:  Mesto, CENA: 0,   STRING TEST: Mesto
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:00:13] 
+[20:00:13] Server Plugins
+[20:00:13] --------------
+[20:00:13]  Loading plugin: mysql
+[20:00:13]  >> plugin.mysql: R41-4 successfully loaded.
+[20:00:13]   Loaded.
+[20:00:13]  Loading plugin: streamer
+[20:00:13] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[20:00:13]   Loaded.
+[20:00:13]  Loading plugin: sscanf
+[20:00:13] 
+
+[20:00:13]  ===============================
+
+[20:00:13]       sscanf plugin loaded.     
+
+[20:00:13]          Version:  2.8.2        
+
+[20:00:13]    (c) 2012 Alex "Y_Less" Cole  
+
+[20:00:13]  ===============================
+
+[20:00:13]   Loaded.
+[20:00:13]  Loading plugin: nativechecker
+[20:00:13]   Loaded.
+[20:00:13]  Loaded 4 plugins.
+
+[20:00:13] 
+[20:00:13] Filterscripts
+[20:00:13] ---------------
+[20:00:13]   Loading filterscript 'Houses.amx'...
+[20:00:13] successfully connected
+[20:00:13] 
+--------------------------------------
+[20:00:13]  House system loading...
+[20:00:13] --------------------------------------
+
+[20:00:13]   Loaded 1 filterscripts.
+
+[20:00:13] Script[gamemodes/VG.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[20:00:13] Number of vehicle models: 0
+[20:00:13] LOADING HOUSE ID: 1
+[20:00:13] HOUSE ID 0, OWNER:  Mesto, CENA: 12456
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:22:28] filterscripts = ""  (string)
+[21:22:28] 
+[21:22:28] Server Plugins
+[21:22:28] --------------
+[21:22:28]  Loading plugin: mysql
+[21:22:29]  >> plugin.mysql: R41-4 successfully loaded.
+[21:22:29]   Loaded.
+[21:22:29]  Loading plugin: streamer
+[21:22:29] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[21:22:29]   Loaded.
+[21:22:29]  Loading plugin: sscanf
+[21:22:29] 
+
+[21:22:29]  ===============================
+
+[21:22:29]       sscanf plugin loaded.     
+
+[21:22:29]          Version:  2.8.2        
+
+[21:22:29]    (c) 2012 Alex "Y_Less" Cole  
+
+[21:22:29]  ===============================
+
+[21:22:29]   Loaded.
+[21:22:29]  Loading plugin: nativechecker
+[21:22:29]   Loaded.
+[21:22:29]  Loaded 4 plugins.
+
+[21:22:29] 
+[21:22:29] Filterscripts
+[21:22:29] ---------------
+[21:22:29]   Loaded 0 filterscripts.
+
+[21:22:29] [Server] Uspesne pripojeno k DB!
+[21:22:29] Hello World!
+[21:22:29] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:23:43] filterscripts = ""  (string)
+[21:23:43] 
+[21:23:43] Server Plugins
+[21:23:43] --------------
+[21:23:43]  Loading plugin: mysql
+[21:23:43]  >> plugin.mysql: R41-4 successfully loaded.
+[21:23:43]   Loaded.
+[21:23:43]  Loading plugin: streamer
+[21:23:43] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[21:23:43]   Loaded.
+[21:23:43]  Loading plugin: sscanf
+[21:23:43] 
+
+[21:23:43]  ===============================
+
+[21:23:43]       sscanf plugin loaded.     
+
+[21:23:43]          Version:  2.8.2        
+
+[21:23:43]    (c) 2012 Alex "Y_Less" Cole  
+
+[21:23:43]  ===============================
+
+[21:23:43]   Loaded.
+[21:23:43]  Loading plugin: nativechecker
+[21:23:43]   Loaded.
+[21:23:43]  Loaded 4 plugins.
+
+[21:23:44] 
+[21:23:44] Filterscripts
+[21:23:44] ---------------
+[21:23:44]   Loaded 0 filterscripts.
+
+[21:23:44] [Server] Uspesne pripojeno k DB!
+[21:23:44] Hello World!
+[21:23:44] Number of vehicle models: 0
+[21:24:03] [connection] 127.0.0.1:51458 requests connection cookie.
+[21:24:04] [connection] incoming connection: 127.0.0.1:51458 id: 0
+[21:24:04] [join] dasd has joined the server (0:127.0.0.1)
+[21:24:14] [part] dasd has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:32:02] filterscripts = ""  (string)
+[22:32:02] 
+[22:32:02] Server Plugins
+[22:32:02] --------------
+[22:32:02]  Loading plugin: mysql
+[22:32:02]  >> plugin.mysql: R41-4 successfully loaded.
+[22:32:02]   Loaded.
+[22:32:02]  Loading plugin: streamer
+[22:32:02] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[22:32:02]   Loaded.
+[22:32:02]  Loading plugin: sscanf
+[22:32:02] 
+
+[22:32:02]  ===============================
+
+[22:32:02]       sscanf plugin loaded.     
+
+[22:32:02]          Version:  2.8.2        
+
+[22:32:02]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:32:02]  ===============================
+
+[22:32:02]   Loaded.
+[22:32:02]  Loading plugin: nativechecker
+[22:32:02]   Loaded.
+[22:32:02]  Loaded 4 plugins.
+
+[22:32:02] 
+[22:32:02] Filterscripts
+[22:32:02] ---------------
+[22:32:02]   Loaded 0 filterscripts.
+
+[22:32:02] Loaded 3 vehicles from: vehicles/trains.txt
+[22:32:02] Loaded 3 vehicles from: vehicles/pilots.txt
+[22:32:02] Loaded 15 vehicles from: vehicles/lv_law.txt
+[22:32:02] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[22:32:02] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[22:32:02] Loaded 38 vehicles from: vehicles/sf_law.txt
+[22:32:02] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[22:32:02] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[22:32:02] Loaded 24 vehicles from: vehicles/ls_law.txt
+[22:32:02] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[22:32:02] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[22:32:02] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[22:32:02] Loaded 71 vehicles from: vehicles/whetstone.txt
+[22:32:02] Loaded 168 vehicles from: vehicles/bone.txt
+[22:32:02] Loaded 61 vehicles from: vehicles/flint.txt
+[22:32:02] Loaded 96 vehicles from: vehicles/tierra.txt
+[22:32:02] Loaded 96 vehicles from: vehicles/red_county.txt
+[22:32:02] Total vehicles from files: 1781
+[22:32:02] 
+---------------------------------------
+[22:32:02] Running Grand Larceny - by the SA-MP team
+
+[22:32:02] ---------------------------------------
+
+[22:32:02] Number of vehicle models: 173
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:32:43] filterscripts = ""  (string)
+[22:32:43] 
+[22:32:43] Server Plugins
+[22:32:43] --------------
+[22:32:43]  Loading plugin: mysql
+[22:32:44]  >> plugin.mysql: R41-4 successfully loaded.
+[22:32:44]   Loaded.
+[22:32:44]  Loading plugin: streamer
+[22:32:44] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[22:32:44]   Loaded.
+[22:32:44]  Loading plugin: sscanf
+[22:32:44] 
+
+[22:32:44]  ===============================
+
+[22:32:44]       sscanf plugin loaded.     
+
+[22:32:44]          Version:  2.8.2        
+
+[22:32:44]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:32:44]  ===============================
+
+[22:32:44]   Loaded.
+[22:32:44]  Loading plugin: nativechecker
+[22:32:44]   Loaded.
+[22:32:44]  Loaded 4 plugins.
+
+[22:32:44] 
+[22:32:44] Filterscripts
+[22:32:44] ---------------
+[22:32:44]   Loaded 0 filterscripts.
+
+[22:32:44] [Server] Uspesne pripojeno k DB!
+[22:32:44] Hello World!
+[22:32:44] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:35:35] filterscripts = ""  (string)
+[22:35:35] 
+[22:35:35] Server Plugins
+[22:35:35] --------------
+[22:35:35]  Loading plugin: mysql
+[22:35:35]  >> plugin.mysql: R41-4 successfully loaded.
+[22:35:35]   Loaded.
+[22:35:35]  Loading plugin: streamer
+[22:35:35] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[22:35:35]   Loaded.
+[22:35:35]  Loading plugin: sscanf
+[22:35:35] 
+
+[22:35:35]  ===============================
+
+[22:35:35]       sscanf plugin loaded.     
+
+[22:35:35]          Version:  2.8.2        
+
+[22:35:35]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:35:35]  ===============================
+
+[22:35:35]   Loaded.
+[22:35:35]  Loading plugin: nativechecker
+[22:35:35]   Loaded.
+[22:35:35]  Loaded 4 plugins.
+
+[22:35:35] 
+[22:35:35] Filterscripts
+[22:35:35] ---------------
+[22:35:35]   Loaded 0 filterscripts.
+
+[22:35:35] [Server] Uspesne pripojeno k DB!
+[22:35:35] Loaded 15 vehicles from: vehicles/lv_law.txt
+[22:35:35] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[22:35:35] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[22:35:35] Loaded 38 vehicles from: vehicles/sf_law.txt
+[22:35:35] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[22:35:35] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[22:35:35] Loaded 24 vehicles from: vehicles/ls_law.txt
+[22:35:35] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[22:35:35] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[22:35:35] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[22:35:35] Loaded 71 vehicles from: vehicles/whetstone.txt
+[22:35:35] Loaded 168 vehicles from: vehicles/bone.txt
+[22:35:35] Loaded 61 vehicles from: vehicles/flint.txt
+[22:35:35] Loaded 96 vehicles from: vehicles/tierra.txt
+[22:35:35] Loaded 96 vehicles from: vehicles/red_county.txt
+[22:35:35] Total vehicles from files: 1775
+[22:35:35] Hello World!
+[22:35:35] Number of vehicle models: 170
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:36:52] filterscripts = ""  (string)
+[22:36:52] 
+[22:36:52] Server Plugins
+[22:36:52] --------------
+[22:36:52]  Loading plugin: mysql
+[22:36:52]  >> plugin.mysql: R41-4 successfully loaded.
+[22:36:52]   Loaded.
+[22:36:52]  Loading plugin: streamer
+[22:36:52] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[22:36:52]   Loaded.
+[22:36:52]  Loading plugin: sscanf
+[22:36:52] 
+
+[22:36:52]  ===============================
+
+[22:36:52]       sscanf plugin loaded.     
+
+[22:36:52]          Version:  2.8.2        
+
+[22:36:52]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:36:52]  ===============================
+
+[22:36:52]   Loaded.
+[22:36:52]  Loading plugin: nativechecker
+[22:36:52]   Loaded.
+[22:36:52]  Loaded 4 plugins.
+
+[22:36:52] 
+[22:36:52] Filterscripts
+[22:36:52] ---------------
+[22:36:52]   Loaded 0 filterscripts.
+
+[22:36:52] [Server] Uspesne pripojeno k DB!
+[22:36:52] Loaded 15 vehicles from: vehicles/lv_law.txt
+[22:36:52] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[22:36:52] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[22:36:52] Loaded 38 vehicles from: vehicles/sf_law.txt
+[22:36:52] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[22:36:52] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[22:36:52] Loaded 24 vehicles from: vehicles/ls_law.txt
+[22:36:52] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[22:36:52] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[22:36:52] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[22:36:52] Loaded 71 vehicles from: vehicles/whetstone.txt
+[22:36:52] Loaded 168 vehicles from: vehicles/bone.txt
+[22:36:52] Loaded 61 vehicles from: vehicles/flint.txt
+[22:36:52] Loaded 96 vehicles from: vehicles/tierra.txt
+[22:36:52] Loaded 96 vehicles from: vehicles/red_county.txt
+[22:36:52] Total vehicles from files: 1775
+[22:36:52] Hello World!
+[22:36:52] Number of vehicle models: 170
+[22:37:11] [connection] 127.0.0.1:49568 requests connection cookie.
+[22:37:12] [connection] incoming connection: 127.0.0.1:49568 id: 0
+[22:37:12] [join] dasd has joined the server (0:127.0.0.1)
+[22:37:15] dasd has been failed to login. (1)
+[22:37:18] dasd has been failed to login. (2)
+[22:37:21] dasd has been failed to login. (3)
+[22:37:21] [part] dasd has left the server (0:2)
+[22:37:48] [connection] 127.0.0.1:58872 requests connection cookie.
+[22:37:49] [connection] incoming connection: 127.0.0.1:58872 id: 0
+[22:37:49] [join] feof has joined the server (0:127.0.0.1)
+[22:52:08] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:09:38] filterscripts = ""  (string)
+[23:09:38] 
+[23:09:38] Server Plugins
+[23:09:38] --------------
+[23:09:38]  Loading plugin: mysql
+[23:09:38]  >> plugin.mysql: R41-4 successfully loaded.
+[23:09:38]   Loaded.
+[23:09:38]  Loading plugin: streamer
+[23:09:38] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:09:38]   Loaded.
+[23:09:38]  Loading plugin: sscanf
+[23:09:38] 
+
+[23:09:38]  ===============================
+
+[23:09:38]       sscanf plugin loaded.     
+
+[23:09:38]          Version:  2.8.2        
+
+[23:09:38]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:09:38]  ===============================
+
+[23:09:38]   Loaded.
+[23:09:38]  Loading plugin: nativechecker
+[23:09:38]   Loaded.
+[23:09:38]  Loaded 4 plugins.
+
+[23:09:39] 
+[23:09:39] Filterscripts
+[23:09:39] ---------------
+[23:09:39]   Loaded 0 filterscripts.
+
+[23:09:39] [Server] Uspesne pripojeno k DB!
+[23:09:39] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:09:39] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:09:39] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:09:39] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:09:39] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:09:39] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:09:39] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:09:39] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:09:39] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:09:39] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:09:39] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:09:39] Loaded 168 vehicles from: vehicles/bone.txt
+[23:09:39] Loaded 61 vehicles from: vehicles/flint.txt
+[23:09:39] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:09:39] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:09:39] Total vehicles from files: 1775
+[23:09:39] +---------------------------+
+[23:09:39] |                           |
+[23:09:39] |   Vojna 5 Gangov loaded!  |
+[23:09:39] |                           |
+[23:09:39] +---------------------------+
+[23:09:39] Number of vehicle models: 170
+[23:10:05] [connection] 127.0.0.1:51001 requests connection cookie.
+[23:10:06] [connection] incoming connection: 127.0.0.1:51001 id: 0
+[23:10:07] [join] feof has joined the server (0:127.0.0.1)
+[23:10:18] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:12:38] filterscripts = ""  (string)
+[23:12:38] 
+[23:12:38] Server Plugins
+[23:12:38] --------------
+[23:12:38]  Loading plugin: mysql
+[23:12:39]  >> plugin.mysql: R41-4 successfully loaded.
+[23:12:39]   Loaded.
+[23:12:39]  Loading plugin: streamer
+[23:12:39] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:12:39]   Loaded.
+[23:12:39]  Loading plugin: sscanf
+[23:12:39] 
+
+[23:12:39]  ===============================
+
+[23:12:39]       sscanf plugin loaded.     
+
+[23:12:39]          Version:  2.8.2        
+
+[23:12:39]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:12:39]  ===============================
+
+[23:12:39]   Loaded.
+[23:12:39]  Loading plugin: nativechecker
+[23:12:39]   Loaded.
+[23:12:39]  Loaded 4 plugins.
+
+[23:12:39] 
+[23:12:39] Filterscripts
+[23:12:39] ---------------
+[23:12:39]   Loaded 0 filterscripts.
+
+[23:12:39] [Server] Uspesne pripojeno k DB!
+[23:12:39] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:12:39] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:12:39] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:12:39] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:12:39] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:12:39] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:12:39] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:12:39] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:12:39] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:12:39] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:12:39] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:12:39] Loaded 168 vehicles from: vehicles/bone.txt
+[23:12:39] Loaded 61 vehicles from: vehicles/flint.txt
+[23:12:39] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:12:39] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:12:39] Total vehicles from files: 1775
+[23:12:39] +---------------------------+
+[23:12:39] |                           |
+[23:12:39] |   Vojna 5 Gangov loaded!  |
+[23:12:39] |                           |
+[23:12:39] +---------------------------+
+[23:12:39] Number of vehicle models: 170
+[23:13:01] [connection] 127.0.0.1:52073 requests connection cookie.
+[23:13:02] [connection] incoming connection: 127.0.0.1:52073 id: 0
+[23:13:02] [join] feof has joined the server (0:127.0.0.1)
+[23:13:32] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:14:28] filterscripts = ""  (string)
+[23:14:28] 
+[23:14:28] Server Plugins
+[23:14:28] --------------
+[23:14:28]  Loading plugin: mysql
+[23:14:28]  >> plugin.mysql: R41-4 successfully loaded.
+[23:14:28]   Loaded.
+[23:14:28]  Loading plugin: streamer
+[23:14:28] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:14:28]   Loaded.
+[23:14:28]  Loading plugin: sscanf
+[23:14:28] 
+
+[23:14:28]  ===============================
+
+[23:14:28]       sscanf plugin loaded.     
+
+[23:14:28]          Version:  2.8.2        
+
+[23:14:28]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:14:28]  ===============================
+
+[23:14:28]   Loaded.
+[23:14:28]  Loading plugin: nativechecker
+[23:14:28]   Loaded.
+[23:14:28]  Loaded 4 plugins.
+
+[23:14:28] 
+[23:14:28] Filterscripts
+[23:14:28] ---------------
+[23:14:28]   Loaded 0 filterscripts.
+
+[23:14:28] [Server] Uspesne pripojeno k DB!
+[23:14:28] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:14:28] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:14:28] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:14:28] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:14:28] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:14:28] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:14:28] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:14:28] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:14:28] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:14:28] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:14:28] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:14:28] Loaded 168 vehicles from: vehicles/bone.txt
+[23:14:28] Loaded 61 vehicles from: vehicles/flint.txt
+[23:14:28] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:14:28] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:14:28] Total vehicles from files: 1775
+[23:14:28] +---------------------------+
+[23:14:28] |                           |
+[23:14:28] |   Vojna 5 Gangov loaded!  |
+[23:14:28] |                           |
+[23:14:28] +---------------------------+
+[23:14:28] Number of vehicle models: 170
+[23:14:58] [connection] 127.0.0.1:59321 requests connection cookie.
+[23:14:59] [connection] incoming connection: 127.0.0.1:59321 id: 0
+[23:14:59] [join] feof has joined the server (0:127.0.0.1)
+[23:15:07] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:20:16] filterscripts = ""  (string)
+[23:20:16] 
+[23:20:16] Server Plugins
+[23:20:16] --------------
+[23:20:16]  Loading plugin: mysql
+[23:20:16]  >> plugin.mysql: R41-4 successfully loaded.
+[23:20:16]   Loaded.
+[23:20:16]  Loading plugin: streamer
+[23:20:16] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:20:16]   Loaded.
+[23:20:16]  Loading plugin: sscanf
+[23:20:16] 
+
+[23:20:16]  ===============================
+
+[23:20:16]       sscanf plugin loaded.     
+
+[23:20:16]          Version:  2.8.2        
+
+[23:20:16]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:20:16]  ===============================
+
+[23:20:16]   Loaded.
+[23:20:16]  Loading plugin: nativechecker
+[23:20:16]   Loaded.
+[23:20:16]  Loaded 4 plugins.
+
+[23:20:16] 
+[23:20:16] Filterscripts
+[23:20:16] ---------------
+[23:20:16]   Loaded 0 filterscripts.
+
+[23:20:16] [Server] Uspesne pripojeno k DB!
+[23:20:16] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:20:16] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:20:16] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:20:16] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:20:16] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:20:16] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:20:16] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:20:16] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:20:16] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:20:16] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:20:16] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:20:16] Loaded 168 vehicles from: vehicles/bone.txt
+[23:20:16] Loaded 61 vehicles from: vehicles/flint.txt
+[23:20:16] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:20:16] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:20:16] Total vehicles from files: 1775
+[23:20:16] +---------------------------+
+[23:20:16] |                           |
+[23:20:16] |   Vojna 5 Gangov loaded!  |
+[23:20:16] |                           |
+[23:20:16] +---------------------------+
+[23:20:16] Number of vehicle models: 170
+[23:20:37] [connection] 127.0.0.1:50295 requests connection cookie.
+[23:20:38] [connection] incoming connection: 127.0.0.1:50295 id: 0
+[23:20:39] [join] feof has joined the server (0:127.0.0.1)
+[23:20:45] [part] feof has left the server (0:1)
+[23:22:34] [connection] 127.0.0.1:65409 requests connection cookie.
+[23:22:35] [connection] incoming connection: 127.0.0.1:65409 id: 0
+[23:22:35] [join] feof has joined the server (0:127.0.0.1)
+[23:22:48] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:24:07] filterscripts = ""  (string)
+[23:24:07] 
+[23:24:07] Server Plugins
+[23:24:07] --------------
+[23:24:07]  Loading plugin: mysql
+[23:24:07]  >> plugin.mysql: R41-4 successfully loaded.
+[23:24:07]   Loaded.
+[23:24:07]  Loading plugin: streamer
+[23:24:07] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:24:07]   Loaded.
+[23:24:07]  Loading plugin: sscanf
+[23:24:07] 
+
+[23:24:07]  ===============================
+
+[23:24:07]       sscanf plugin loaded.     
+
+[23:24:07]          Version:  2.8.2        
+
+[23:24:07]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:24:07]  ===============================
+
+[23:24:07]   Loaded.
+[23:24:07]  Loading plugin: nativechecker
+[23:24:07]   Loaded.
+[23:24:07]  Loaded 4 plugins.
+
+[23:24:07] 
+[23:24:07] Filterscripts
+[23:24:07] ---------------
+[23:24:07]   Loaded 0 filterscripts.
+
+[23:24:08] [Server] Uspesne pripojeno k DB!
+[23:24:08] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:24:08] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:24:08] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:24:08] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:24:08] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:24:08] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:24:08] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:24:08] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:24:08] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:24:08] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:24:08] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:24:08] Loaded 168 vehicles from: vehicles/bone.txt
+[23:24:08] Loaded 61 vehicles from: vehicles/flint.txt
+[23:24:08] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:24:08] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:24:08] Total vehicles from files: 1775
+[23:24:08] +---------------------------+
+[23:24:08] |                           |
+[23:24:08] |   Vojna 5 Gangov loaded!  |
+[23:24:08] |                           |
+[23:24:08] +---------------------------+
+[23:24:08] Number of vehicle models: 170
+[23:24:30] [connection] 127.0.0.1:56924 requests connection cookie.
+[23:24:31] [connection] incoming connection: 127.0.0.1:56924 id: 0
+[23:24:31] [join] feof has joined the server (0:127.0.0.1)
+[23:24:39] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:30:24] filterscripts = ""  (string)
+[23:30:24] 
+[23:30:24] Server Plugins
+[23:30:24] --------------
+[23:30:24]  Loading plugin: mysql
+[23:30:24]  >> plugin.mysql: R41-4 successfully loaded.
+[23:30:24]   Loaded.
+[23:30:24]  Loading plugin: streamer
+[23:30:24] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:30:24]   Loaded.
+[23:30:24]  Loading plugin: sscanf
+[23:30:24] 
+
+[23:30:24]  ===============================
+
+[23:30:24]       sscanf plugin loaded.     
+
+[23:30:24]          Version:  2.8.2        
+
+[23:30:24]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:30:24]  ===============================
+
+[23:30:24]   Loaded.
+[23:30:24]  Loading plugin: nativechecker
+[23:30:24]   Loaded.
+[23:30:24]  Loaded 4 plugins.
+
+[23:30:24] 
+[23:30:24] Filterscripts
+[23:30:24] ---------------
+[23:30:24]   Loaded 0 filterscripts.
+
+[23:30:25] [Server] Uspesne pripojeno k DB!
+[23:30:25] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:30:25] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:30:25] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:30:25] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:30:25] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:30:25] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:30:25] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:30:25] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:30:25] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:30:25] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:30:25] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:30:25] Loaded 168 vehicles from: vehicles/bone.txt
+[23:30:25] Loaded 61 vehicles from: vehicles/flint.txt
+[23:30:25] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:30:25] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:30:25] Total vehicles from files: 1775
+[23:30:25] +---------------------------+
+[23:30:25] |                           |
+[23:30:25] |   Vojna 5 Gangov loaded!  |
+[23:30:25] |                           |
+[23:30:25] +---------------------------+
+[23:30:25] Number of vehicle models: 170
+[23:30:48] [connection] 127.0.0.1:59345 requests connection cookie.
+[23:30:49] [connection] incoming connection: 127.0.0.1:59345 id: 0
+[23:30:49] [join] feof has joined the server (0:127.0.0.1)
+[23:30:56] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:34:01] filterscripts = ""  (string)
+[23:34:01] 
+[23:34:01] Server Plugins
+[23:34:01] --------------
+[23:34:01]  Loading plugin: mysql
+[23:34:01]  >> plugin.mysql: R41-4 successfully loaded.
+[23:34:01]   Loaded.
+[23:34:01]  Loading plugin: streamer
+[23:34:01] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:34:01]   Loaded.
+[23:34:01]  Loading plugin: sscanf
+[23:34:01] 
+
+[23:34:01]  ===============================
+
+[23:34:01]       sscanf plugin loaded.     
+
+[23:34:01]          Version:  2.8.2        
+
+[23:34:01]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:34:01]  ===============================
+
+[23:34:01]   Loaded.
+[23:34:01]  Loading plugin: nativechecker
+[23:34:01]   Loaded.
+[23:34:01]  Loaded 4 plugins.
+
+[23:34:01] 
+[23:34:01] Filterscripts
+[23:34:01] ---------------
+[23:34:01]   Loaded 0 filterscripts.
+
+[23:34:01] [Server] Uspesne pripojeno k DB!
+[23:34:01] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:34:01] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:34:01] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:34:01] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:34:01] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:34:01] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:34:01] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:34:01] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:34:01] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:34:01] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:34:01] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:34:01] Loaded 168 vehicles from: vehicles/bone.txt
+[23:34:01] Loaded 61 vehicles from: vehicles/flint.txt
+[23:34:01] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:34:01] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:34:01] Total vehicles from files: 1775
+[23:34:01] +---------------------------+
+[23:34:01] |                           |
+[23:34:01] |   Vojna 5 Gangov loaded!  |
+[23:34:01] |                           |
+[23:34:01] +---------------------------+
+[23:34:01] Number of vehicle models: 170
+[23:34:21] [connection] 127.0.0.1:56568 requests connection cookie.
+[23:34:22] [connection] incoming connection: 127.0.0.1:56568 id: 0
+[23:34:23] [join] feof has joined the server (0:127.0.0.1)
+[23:34:33] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:40:45] filterscripts = ""  (string)
+[23:40:45] 
+[23:40:45] Server Plugins
+[23:40:45] --------------
+[23:40:45]  Loading plugin: mysql
+[23:40:45]  >> plugin.mysql: R41-4 successfully loaded.
+[23:40:45]   Loaded.
+[23:40:45]  Loading plugin: streamer
+[23:40:45] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:40:45]   Loaded.
+[23:40:45]  Loading plugin: sscanf
+[23:40:45] 
+
+[23:40:45]  ===============================
+
+[23:40:45]       sscanf plugin loaded.     
+
+[23:40:45]          Version:  2.8.2        
+
+[23:40:45]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:40:45]  ===============================
+
+[23:40:45]   Loaded.
+[23:40:45]  Loading plugin: nativechecker
+[23:40:45]   Loaded.
+[23:40:45]  Loaded 4 plugins.
+
+[23:40:45] 
+[23:40:45] Filterscripts
+[23:40:45] ---------------
+[23:40:45]   Loaded 0 filterscripts.
+
+[23:40:46] [Server] Uspesne pripojeno k DB!
+[23:40:46] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:40:46] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:40:46] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:40:46] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:40:46] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:40:46] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:40:46] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:40:46] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:40:46] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:40:46] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:40:46] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:40:46] Loaded 168 vehicles from: vehicles/bone.txt
+[23:40:46] Loaded 61 vehicles from: vehicles/flint.txt
+[23:40:46] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:40:46] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:40:46] Total vehicles from files: 1775
+[23:40:46] +---------------------------+
+[23:40:46] |                           |
+[23:40:46] |   Vojna 5 Gangov loaded!  |
+[23:40:46] |                           |
+[23:40:46] +---------------------------+
+[23:40:46] Number of vehicle models: 170
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:43:32] filterscripts = ""  (string)
+[23:43:32] 
+[23:43:32] Server Plugins
+[23:43:32] --------------
+[23:43:32]  Loading plugin: mysql
+[23:43:32]  >> plugin.mysql: R41-4 successfully loaded.
+[23:43:32]   Loaded.
+[23:43:32]  Loading plugin: streamer
+[23:43:32] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:43:32]   Loaded.
+[23:43:32]  Loading plugin: sscanf
+[23:43:32] 
+
+[23:43:32]  ===============================
+
+[23:43:32]       sscanf plugin loaded.     
+
+[23:43:32]          Version:  2.8.2        
+
+[23:43:32]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:43:32]  ===============================
+
+[23:43:32]   Loaded.
+[23:43:32]  Loading plugin: nativechecker
+[23:43:32]   Loaded.
+[23:43:32]  Loaded 4 plugins.
+
+[23:43:32] 
+[23:43:32] Filterscripts
+[23:43:32] ---------------
+[23:43:32]   Loaded 0 filterscripts.
+
+[23:43:32] [Server] Uspesne pripojeno k DB!
+[23:43:32] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:43:32] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:43:32] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:43:32] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:43:32] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:43:32] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:43:32] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:43:32] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:43:32] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:43:32] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:43:32] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:43:32] Loaded 168 vehicles from: vehicles/bone.txt
+[23:43:32] Loaded 61 vehicles from: vehicles/flint.txt
+[23:43:32] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:43:32] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:43:32] Total vehicles from files: 1775
+[23:43:32] +---------------------------+
+[23:43:32] |                           |
+[23:43:32] |   Vojna 5 Gangov loaded!  |
+[23:43:32] |                           |
+[23:43:32] +---------------------------+
+[23:43:32] Number of vehicle models: 170
+[23:44:08] [connection] 127.0.0.1:50365 requests connection cookie.
+[23:44:09] [connection] incoming connection: 127.0.0.1:50365 id: 0
+[23:44:09] [join] feof has joined the server (0:127.0.0.1)
+[23:44:19] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:50:15] filterscripts = ""  (string)
+[23:50:15] 
+[23:50:15] Server Plugins
+[23:50:15] --------------
+[23:50:15]  Loading plugin: mysql
+[23:50:15]  >> plugin.mysql: R41-4 successfully loaded.
+[23:50:15]   Loaded.
+[23:50:15]  Loading plugin: streamer
+[23:50:15] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:50:15]   Loaded.
+[23:50:15]  Loading plugin: sscanf
+[23:50:15] 
+
+[23:50:15]  ===============================
+
+[23:50:15]       sscanf plugin loaded.     
+
+[23:50:15]          Version:  2.8.2        
+
+[23:50:15]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:50:15]  ===============================
+
+[23:50:15]   Loaded.
+[23:50:15]  Loading plugin: nativechecker
+[23:50:15]   Loaded.
+[23:50:15]  Loaded 4 plugins.
+
+[23:50:15] 
+[23:50:15] Filterscripts
+[23:50:15] ---------------
+[23:50:15]   Loaded 0 filterscripts.
+
+[23:50:15] [Server] Uspesne pripojeno k DB!
+[23:50:15] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:50:15] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:50:15] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:50:15] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:50:15] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:50:15] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:50:15] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:50:15] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:50:15] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:50:15] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:50:15] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:50:15] Loaded 168 vehicles from: vehicles/bone.txt
+[23:50:15] Loaded 61 vehicles from: vehicles/flint.txt
+[23:50:15] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:50:15] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:50:15] Total vehicles from files: 1775
+[23:50:15] +---------------------------+
+[23:50:15] |                           |
+[23:50:15] |   Vojna 5 Gangov loaded!  |
+[23:50:15] |                           |
+[23:50:15] +---------------------------+
+[23:50:15] Number of vehicle models: 170
+[23:50:37] [connection] 127.0.0.1:53811 requests connection cookie.
+[23:50:38] [connection] incoming connection: 127.0.0.1:53811 id: 0
+[23:50:38] [join] feof has joined the server (0:127.0.0.1)
+[23:50:46] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:51:27] filterscripts = ""  (string)
+[23:51:27] 
+[23:51:27] Server Plugins
+[23:51:27] --------------
+[23:51:27]  Loading plugin: mysql
+[23:51:27]  >> plugin.mysql: R41-4 successfully loaded.
+[23:51:27]   Loaded.
+[23:51:27]  Loading plugin: streamer
+[23:51:27] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:51:27]   Loaded.
+[23:51:27]  Loading plugin: sscanf
+[23:51:27] 
+
+[23:51:27]  ===============================
+
+[23:51:27]       sscanf plugin loaded.     
+
+[23:51:27]          Version:  2.8.2        
+
+[23:51:27]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:51:27]  ===============================
+
+[23:51:27]   Loaded.
+[23:51:27]  Loading plugin: nativechecker
+[23:51:27]   Loaded.
+[23:51:27]  Loaded 4 plugins.
+
+[23:51:27] 
+[23:51:27] Filterscripts
+[23:51:27] ---------------
+[23:51:27]   Loaded 0 filterscripts.
+
+[23:51:27] [Server] Uspesne pripojeno k DB!
+[23:51:27] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:51:27] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:51:27] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:51:27] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:51:27] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:51:27] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:51:27] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:51:27] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:51:27] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:51:27] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:51:27] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:51:27] Loaded 168 vehicles from: vehicles/bone.txt
+[23:51:27] Loaded 61 vehicles from: vehicles/flint.txt
+[23:51:27] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:51:27] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:51:27] Total vehicles from files: 1775
+[23:51:27] +---------------------------+
+[23:51:27] |                           |
+[23:51:27] |   Vojna 5 Gangov loaded!  |
+[23:51:27] |                           |
+[23:51:27] +---------------------------+
+[23:51:27] Number of vehicle models: 170
+[23:51:46] [connection] 127.0.0.1:63794 requests connection cookie.
+[23:51:47] [connection] incoming connection: 127.0.0.1:63794 id: 0
+[23:51:47] [join] feof has joined the server (0:127.0.0.1)
+[23:51:54] [part] feof has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:53:16] filterscripts = ""  (string)
+[23:53:16] 
+[23:53:16] Server Plugins
+[23:53:16] --------------
+[23:53:16]  Loading plugin: mysql
+[23:53:16]  >> plugin.mysql: R41-4 successfully loaded.
+[23:53:16]   Loaded.
+[23:53:16]  Loading plugin: streamer
+[23:53:16] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:53:16]   Loaded.
+[23:53:16]  Loading plugin: sscanf
+[23:53:16] 
+
+[23:53:16]  ===============================
+
+[23:53:16]       sscanf plugin loaded.     
+
+[23:53:16]          Version:  2.8.2        
+
+[23:53:16]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:53:16]  ===============================
+
+[23:53:16]   Loaded.
+[23:53:16]  Loading plugin: nativechecker
+[23:53:16]   Loaded.
+[23:53:16]  Loaded 4 plugins.
+
+[23:53:16] 
+[23:53:16] Filterscripts
+[23:53:16] ---------------
+[23:53:16]   Loaded 0 filterscripts.
+
+[23:53:16] [Server] Uspesne pripojeno k DB!
+[23:53:16] Loaded 15 vehicles from: vehicles/lv_law.txt
+[23:53:16] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[23:53:16] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[23:53:16] Loaded 38 vehicles from: vehicles/sf_law.txt
+[23:53:16] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[23:53:16] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[23:53:16] Loaded 24 vehicles from: vehicles/ls_law.txt
+[23:53:16] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[23:53:16] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[23:53:16] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[23:53:16] Loaded 71 vehicles from: vehicles/whetstone.txt
+[23:53:16] Loaded 168 vehicles from: vehicles/bone.txt
+[23:53:16] Loaded 61 vehicles from: vehicles/flint.txt
+[23:53:16] Loaded 96 vehicles from: vehicles/tierra.txt
+[23:53:16] Loaded 96 vehicles from: vehicles/red_county.txt
+[23:53:16] Total vehicles from files: 1775
+[23:53:16] +---------------------------+
+[23:53:16] |                           |
+[23:53:16] |   Vojna 5 Gangov loaded!  |
+[23:53:16] |                           |
+[23:53:16] +---------------------------+
+[23:53:16] Number of vehicle models: 170
+[23:53:41] [connection] 127.0.0.1:58393 requests connection cookie.
+[23:53:42] [connection] incoming connection: 127.0.0.1:58393 id: 0
+[23:53:43] [join] _Michael_ has joined the server (0:127.0.0.1)
+[23:53:47] Test
+[23:53:50] [part] _Michael_ has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:38:25] filterscripts = ""  (string)
+[19:38:25] 
+[19:38:25] Server Plugins
+[19:38:25] --------------
+[19:38:25]  Loading plugin: mysql
+[19:38:25]  >> plugin.mysql: R41-4 successfully loaded.
+[19:38:25]   Loaded.
+[19:38:25]  Loading plugin: streamer
+[19:38:25] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:38:25]   Loaded.
+[19:38:25]  Loading plugin: sscanf
+[19:38:25] 
+
+[19:38:25]  ===============================
+
+[19:38:25]       sscanf plugin loaded.     
+
+[19:38:25]          Version:  2.8.2        
+
+[19:38:25]    (c) 2012 Alex "Y_Less" Cole  
+
+[19:38:25]  ===============================
+
+[19:38:25]   Loaded.
+[19:38:25]  Loading plugin: nativechecker
+[19:38:25]   Loaded.
+[19:38:25]  Loaded 4 plugins.
+
+[19:38:25] 
+[19:38:25] Filterscripts
+[19:38:25] ---------------
+[19:38:25]   Loaded 0 filterscripts.
+
+[19:38:25] [Server] Uspesne pripojeno k DB!
+[19:38:25] Loaded 15 vehicles from: vehicles/lv_law.txt
+[19:38:25] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[19:38:25] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[19:38:25] Loaded 38 vehicles from: vehicles/sf_law.txt
+[19:38:25] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[19:38:25] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[19:38:25] Loaded 24 vehicles from: vehicles/ls_law.txt
+[19:38:25] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[19:38:25] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[19:38:25] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[19:38:25] Loaded 71 vehicles from: vehicles/whetstone.txt
+[19:38:25] Loaded 168 vehicles from: vehicles/bone.txt
+[19:38:25] Loaded 61 vehicles from: vehicles/flint.txt
+[19:38:25] Loaded 96 vehicles from: vehicles/tierra.txt
+[19:38:25] Loaded 96 vehicles from: vehicles/red_county.txt
+[19:38:25] Total vehicles from files: 1775
+[19:38:25] +---------------------------+
+[19:38:25] |                           |
+[19:38:25] |   Vojna 5 Gangov loaded!  |
+[19:38:25] |                           |
+[19:38:25] +---------------------------+
+[19:38:25] Number of vehicle models: 170
+[19:38:52] [connection] 127.0.0.1:57000 requests connection cookie.
+[19:38:53] [connection] incoming connection: 127.0.0.1:57000 id: 0
+[19:38:54] [join] _Michael_ has joined the server (0:127.0.0.1)
+[19:39:18] Test
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:00:22] filterscripts = ""  (string)
+[20:00:22] 
+[20:00:22] Server Plugins
+[20:00:22] --------------
+[20:00:22]  Loading plugin: mysql
+[20:00:22]  >> plugin.mysql: R41-4 successfully loaded.
+[20:00:22]   Loaded.
+[20:00:22]  Loading plugin: streamer
+[20:00:22] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[20:00:22]   Loaded.
+[20:00:22]  Loading plugin: sscanf
+[20:00:22] 
+
+[20:00:22]  ===============================
+
+[20:00:22]       sscanf plugin loaded.     
+
+[20:00:22]          Version:  2.8.2        
+
+[20:00:22]    (c) 2012 Alex "Y_Less" Cole  
+
+[20:00:22]  ===============================
+
+[20:00:22]   Loaded.
+[20:00:22]  Loading plugin: nativechecker
+[20:00:22]   Loaded.
+[20:00:22]  Loaded 4 plugins.
+
+[20:00:22] 
+[20:00:22] Filterscripts
+[20:00:22] ---------------
+[20:00:22]   Loaded 0 filterscripts.
+
+[20:00:22] I have connected to the MySQL server.
+[20:00:22] Loaded 15 vehicles from: vehicles/lv_law.txt
+[20:00:22] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[20:00:22] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[20:00:22] Loaded 38 vehicles from: vehicles/sf_law.txt
+[20:00:22] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[20:00:22] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[20:00:22] Loaded 24 vehicles from: vehicles/ls_law.txt
+[20:00:22] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[20:00:22] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[20:00:22] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[20:00:22] Loaded 71 vehicles from: vehicles/whetstone.txt
+[20:00:22] Loaded 168 vehicles from: vehicles/bone.txt
+[20:00:22] Loaded 61 vehicles from: vehicles/flint.txt
+[20:00:22] Loaded 96 vehicles from: vehicles/tierra.txt
+[20:00:22] Loaded 96 vehicles from: vehicles/red_county.txt
+[20:00:22] Total vehicles from files: 1775
+[20:00:22] +---------------------------+
+[20:00:22] |                           |
+[20:00:22] |   Vojna 5 Gangov loaded!  |
+[20:00:22] |                           |
+[20:00:22] +---------------------------+
+[20:00:22] Number of vehicle models: 170
+[20:00:44] [connection] 127.0.0.1:57158 requests connection cookie.
+[20:00:45] [connection] incoming connection: 127.0.0.1:57158 id: 0
+[20:00:45] [join] _Michael_ has joined the server (0:127.0.0.1)
+[20:00:53] [part] _Michael_ has left the server (0:1)
+[20:01:17] [connection] 127.0.0.1:65296 requests connection cookie.
+[20:01:18] [connection] incoming connection: 127.0.0.1:65296 id: 0
+[20:01:19] [join] _Michael_ has joined the server (0:127.0.0.1)
+[20:01:41] _Michael_ has been failed to login. (1)
+[20:01:43] _Michael_ has been failed to login. (2)
+[20:01:45] _Michael_ has been failed to login. (3)
+[20:01:45] [part] _Michael_ has left the server (0:2)
+[20:02:10] [connection] 127.0.0.1:55398 requests connection cookie.
+[20:02:11] [connection] incoming connection: 127.0.0.1:55398 id: 0
+[20:02:12] [join] kojot has joined the server (0:127.0.0.1)
+[20:02:21] [part] kojot has left the server (0:1)
+[20:02:46] [connection] 127.0.0.1:61714 requests connection cookie.
+[20:02:47] [connection] incoming connection: 127.0.0.1:61714 id: 0
+[20:02:48] [join] kojot has joined the server (0:127.0.0.1)
+[20:02:51] kojot has been failed to login. (1)
+[20:02:53] kojot has been failed to login. (2)
+[20:02:54] [part] kojot has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:03:34] filterscripts = ""  (string)
+[20:03:34] 
+[20:03:34] Server Plugins
+[20:03:34] --------------
+[20:03:34]  Loading plugin: mysql
+[20:03:35]  >> plugin.mysql: R41-4 successfully loaded.
+[20:03:35]   Loaded.
+[20:03:35]  Loading plugin: streamer
+[20:03:35] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[20:03:35]   Loaded.
+[20:03:35]  Loading plugin: sscanf
+[20:03:35] 
+
+[20:03:35]  ===============================
+
+[20:03:35]       sscanf plugin loaded.     
+
+[20:03:35]          Version:  2.8.2        
+
+[20:03:35]    (c) 2012 Alex "Y_Less" Cole  
+
+[20:03:35]  ===============================
+
+[20:03:35]   Loaded.
+[20:03:35]  Loading plugin: nativechecker
+[20:03:35]   Loaded.
+[20:03:35]  Loaded 4 plugins.
+
+[20:03:35] 
+[20:03:35] Filterscripts
+[20:03:35] ---------------
+[20:03:35]   Loaded 0 filterscripts.
+
+[20:03:35] I have connected to the MySQL server.
+[20:03:35] Loaded 15 vehicles from: vehicles/lv_law.txt
+[20:03:35] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[20:03:35] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[20:03:35] Loaded 38 vehicles from: vehicles/sf_law.txt
+[20:03:35] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[20:03:35] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[20:03:35] Loaded 24 vehicles from: vehicles/ls_law.txt
+[20:03:35] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[20:03:35] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[20:03:35] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[20:03:35] Loaded 71 vehicles from: vehicles/whetstone.txt
+[20:03:35] Loaded 168 vehicles from: vehicles/bone.txt
+[20:03:35] Loaded 61 vehicles from: vehicles/flint.txt
+[20:03:35] Loaded 96 vehicles from: vehicles/tierra.txt
+[20:03:35] Loaded 96 vehicles from: vehicles/red_county.txt
+[20:03:35] Total vehicles from files: 1775
+[20:03:35] +---------------------------+
+[20:03:35] |                           |
+[20:03:35] |   Vojna 5 Gangov loaded!  |
+[20:03:35] |                           |
+[20:03:35] +---------------------------+
+[20:03:35] Number of vehicle models: 170
+[20:03:53] [connection] 127.0.0.1:58599 requests connection cookie.
+[20:03:54] [connection] incoming connection: 127.0.0.1:58599 id: 0
+[20:03:55] [join] kojot has joined the server (0:127.0.0.1)
+[20:03:59] kojot has been failed to login. (1)
+[20:04:00] [part] kojot has left the server (0:2)
+[20:04:31] [connection] 127.0.0.1:50980 requests connection cookie.
+[20:04:32] [connection] incoming connection: 127.0.0.1:50980 id: 0
+[20:04:32] [join] kokotpicajebanec has joined the server (0:127.0.0.1)
+[20:04:38] [part] kokotpicajebanec has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:01:02] filterscripts = ""  (string)
+[21:01:02] 
+[21:01:02] Server Plugins
+[21:01:02] --------------
+[21:01:02]  Loading plugin: mysql
+[21:01:02]  >> plugin.mysql: R41-4 successfully loaded.
+[21:01:02]   Loaded.
+[21:01:02]  Loading plugin: streamer
+[21:01:02] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[21:01:02]   Loaded.
+[21:01:02]  Loading plugin: sscanf
+[21:01:02] 
+
+[21:01:02]  ===============================
+
+[21:01:02]       sscanf plugin loaded.     
+
+[21:01:02]          Version:  2.8.2        
+
+[21:01:02]    (c) 2012 Alex "Y_Less" Cole  
+
+[21:01:02]  ===============================
+
+[21:01:02]   Loaded.
+[21:01:02]  Loading plugin: nativechecker
+[21:01:02]   Loaded.
+[21:01:02]  Loaded 4 plugins.
+
+[21:01:02] 
+[21:01:02] Filterscripts
+[21:01:02] ---------------
+[21:01:02]   Loaded 0 filterscripts.
+
+[21:01:02] Loaded 15 vehicles from: vehicles/lv_law.txt
+[21:01:02] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[21:01:02] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[21:01:02] Loaded 38 vehicles from: vehicles/sf_law.txt
+[21:01:02] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[21:01:02] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[21:01:02] Loaded 24 vehicles from: vehicles/ls_law.txt
+[21:01:02] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[21:01:02] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[21:01:02] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[21:01:02] Loaded 71 vehicles from: vehicles/whetstone.txt
+[21:01:02] Loaded 168 vehicles from: vehicles/bone.txt
+[21:01:02] Loaded 61 vehicles from: vehicles/flint.txt
+[21:01:02] Loaded 96 vehicles from: vehicles/tierra.txt
+[21:01:02] Loaded 96 vehicles from: vehicles/red_county.txt
+[21:01:02] Total vehicles from files: 1775
+[21:01:03] I have connected to the MySQL server.
+[21:01:03] +---------------------------+
+[21:01:03] |                           |
+[21:01:03] |   Vojna 5 Gangov loaded!  |
+[21:01:03] |                           |
+[21:01:03] +---------------------------+
+[21:01:03] Number of vehicle models: 170
+[21:01:31] [connection] 127.0.0.1:58733 requests connection cookie.
+[21:01:32] [connection] incoming connection: 127.0.0.1:58733 id: 0
+[21:01:32] [join] pojebanec has joined the server (0:127.0.0.1)
+[21:01:39] OnPlayerDisconnect has been called.
+[21:01:39] [part] pojebanec has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:03:25] filterscripts = ""  (string)
+[21:03:25] 
+[21:03:25] Server Plugins
+[21:03:25] --------------
+[21:03:25]  Loading plugin: mysql
+[21:03:25]  >> plugin.mysql: R41-4 successfully loaded.
+[21:03:25]   Loaded.
+[21:03:25]  Loading plugin: streamer
+[21:03:25] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[21:03:25]   Loaded.
+[21:03:25]  Loading plugin: sscanf
+[21:03:25] 
+
+[21:03:25]  ===============================
+
+[21:03:25]       sscanf plugin loaded.     
+
+[21:03:25]          Version:  2.8.2        
+
+[21:03:25]    (c) 2012 Alex "Y_Less" Cole  
+
+[21:03:25]  ===============================
+
+[21:03:25]   Loaded.
+[21:03:25]  Loading plugin: nativechecker
+[21:03:25]   Loaded.
+[21:03:25]  Loaded 4 plugins.
+
+[21:03:25] 
+[21:03:25] Filterscripts
+[21:03:25] ---------------
+[21:03:25]   Loaded 0 filterscripts.
+
+[21:03:25] Loaded 15 vehicles from: vehicles/lv_law.txt
+[21:03:25] Loaded 39 vehicles from: vehicles/lv_airport.txt
+[21:03:25] Loaded 255 vehicles from: vehicles/lv_gen.txt
+[21:03:25] Loaded 38 vehicles from: vehicles/sf_law.txt
+[21:03:25] Loaded 35 vehicles from: vehicles/sf_airport.txt
+[21:03:25] Loaded 353 vehicles from: vehicles/sf_gen.txt
+[21:03:25] Loaded 24 vehicles from: vehicles/ls_law.txt
+[21:03:25] Loaded 37 vehicles from: vehicles/ls_airport.txt
+[21:03:25] Loaded 98 vehicles from: vehicles/ls_gen_inner.txt
+[21:03:25] Loaded 389 vehicles from: vehicles/ls_gen_outer.txt
+[21:03:25] Loaded 71 vehicles from: vehicles/whetstone.txt
+[21:03:25] Loaded 168 vehicles from: vehicles/bone.txt
+[21:03:25] Loaded 61 vehicles from: vehicles/flint.txt
+[21:03:25] Loaded 96 vehicles from: vehicles/tierra.txt
+[21:03:25] Loaded 96 vehicles from: vehicles/red_county.txt
+[21:03:25] Total vehicles from files: 1775
+[21:03:25] I have connected to the MySQL server.
+[21:03:25] +---------------------------+
+[21:03:25] |                           |
+[21:03:25] |   Vojna 5 Gangov loaded!  |
+[21:03:25] |                           |
+[21:03:25] +---------------------------+
+[21:03:25] Number of vehicle models: 170
+[21:03:47] [connection] 127.0.0.1:59753 requests connection cookie.
+[21:03:48] [connection] incoming connection: 127.0.0.1:59753 id: 0
+[21:03:48] [join] JebatNaToDoPice has joined the server (0:127.0.0.1)
+[21:03:59] OnPlayerDisconnect has been called.
+[21:03:59] [part] JebatNaToDoPice has left the server (0:1)
+[21:04:20] [connection] 127.0.0.1:62648 requests connection cookie.
+[21:04:21] [connection] incoming connection: 127.0.0.1:62648 id: 0
+[21:04:21] [join] JebatNaToDoPice has joined the server (0:127.0.0.1)
+[21:04:25] JebatNaToDoPice has been failed to login. (1)
+[21:04:30] OnPlayerDisconnect has been called.
+[21:04:30] [part] JebatNaToDoPice has left the server (0:1)

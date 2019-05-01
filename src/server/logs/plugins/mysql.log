@@ -1,0 +1,1 @@
+[23:13:32] [ERROR] error #1146 while executing query "UPDATE `players` SET `SCORE` = 0, `CASH` = 0, `KILLS` = 0, `DEATHS` = 0 WHERE `ID` = 0 LIMIT 1": Table '294332_mysql_db.players' doesn't exist
