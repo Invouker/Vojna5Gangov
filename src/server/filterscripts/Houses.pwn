@@ -40,12 +40,14 @@ enum E_HOUSE_INFO {
 	Cache: cache,
 	
 	pickup,
-	Text3D:labelText
+	iPickup,
+	Text3D:labelText,
+	cp
 }
 
 new Float:HouseIntPOS[][] =
 {
-	{2496.049804,-1695.238159,1014.742187}, // CJ's HOUSE
+	{2496.049804,-1695.238159,1014.742187} // CJ's HOUSE
 };
 
 new Float:HouseIntPickUp[][] =
@@ -93,6 +95,7 @@ public LoadHouse(houseid)
 
 		RenderHouse(houseid); // vygeneruje pickup, 3dtext a podobnÈ veci k domu
 		TotalLoaded++;
+		
 		cache_unset_active();
 	}
 }
@@ -122,6 +125,25 @@ stock RenderHouse(houseid)
 		HouseInfo[houseid][pickup] = CreateDynamicPickup(1273, 1, HouseInfo[houseid][x], HouseInfo[houseid][y], HouseInfo[houseid][z], -1,-1);
 	}
 	
+	if(!IsValidDynamicCP(HouseInfo[houseid][cp])){
+	HouseInfo[houseid][cp] = CreateDynamicCP(
+		HouseIntPosExit[ HouseInfo[houseid][interier] ][0], // zÌska, ak˝ interier m· osadiù, n·sledne vytiahne v˝chod X s˙radnicu
+		HouseIntPosExit[ HouseInfo[houseid][interier] ][1],// zÌska, ak˝ interier m· osadiù, n·sledne vytiahne v˝chod Y s˙radnicu
+		HouseIntPosExit[ HouseInfo[houseid][interier] ][2],// zÌska, ak˝ interier m· osadiù, n·sledne vytiahne v˝chod Z s˙radnicu
+		1.5, houseid, HouseIntID[ HouseInfo[houseid][interier] ][0]);
+	}
+	
+	if(!IsValidDynamicPickup(HouseInfo[houseid][iPickup])){ // kontrolujem, Ëi existuje, ak nie vyvorÌ sa
+		HouseInfo[houseid][iPickup] = CreateDynamicPickup(1277, 1,
+ 		HouseIntPickUp[ HouseInfo[houseid][interier] ][0],
+		HouseIntPickUp[ HouseInfo[houseid][interier] ][1],
+ 		HouseIntPickUp[ HouseInfo[houseid][interier] ][2],
+		 houseid, HouseIntID[ HouseInfo[houseid][interier] ][0]);
+	}
+ //1277 SAVE ICON
+	
+	printf("X:%f, Y:%f, Z:%f ", HouseIntPosExit[ HouseInfo[houseid][interier] ][0], HouseIntPosExit[ HouseInfo[houseid][interier] ][1], HouseIntPosExit[ HouseInfo[houseid][interier] ][2]);
+	printf("\nHouseID: %d, InteriorID: %d", houseid, HouseIntID[ HouseInfo[houseid][interier] ][0]);
 	UpdateDynamic3DTextLabelText(HouseInfo[houseid][labelText], -1, houseText); // updatujem 3D text
 }
 
@@ -140,6 +162,8 @@ CMD:pos(playerid, params[])
 {
 	#pragma unused params
 	SCM(playerid, COLOR_RED, "Bol si teleportovan˝!");
+	SetPlayerInterior(playerid, 0);
+	SetPlayerVirtualWorld(playerid, 0);
 	SetPlayerPos(playerid, 2136.9878,-1457.1827,23.9723);
 	return 1;
 }
@@ -165,6 +189,14 @@ CMD:isvalid(playerid, params[])
 	return 1;
 }
 
+CMD:vw(playerid)
+{
+	new str[128];
+	format(str, sizeof(str), "Tvoj interier: %d a VW: %d kde sa nach·dzaö: ", GetPlayerInterior(playerid), GetPlayerVirtualWorld(playerid));
+	SCMF(str);
+	return 1;
+}
+
 CMD:createhouse(playerid, params[])
 {
 	new hPrice, interiorID, hIsVip;
@@ -179,24 +211,6 @@ CMD:createhouse(playerid, params[])
   			new hID = TotalLoaded + 1;
 		    if(hID < MAX_HOUSES)
 			{
-				/*
-		owner[24+1],
-		bool:isOwned,
-		bool:isLocked,
-		price,
-		interier,
-
-		Float:x,
-		Float:y,
-		Float:z,
-
-		bool:isVip,
-
-		Cache: cache,
-
-		pickup,
-		Text3D:labelText
-				*/
 				format(HouseInfo[hID][owner], MAX_PLAYER_NAME + 1, "%s", DEFAULT_HOUSE_OWNER);
 				HouseInfo[hID][price] = hPrice;
 				HouseInfo[hID][interier] = interiorID;
@@ -220,9 +234,7 @@ CMD:createhouse(playerid, params[])
 				mysql_tquery(Database, string);
                 
                 TotalLoaded++;
-				//HouseIntPos[ HouseInfo[hID][interier] ] [0], HouseIntPos[ HouseInfo[hID][interier] ] [1], HouseIntPos[ HouseInfo[hID][interier] ] [2]
-
-				//HouseIntPOS[ ID INTERIERU ] [ POS 0,1,2 ];
+				
 			}else SCMF("Bol prekroËen˝ limit domov na servery!");
 		}
 	}
@@ -288,9 +300,11 @@ public OnFilterScriptExit()
 {
 	for(new id = 0; id < MAX_HOUSES; id++){
  		SaveHouse(id);
+ 		
 		DestroyDynamicPickup(HouseInfo[id][pickup]);
 		DestroyDynamic3DTextLabel(HouseInfo[id][labelText]);
-
+        DestroyDynamicCP(HouseInfo[id][cp]);
+        
 		HouseInfo[id][owner] = INVALID_HOUSE_OWNER;
 		HouseInfo[id][isOwned] = false;
 		
@@ -316,14 +330,29 @@ public OnFilterScriptExit()
 }
 
 
+public OnPlayerEnterDynamicCP(playerid, checkpointid)
+{
+	for(new houseID; houseID < MAX_HOUSES; houseID++)
+	{
+		if(checkpointid == HouseInfo[houseID][cp])
+		{
+		    SetPlayerPos(playerid, HouseInfo[houseID][x], HouseInfo[houseID][y], HouseInfo[houseID][z]);
+		    SetPlayerVirtualWorld(playerid, 0);
+			SetPlayerInterior(playerid, 0);
+			break;
+		}
+	}
+	return 1;
+}
+
 public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 {
 	for(new houseID; houseID < MAX_HOUSES; houseID++)
 	{
 		if(pickupid == HouseInfo[houseID][pickup])
 		{
-			if(!Dialog_Opened(playerid)){
-			//OznaËÌm hr·Ëa a uloûÌm do ktorÈho domu voöiel
+	        if(Dialog_Opened(playerid))
+			{
 				HouseEnter[playerid] = houseID; // nastavÌm global variable pre kaûdÈho hr·Ëa
 				if(HouseInfo[houseID][isOwned])
 				{
@@ -336,9 +365,8 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 
 					Dialog_Show(playerid, HouseMenu, DIALOG_STYLE_LIST, "Dom", dialogText, "Select", "Cancel"); // aj je niekto majitel,
 				} else Dialog_Show(playerid, BuyHouse, DIALOG_STYLE_LIST, "K˙più Dom", "K˙più dom\n???\nPridat Peniaze", "Select", "Cancel"); // ak nieje nikto majitel
-			    
+				break;
 			}
-			break;
 		}
 	}
 	return 1;
@@ -356,7 +384,22 @@ Dialog:HouseMenu(playerid, response, listitem, inputtext[])
 					{
 		   				//dom je zamknut˝
 	    	    		SCMF("Dom je zamknut˝, nemÙûeö do neho vst˙più!");
+	    	    		Dialog_Close(playerid);
 					}else{
+					
+						//HouseIntPos[ HouseInfo[hID][interier] ] [0], HouseIntPos[ HouseInfo[hID][interier] ] [1], HouseIntPos[ HouseInfo[hID][interier] ] [2]
+
+						//HouseIntPOS[ ID INTERIERU ] [ POS 0,1,2 ];
+
+						SetPlayerPos(playerid,
+						HouseIntPOS[ HouseInfo[HouseEnter[playerid]][interier] ][0],
+						HouseIntPOS[ HouseInfo[HouseEnter[playerid]][interier] ][1],
+						HouseIntPOS[ HouseInfo[HouseEnter[playerid]][interier] ][2]);
+						
+						SetPlayerVirtualWorld(playerid, HouseEnter[playerid]);
+						SetPlayerInterior(playerid, HouseIntID[ HouseInfo[HouseEnter[playerid]][interier] ][0]);
+						
+					    Dialog_Close(playerid);
 						//dom je odomknut˝, samotn˝ vstup do interiera!
 					}
 				}else Dialog_Close(playerid); // neplatn˝ vstup, ID domu
@@ -372,6 +415,7 @@ Dialog:HouseMenu(playerid, response, listitem, inputtext[])
 						SCMF("zamkol si dom!");
 						HouseInfo[HouseEnter[playerid]][isLocked] = true;
 					}
+					Dialog_Close(playerid);
                 }
 			}
 		}
@@ -412,6 +456,7 @@ Dialog:BuyHouse(playerid, response, listitem, inputtext[])
 			}
    			case 2:{
      			PlayerInfo[playerid][Cash] += 10000;
+     			Dialog_Close(playerid);
 			}
 		}
 	}else Dialog_Close(playerid);
