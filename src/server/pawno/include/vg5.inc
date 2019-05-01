@@ -3,6 +3,12 @@
 #define MYSQL_PASS "123456"
 #define MYSQL_DATABASE "294332_mysql_db"
 
+#define COLOR_RED 0xFF0000
+#define COLOR_GREEN 0X00FF00
+
+#define STREAM_DISTANCE_3DTEXT 300
+#define STREAM_DISTANCE_PICKUP 300
+
 #undef MAX_PLAYERS
 #define MAX_PLAYERS 	100
 
@@ -16,7 +22,6 @@
 
 #pragma unused ret_memcpy
 
-
 enum E_PLAYER_DATA
 {
     ID,
@@ -29,7 +34,8 @@ enum E_PLAYER_DATA
     Score,
     Cash,
     Cache: Player_Cache,
-    bool:LoggedIn
+    bool:LoggedIn,
+    Vip
 }
 new PlayerInfo[MAX_PLAYERS][E_PLAYER_DATA];
 
