@@ -1,10 +1,16 @@
+#include <dutils>
+#include <easyDialog>
+#include <streamer>
+#include <sscanf2>
+#include <izcmd>
+#include <vg5_callbacks>
+#include <vg5_colors>
+
+
 #define MYSQL_HOST "casa1.fakaheda.eu"
 #define MYSQL_USER "294332_mysql_db"
 #define MYSQL_PASS "123456"
 #define MYSQL_DATABASE "294332_mysql_db"
-
-#define COLOR_RED 0xFF0000
-#define COLOR_GREEN 0X00FF00
 
 #define STREAM_DISTANCE_3DTEXT 300
 #define STREAM_DISTANCE_PICKUP 300
@@ -62,4 +68,3 @@ stock split(const strsrc[], strdest[][], delimiter)
 	}
 	return 1;
 }
-

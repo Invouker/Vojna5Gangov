@@ -1,27 +1,20 @@
-
 #include <a_samp>
-#include <sscanf2>
-#include <izcmd>
+
 #include <a_mysql>
 #include <a_zones>
-#include <streamer>
+
 #include <vg5>
-#include <easyDialog>
-#include <dutils>
-#include <vg5callbacks>
-#include <vg5languages>
+#include <vg5_languages>
+
 
 #define SCM SendClientMessage
 #define SCMF(%0) SendClientMessage(playerid, -1, %0)
 
-#define MAX_HOUSES 10
+#define MAX_HOUSES 20
 #define DEFAULT_HOUSE_OWNER "Mesto"
 #define INVALID_HOUSE_OWNER '\0'
 #define INVALID_HOUSE -1
 
-
-// STREAM_DISTANCE_3DTEXT
-// STREAM_DISTANCE_PICKUP
 new MySQL: Database;
 
 enum E_HOUSE_INFO {
@@ -39,35 +32,55 @@ enum E_HOUSE_INFO {
 
 	Cache: cache,
 	
-	pickup,
-	iPickup,
-	Text3D:labelText,
-	cp
+	pickup, // pickup zeleneho domËeka
+	iPickup, // pickup v interiery
+	Text3D:labelText, // 3D Text vonku
+	cp // exit Checkpoint
 }
 
 new Float:HouseIntPOS[][] =
 {
-	{2496.049804,-1695.238159,1014.742187} // CJ's HOUSE
+	{2496.049804,-1695.238159,1014.742187}, // CJ's HOUSE
+	{2262.83,-1137.71,1050.63}, // Red Bed Motel Room
+	{2260.76,-1210.45,1049.02}, // Hashbury House
+	{1299.3243,-791.4959,1084.0078}, // Madd Doggs Mansion
+	{2365.42,-1131.85,1050.88}, // Verdant Bluffs Safehouse
+	{2324.33,-1144.79,1050.71} // Unused Safe House
 };
 
 new Float:HouseIntPickUp[][] =
 {
-	{2496.1025,-1711.1698,1014.7422} // v interiery pickup
+	{2496.1025,-1711.1698,1014.7422}, // v interiery pickup
+	{2267.1716,-1134.4962,1050.6328},
+	{2249.1780,-1208.7275,1049.0234},
+	{1266.0884,-792.2115,1084.0078},
+	{2366.9988,-1121.0509,1050.8750},
+	{2338.1279,-1141.0211,1054.3047}
 };
 
 new Float:HouseIntPosExit[][] =
 {
-	{2495.9302,-1693.0852,1014.7422} //EXIT CJ
+	{2495.9302,-1693.0852,1014.7422}, //EXIT CJ
+	{2259.9971,-1135.9393,1050.6328},
+	{2269.3171,-1210.4183,1047.5625},
+	{1298.9766,-795.2381,1084.0078},
+	{2365.3027,-1135.0200,1050.8750},
+	{2324.4236,-1148.4510,1050.7101}
 };
 
 new HouseIntID[][1] =
 {
-	{3} // OK
+	{3}, // OK
+ 	{10},
+ 	{10},
+ 	{5},
+ 	{8},
+ 	{12}
 };
 
-new HouseInfo[MAX_HOUSES][E_HOUSE_INFO];
-new HouseEnter[MAX_PLAYERS] = -1;
-new TotalLoaded;
+new HouseInfo[MAX_HOUSES][E_HOUSE_INFO]; // celkovÈ ukldanie d·ù do pam‰te
+new HouseEnter[MAX_PLAYERS] = -1; // Zistenie, do ktorÈho hr·Ë veöiel pomocou pickupu pre dalöe spravovanie domu
+new TotalLoaded; // poËet, aby som zistil akÈ ID m· posledn˝ vytvoren˝ dom ( naËÌtan˝ )
 
 forward LoadHouse(houseid);
 public LoadHouse(houseid)
@@ -75,7 +88,7 @@ public LoadHouse(houseid)
 	if(cache_num_rows() > 0) // ak neobsahuje niË, nenaËÌta sa niË...
 	{
 		printf("LOADING HOUSE ID: %d", houseid);
-	 	HouseInfo[houseid][cache] = cache_save();
+	 	HouseInfo[houseid][cache] = cache_save(); // uloûenie cache, idk for what
 
 	 	cache_set_active(HouseInfo[houseid][cache]);
 	 	
@@ -100,7 +113,7 @@ public LoadHouse(houseid)
 	}
 }
 
-stock RenderHouse(houseid)
+stock RenderHouse(houseid) // funkcia na znovu vykreslenie domu
 {
 	//Render Textdraw, pickup pre domy
 	// Get2DZone(Float:x, Float:y, Float:z, zone[], len);
@@ -125,7 +138,7 @@ stock RenderHouse(houseid)
 		HouseInfo[houseid][pickup] = CreateDynamicPickup(1273, 1, HouseInfo[houseid][x], HouseInfo[houseid][y], HouseInfo[houseid][z], -1,-1);
 	}
 	
-	if(!IsValidDynamicCP(HouseInfo[houseid][cp])){
+	if(!IsValidDynamicCP(HouseInfo[houseid][cp])){ // kontrolujem, Ëi existuje, ak nie vyvorÌ sa
 	HouseInfo[houseid][cp] = CreateDynamicCP(
 		HouseIntPosExit[ HouseInfo[houseid][interier] ][0], // zÌska, ak˝ interier m· osadiù, n·sledne vytiahne v˝chod X s˙radnicu
 		HouseIntPosExit[ HouseInfo[houseid][interier] ][1],// zÌska, ak˝ interier m· osadiù, n·sledne vytiahne v˝chod Y s˙radnicu
@@ -134,16 +147,13 @@ stock RenderHouse(houseid)
 	}
 	
 	if(!IsValidDynamicPickup(HouseInfo[houseid][iPickup])){ // kontrolujem, Ëi existuje, ak nie vyvorÌ sa
-		HouseInfo[houseid][iPickup] = CreateDynamicPickup(1277, 1,
- 		HouseIntPickUp[ HouseInfo[houseid][interier] ][0],
+		HouseInfo[houseid][iPickup] = CreateDynamicPickup(1277, 1, // VytvorÌ sa v dome pickup, v ktorom budu mÙcù hr·Ëi
+ 		HouseIntPickUp[ HouseInfo[houseid][interier] ][0], // nastavovaù, ukladaù, poprÌpade vÙjsù do gar·ûe..
 		HouseIntPickUp[ HouseInfo[houseid][interier] ][1],
  		HouseIntPickUp[ HouseInfo[houseid][interier] ][2],
 		 houseid, HouseIntID[ HouseInfo[houseid][interier] ][0]);
 	}
- //1277 SAVE ICON
-	
-	printf("X:%f, Y:%f, Z:%f ", HouseIntPosExit[ HouseInfo[houseid][interier] ][0], HouseIntPosExit[ HouseInfo[houseid][interier] ][1], HouseIntPosExit[ HouseInfo[houseid][interier] ][2]);
-	printf("\nHouseID: %d, InteriorID: %d", houseid, HouseIntID[ HouseInfo[houseid][interier] ][0]);
+
 	UpdateDynamic3DTextLabelText(HouseInfo[houseid][labelText], -1, houseText); // updatujem 3D text
 }
 
@@ -177,18 +187,20 @@ CMD:hspos(playerid, params[])
 	return 1;
 }
 
-CMD:isvalid(playerid, params[])
+CMD:interier(playerid, params[])
 {
-	#pragma unused params
-	for(new i; i < MAX_HOUSES; i++){
-        if(!IsValidDynamic3DTextLabel(HouseInfo[i][labelText]))
-		{
-		SCMF("Nieje valid!");
-		}
-	}
+	new hid,inter;
+	if(sscanf(params, "ii", hid, inter)) return SCM(playerid, -1, "/interier <houseid> <interierID>");
+	HouseInfo[hid][interier] = inter;
+	
+	DestroyDynamicPickup(HouseInfo[hid][iPickup]); // pre obnovu
+	DestroyDynamicCP(HouseInfo[hid][cp]); // pre obnovu
+	
+	RenderHouse(hid); // vyrenderujeme to znova
+	
+	SCMF("Zmenil si interier!");
 	return 1;
 }
-
 CMD:vw(playerid)
 {
 	new str[128];
@@ -248,8 +260,8 @@ stock SaveHouse(houseid)
 	if(isnull(HouseInfo[houseid][owner])) return 0;
 
 	new query[384];
-    mysql_format(Database, query, sizeof(query), "UPDATE `houses` SET `owner`='%e', `price`='%d', `isVip`='%d', `x`='%f', `y`='%f', `z`='%f' WHERE `id`='%i' LIMIT 1",
-	HouseInfo[houseid][owner], HouseInfo[houseid][price], 1, HouseInfo[houseid][x], HouseInfo[houseid][y], HouseInfo[houseid][z], houseid);
+    mysql_format(Database, query, sizeof(query), "UPDATE `houses` SET `owner`='%e', `price`='%d', `isVip`='%d', `x`='%f', `y`='%f', `z`='%f', `interier`='%d' WHERE `id`='%i' LIMIT 1",
+	HouseInfo[houseid][owner], HouseInfo[houseid][price], 1, HouseInfo[houseid][x], HouseInfo[houseid][y], HouseInfo[houseid][z],HouseInfo[houseid][interier], houseid);
 	if(isnull(query)) return 0;
 	else mysql_tquery(Database, query);
 	return 1;
@@ -280,7 +292,7 @@ public OnFilterScriptInit()
 	
 	print(" House system loading...");
 	print("--------------------------------------\n");
-	timerTesting = SetTimer("saveHouses", 1000*20, true);
+	timerTesting = SetTimer("saveHouses", 1000*30, true);
 	return 1;
 }
 
@@ -302,8 +314,9 @@ public OnFilterScriptExit()
  		SaveHouse(id);
  		
 		DestroyDynamicPickup(HouseInfo[id][pickup]);
+		DestroyDynamicPickup(HouseInfo[id][iPickup]);
+		DestroyDynamicCP(HouseInfo[id][cp]);
 		DestroyDynamic3DTextLabel(HouseInfo[id][labelText]);
-        DestroyDynamicCP(HouseInfo[id][cp]);
         
 		HouseInfo[id][owner] = INVALID_HOUSE_OWNER;
 		HouseInfo[id][isOwned] = false;
@@ -336,9 +349,13 @@ public OnPlayerEnterDynamicCP(playerid, checkpointid)
 	{
 		if(checkpointid == HouseInfo[houseID][cp])
 		{
-		    SetPlayerPos(playerid, HouseInfo[houseID][x], HouseInfo[houseID][y], HouseInfo[houseID][z]);
-		    SetPlayerVirtualWorld(playerid, 0);
-			SetPlayerInterior(playerid, 0);
+		    if(!HouseInfo[houseID][isLocked])
+		    {
+			    SetPlayerPos(playerid, HouseInfo[houseID][x], HouseInfo[houseID][y], HouseInfo[houseID][z]);
+			    SetPlayerVirtualWorld(playerid, 0);
+				SetPlayerInterior(playerid, 0);
+	            Dialog_Close(playerid);
+            }else SCMF("NemÙûeö opustiù dom pokial je dom zamknut˝!");
 			break;
 		}
 	}
@@ -347,11 +364,26 @@ public OnPlayerEnterDynamicCP(playerid, checkpointid)
 
 public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 {
+
 	for(new houseID; houseID < MAX_HOUSES; houseID++)
 	{
+	    if(pickupid == HouseInfo[houseID][iPickup])
+		{
+		    if(IsPlayerInAnyVehicle(playerid)) return Dialog_Close(playerid);
+			if(!Dialog_Opened(playerid))
+			{
+                if(strcmp(HouseInfo[houseID][owner], PlayerName(playerid), true) == 0)
+				{
+					Dialog_Show(playerid, HouseSettings, DIALOG_STYLE_LIST, "Nastavenia domu", "Zamkn˙ù dom\nSpravovaù Vozidl·", "Select", "Cancel", houseID);
+					break;
+				}
+			}
+		}
+	
 		if(pickupid == HouseInfo[houseID][pickup])
 		{
-	        if(Dialog_Opened(playerid))
+			if(IsPlayerInAnyVehicle(playerid)) return Dialog_Close(playerid);
+	        if(!Dialog_Opened(playerid))
 			{
 				HouseEnter[playerid] = houseID; // nastavÌm global variable pre kaûdÈho hr·Ëa
 				if(HouseInfo[houseID][isOwned])
@@ -371,7 +403,12 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 	}
 	return 1;
 }
-
+Dialog:HouseSettings(playerid, response, listitem, inputtext[])
+{
+	if(!response) return Dialog_Close(playerid);
+	
+	return 1;
+}
 Dialog:HouseMenu(playerid, response, listitem, inputtext[])
 {
 	if(response)
@@ -478,164 +515,3 @@ public OnPlayerDisconnect(playerid, reason)
 {
 	return 1;
 }
-
-public OnPlayerSpawn(playerid)
-{
-	return 1;
-}
-
-public OnPlayerDeath(playerid, killerid, reason)
-{
-	return 1;
-}
-
-public OnVehicleSpawn(vehicleid)
-{
-	return 1;
-}
-
-public OnVehicleDeath(vehicleid, killerid)
-{
-	return 1;
-}
-
-public OnPlayerText(playerid, text[])
-{
-	return 1;
-}
-
-public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
-{
-	return 1;
-}
-
-public OnPlayerExitVehicle(playerid, vehicleid)
-{
-	return 1;
-}
-
-public OnPlayerStateChange(playerid, newstate, oldstate)
-{
-	return 1;
-}
-
-public OnPlayerEnterCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnPlayerLeaveCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnPlayerEnterRaceCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnPlayerLeaveRaceCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnRconCommand(cmd[])
-{
-	return 1;
-}
-
-public OnPlayerRequestSpawn(playerid)
-{
-	return 1;
-}
-
-public OnObjectMoved(objectid)
-{
-	return 1;
-}
-
-public OnPlayerObjectMoved(playerid, objectid)
-{
-	return 1;
-}
-
-public OnPlayerPickUpPickup(playerid, pickupid)
-{
-	return 1;
-}
-
-public OnVehicleMod(playerid, vehicleid, componentid)
-{
-	return 1;
-}
-
-public OnVehiclePaintjob(playerid, vehicleid, paintjobid)
-{
-	return 1;
-}
-
-public OnVehicleRespray(playerid, vehicleid, color1, color2)
-{
-	return 1;
-}
-
-public OnPlayerSelectedMenuRow(playerid, row)
-{
-	return 1;
-}
-
-public OnPlayerExitedMenu(playerid)
-{
-	return 1;
-}
-
-public OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)
-{
-	return 1;
-}
-
-public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
-{
-	return 1;
-}
-
-public OnRconLoginAttempt(ip[], password[], success)
-{
-	return 1;
-}
-
-public OnPlayerUpdate(playerid)
-{
-	return 1;
-}
-
-public OnPlayerStreamIn(playerid, forplayerid)
-{
-	return 1;
-}
-
-public OnPlayerStreamOut(playerid, forplayerid)
-{
-	return 1;
-}
-
-public OnVehicleStreamIn(vehicleid, forplayerid)
-{
-	return 1;
-}
-
-public OnVehicleStreamOut(vehicleid, forplayerid)
-{
-	return 1;
-}
-
-public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
-{
-	return 1;
-}
-
-public OnPlayerClickPlayer(playerid, clickedplayerid, source)
-{
-	return 1;
-}
-
