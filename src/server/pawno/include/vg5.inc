@@ -41,7 +41,8 @@ enum E_PLAYER_DATA
     Cash,
     Cache: Player_Cache,
     bool:LoggedIn,
-    Vip
+    vip,
+    bool:isInvisible
 }
 new PlayerInfo[MAX_PLAYERS][E_PLAYER_DATA];
 
