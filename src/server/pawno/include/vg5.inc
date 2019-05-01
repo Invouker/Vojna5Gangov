@@ -1,7 +1,19 @@
+#include <dutils>
+#include <easyDialog>
+#include <streamer>
+#include <sscanf2>
+#include <izcmd>
+#include <vg5_callbacks>
+#include <vg5_colors>
+
+
 #define MYSQL_HOST "casa1.fakaheda.eu"
 #define MYSQL_USER "294332_mysql_db"
 #define MYSQL_PASS "123456"
 #define MYSQL_DATABASE "294332_mysql_db"
+
+#define STREAM_DISTANCE_3DTEXT 300
+#define STREAM_DISTANCE_PICKUP 300
 
 #undef MAX_PLAYERS
 #define MAX_PLAYERS 	100
@@ -18,7 +30,6 @@
 
 #pragma unused ret_memcpy
 
-
 enum E_PLAYER_DATA
 {
     ID,
@@ -30,7 +41,8 @@ enum E_PLAYER_DATA
     Score,
     Cash,
     Cache: Player_Cache,
-    bool:LoggedIn
+    bool:LoggedIn,
+    Vip
 }
 new PlayerInfo[MAX_PLAYERS][E_PLAYER_DATA];
 
@@ -56,7 +68,6 @@ stock split(const strsrc[], strdest[][], delimiter)
 		i++;
 	}
 	return 1;
-}
 
 stock LoadStaticVehiclesFromFile(const filename[])
 {
@@ -140,4 +151,3 @@ stock token_by_delim(const string[], return_str[], delim, start_index)
 	if(string[start_index] == EOS) start_index = (-1);
 	return start_index;
 }
-
