@@ -3,8 +3,10 @@
 #include <streamer>
 #include <sscanf2>
 #include <izcmd>
+
 #include <vg5_callbacks>
 #include <vg5_colors>
+#include <vg5_gui>
 
 
 #define MYSQL_HOST "casa1.fakaheda.eu"
@@ -43,6 +45,7 @@ enum E_PLAYER_DATA
     Cache: Player_Cache,
     bool:LoggedIn,
     vip,
+    vipTimeto,
     bool:isInvisible
 }
 new PlayerInfo[MAX_PLAYERS][E_PLAYER_DATA];
@@ -69,6 +72,7 @@ stock split(const strsrc[], strdest[][], delimiter)
 		i++;
 	}
 	return 1;
+}
 
 stock LoadStaticVehiclesFromFile(const filename[])
 {
