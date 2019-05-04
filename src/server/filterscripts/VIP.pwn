@@ -169,8 +169,8 @@ CMD:setvip(playerid, params[])
 	PlayerInfo[pid][vip] = vType;
 	PlayerInfo[pid][vipTimeto] = (60*60*24*days) + gettime(); // + timestamp now
 	new string[128];
-	
-	
+
+
 	format(string, sizeof(string), "Nastavil si VIP Level %s hráèovy %s(%d) na %d dní.", VIPType[ GetPlayerVIPLevel(pid) - 1 ], PlayerName(pid), pid, days );
 	SendClientMessage(playerid, COLOR_LIMEGREEN, string);
 	if(pid != playerid){
@@ -192,7 +192,7 @@ CMD:unsetvip(playerid, params[])
 
 	PlayerInfo[pid][vip] = 0;
 	PlayerInfo[pid][vipTimeto] =0;
-	
+
 	new string[256];
 	format(string, sizeof(string), "Odobral si VIP hráèovy %s(%d) za %s.", PlayerName(pid), pid, reason);
 	SendClientMessage(playerid, COLOR_LIMEGREEN, string);
@@ -214,7 +214,7 @@ CMD:vip(playerid, params[])
 
 stock IsPlayerVIP(playerid)
 {
-	if(PlayerInfo[playerid][vip] >= 1)
+	if(PlayerInfo[playerid][vip] >= 1 || PlayerInfo[playerid][adminLevel] > 0)
 	{
 		return true;
  	}
@@ -305,150 +305,5 @@ public OnPlayerDisconnect(playerid, reason)
 {
 	if(VipTimer[playerid] > 0) KillTimer(VipTimer[playerid]);
  	for(new i; i < MAX_COMMANDS_TIME; i++) CommandTime[playerid][i] = 0;
-	return 1;
-}
-
-public OnPlayerDeath(playerid, killerid, reason)
-{
-	return 1;
-}
-
-public OnVehicleDeath(vehicleid, killerid)
-{
-	return 1;
-}
-
-public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
-{
-	return 1;
-}
-
-public OnPlayerExitVehicle(playerid, vehicleid)
-{
-	return 1;
-}
-
-public OnPlayerStateChange(playerid, newstate, oldstate)
-{
-	return 1;
-}
-
-public OnPlayerEnterCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnPlayerLeaveCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnPlayerEnterRaceCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnPlayerLeaveRaceCheckpoint(playerid)
-{
-	return 1;
-}
-
-public OnRconCommand(cmd[])
-{
-	return 1;
-}
-
-public OnPlayerRequestSpawn(playerid)
-{
-	return 1;
-}
-
-public OnObjectMoved(objectid)
-{
-	return 1;
-}
-
-public OnPlayerObjectMoved(playerid, objectid)
-{
-	return 1;
-}
-
-public OnPlayerPickUpPickup(playerid, pickupid)
-{
-	return 1;
-}
-
-public OnVehicleMod(playerid, vehicleid, componentid)
-{
-	return 1;
-}
-
-public OnVehiclePaintjob(playerid, vehicleid, paintjobid)
-{
-	return 1;
-}
-
-public OnVehicleRespray(playerid, vehicleid, color1, color2)
-{
-	return 1;
-}
-
-public OnPlayerSelectedMenuRow(playerid, row)
-{
-	return 1;
-}
-
-public OnPlayerExitedMenu(playerid)
-{
-	return 1;
-}
-
-public OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)
-{
-	return 1;
-}
-
-public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
-{
-	return 1;
-}
-
-public OnRconLoginAttempt(ip[], password[], success)
-{
-	return 1;
-}
-
-public OnPlayerUpdate(playerid)
-{
-	return 1;
-}
-
-public OnPlayerStreamIn(playerid, forplayerid)
-{
-	return 1;
-}
-
-public OnPlayerStreamOut(playerid, forplayerid)
-{
-	return 1;
-}
-
-public OnVehicleStreamIn(vehicleid, forplayerid)
-{
-	return 1;
-}
-
-public OnVehicleStreamOut(vehicleid, forplayerid)
-{
-	return 1;
-}
-
-public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
-{
-	return 1;
-}
-
-public OnPlayerClickPlayer(playerid, clickedplayerid, source)
-{
 	return 1;
 }

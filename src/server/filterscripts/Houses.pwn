@@ -15,6 +15,8 @@
 #define INVALID_HOUSE_OWNER '\0'
 #define INVALID_HOUSE -1
 
+#pragma unused AdminInfo
+
 new MySQL: Database;
 
 enum E_HOUSE_INFO {
@@ -31,7 +33,7 @@ enum E_HOUSE_INFO {
 	isVip,
 
 	Cache: cache,
-	
+
 	pickup, // pickup zeleneho domËeka
 	iPickup, // pickup v interiery
 	Text3D:labelText, // 3D Text vonku
@@ -91,24 +93,24 @@ public LoadHouse(houseid)
 	 	HouseInfo[houseid][cache] = cache_save(); // uloûenie cache, idk for what
 
 	 	cache_set_active(HouseInfo[houseid][cache]);
-	 	
+
 		cache_get_value(0, 1, HouseInfo[houseid][owner], 24+1);
-		
+
 	 	if(strcmp(HouseInfo[houseid][owner], DEFAULT_HOUSE_OWNER, true) == 0) HouseInfo[houseid][isOwned] = false;
 		else HouseInfo[houseid][isOwned] = true;
-		 
+
 		cache_get_value_int(0, "price", HouseInfo[houseid][price]);
 		cache_get_value_int(0, "isVip", HouseInfo[houseid][isVip]);
 		cache_get_value_int(0, "isLocked", HouseInfo[houseid][isLocked]);
 		cache_get_value_int(0, "interier", HouseInfo[houseid][interier]);
-		
+
 		cache_get_value_float(0, "x", HouseInfo[houseid][x]);
 		cache_get_value_float(0, "y", HouseInfo[houseid][y]);
 		cache_get_value_float(0, "z", HouseInfo[houseid][z]);
 
 		RenderHouse(houseid); // vygeneruje pickup, 3dtext a podobnÈ veci k domu
 		TotalLoaded++;
-		
+
 		cache_unset_active();
 	}
 }
@@ -120,14 +122,14 @@ stock RenderHouse(houseid) // funkcia na znovu vykreslenie domu
 	new houseText[328],
 		sZone[50];
  	Get2DZone(HouseInfo[houseid][x], HouseInfo[houseid][y], sZone, sizeof(sZone)); // osadÌ zÛnu do stringu sZone
-	
+
 	if(HouseInfo[houseid][isVip] == 0) format(houseText, sizeof(houseText), "{FF0000}[ House ]\n%s %d\n%s", sZone, houseid, HouseInfo[houseid][owner]); // kontrolujem, Ëi je VIP dom
 	else format(houseText, sizeof(houseText), "{FF0000}[ V.I.P House ]\n%s %d\n%s",sZone, houseid, HouseInfo[houseid][owner]); // ak je VIP premmenn· nastavÌ VIP HOUSE
 
 	if(!HouseInfo[houseid][isOwned]) // ak nikto neb˝va, prid·m dalöÌ riadok a k tmu cenu
 	{
 		new priceText[50];
-		format(priceText, sizeof(priceText), "\n%d $", HouseInfo[houseid][price]);
+		format(priceText, sizeof(priceText), "\n%s $", AddCommasToInt(HouseInfo[houseid][price]));
 		strcat(houseText, priceText);
 	}
 	if(!IsValidDynamic3DTextLabel(HouseInfo[houseid][labelText])){ // kontrolujem, Ëi uû existuje, ak nie vytvorÌ sa
@@ -137,7 +139,7 @@ stock RenderHouse(houseid) // funkcia na znovu vykreslenie domu
 	if(!IsValidDynamicPickup(HouseInfo[houseid][pickup])){ // kontrolujem, Ëi existuje, ak nie vyvorÌ sa
 		HouseInfo[houseid][pickup] = CreateDynamicPickup(1273, 1, HouseInfo[houseid][x], HouseInfo[houseid][y], HouseInfo[houseid][z], -1,-1);
 	}
-	
+
 	if(!IsValidDynamicCP(HouseInfo[houseid][cp])){ // kontrolujem, Ëi existuje, ak nie vyvorÌ sa
 	HouseInfo[houseid][cp] = CreateDynamicCP(
 		HouseIntPosExit[ HouseInfo[houseid][interier] ][0], // zÌska, ak˝ interier m· osadiù, n·sledne vytiahne v˝chod X s˙radnicu
@@ -145,7 +147,7 @@ stock RenderHouse(houseid) // funkcia na znovu vykreslenie domu
 		HouseIntPosExit[ HouseInfo[houseid][interier] ][2],// zÌska, ak˝ interier m· osadiù, n·sledne vytiahne v˝chod Z s˙radnicu
 		1.5, houseid, HouseIntID[ HouseInfo[houseid][interier] ][0]);
 	}
-	
+
 	if(!IsValidDynamicPickup(HouseInfo[houseid][iPickup])){ // kontrolujem, Ëi existuje, ak nie vyvorÌ sa
 		HouseInfo[houseid][iPickup] = CreateDynamicPickup(1277, 1, // VytvorÌ sa v dome pickup, v ktorom budu mÙcù hr·Ëi
  		HouseIntPickUp[ HouseInfo[houseid][interier] ][0], // nastavovaù, ukladaù, poprÌpade vÙjsù do gar·ûe..
@@ -192,12 +194,12 @@ CMD:interier(playerid, params[])
 	new hid,inter;
 	if(sscanf(params, "ii", hid, inter)) return SCM(playerid, -1, "/interier <houseid> <interierID>");
 	HouseInfo[hid][interier] = inter;
-	
+
 	DestroyDynamicPickup(HouseInfo[hid][iPickup]); // pre obnovu
 	DestroyDynamicCP(HouseInfo[hid][cp]); // pre obnovu
-	
+
 	RenderHouse(hid); // vyrenderujeme to znova
-	
+
 	SCMF("Zmenil si interier!");
 	return 1;
 }
@@ -235,18 +237,18 @@ CMD:createhouse(playerid, params[])
 				HouseInfo[hID][x] = pos[0];
 				HouseInfo[hID][y] = pos[1];
 				HouseInfo[hID][z] = pos[2];
-				
+
 				if(hIsVip) HouseInfo[hID][isVip] = true;
 				else HouseInfo[hID][isVip] = false;
-				
+
 				RenderHouse(hID);
 				new string[256];
 	 			mysql_format(Database, string, sizeof(string), "INSERT INTO `houses` (`price`, `isVip`, `x`, `y`, `z`) VALUES ('%d','%d','%f','%f','%f')",
 				 hPrice, hIsVip, pos[0], pos[1], pos[2]);
 				mysql_tquery(Database, string);
-                
+
                 TotalLoaded++;
-				
+
 			}else SCMF("Bol prekroËen˝ limit domov na servery!");
 		}
 	}
@@ -261,7 +263,7 @@ stock SaveHouse(houseid)
 
 	new query[384];
     mysql_format(Database, query, sizeof(query), "UPDATE `houses` SET `owner`='%e', `price`='%d', `isVip`='%d', `x`='%f', `y`='%f', `z`='%f', `interier`='%d' WHERE `id`='%i' LIMIT 1",
-	HouseInfo[houseid][owner], HouseInfo[houseid][price], 1, HouseInfo[houseid][x], HouseInfo[houseid][y], HouseInfo[houseid][z],HouseInfo[houseid][interier], houseid);
+	HouseInfo[houseid][owner], HouseInfo[houseid][price],  HouseInfo[houseid][isVip], HouseInfo[houseid][x], HouseInfo[houseid][y], HouseInfo[houseid][z],HouseInfo[houseid][interier], houseid);
 	if(isnull(query)) return 0;
 	else mysql_tquery(Database, query);
 	return 1;
@@ -289,7 +291,7 @@ public OnFilterScriptInit()
 	    mysql_tquery(Database, string, "LoadHouse", "i", id);
     }
 
-	
+
 	print(" House system loading...");
 	print("--------------------------------------\n");
 	timerTesting = SetTimer("saveHouses", 1000*30, true);
@@ -312,24 +314,24 @@ public OnFilterScriptExit()
 {
 	for(new id = 0; id < MAX_HOUSES; id++){
  		SaveHouse(id);
- 		
+
 		DestroyDynamicPickup(HouseInfo[id][pickup]);
 		DestroyDynamicPickup(HouseInfo[id][iPickup]);
 		DestroyDynamicCP(HouseInfo[id][cp]);
 		DestroyDynamic3DTextLabel(HouseInfo[id][labelText]);
-        
+
 		HouseInfo[id][owner] = INVALID_HOUSE_OWNER;
 		HouseInfo[id][isOwned] = false;
-		
+
 		HouseInfo[id][x] = 0;
 		HouseInfo[id][y] = 0;
 		HouseInfo[id][z] = 0;
-		
+
 		HouseInfo[id][isVip] = false;
-		
+
 	//	HouseInfo[id][labelText] = INVALID_3DTEXT_ID;
 		HouseInfo[id][pickup] = -1;
-		
+
 		if(cache_is_valid(HouseInfo[id][cache])) //Checking if the player's cache ID is valid.
 		{
 			cache_delete(HouseInfo[id][cache]); // Deleting the cache.
@@ -379,7 +381,7 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 				}
 			}
 		}
-	
+
 		if(pickupid == HouseInfo[houseID][pickup])
 		{
 			if(IsPlayerInAnyVehicle(playerid)) return Dialog_Close(playerid);
@@ -406,7 +408,7 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 Dialog:HouseSettings(playerid, response, listitem, inputtext[])
 {
 	if(!response) return Dialog_Close(playerid);
-	
+
 	return 1;
 }
 Dialog:HouseMenu(playerid, response, listitem, inputtext[])
@@ -423,7 +425,7 @@ Dialog:HouseMenu(playerid, response, listitem, inputtext[])
 	    	    		SCMF("Dom je zamknut˝, nemÙûeö do neho vst˙più!");
 	    	    		Dialog_Close(playerid);
 					}else{
-					
+
 						//HouseIntPos[ HouseInfo[hID][interier] ] [0], HouseIntPos[ HouseInfo[hID][interier] ] [1], HouseIntPos[ HouseInfo[hID][interier] ] [2]
 
 						//HouseIntPOS[ ID INTERIERU ] [ POS 0,1,2 ];
@@ -432,10 +434,10 @@ Dialog:HouseMenu(playerid, response, listitem, inputtext[])
 						HouseIntPOS[ HouseInfo[HouseEnter[playerid]][interier] ][0],
 						HouseIntPOS[ HouseInfo[HouseEnter[playerid]][interier] ][1],
 						HouseIntPOS[ HouseInfo[HouseEnter[playerid]][interier] ][2]);
-						
+
 						SetPlayerVirtualWorld(playerid, HouseEnter[playerid]);
 						SetPlayerInterior(playerid, HouseIntID[ HouseInfo[HouseEnter[playerid]][interier] ][0]);
-						
+
 					    Dialog_Close(playerid);
 						//dom je odomknut˝, samotn˝ vstup do interiera!
 					}
@@ -475,13 +477,13 @@ Dialog:BuyHouse(playerid, response, listitem, inputtext[])
 				// Eöte kontorla, Ëi je dan˝ hr·Ë VIP !!! na kupu VIP Domu!!!!
 				// Eöte kontorla, Ëi je dan˝ hr·Ë VIP !!! na kupu VIP Domu!!!!
 				// Eöte kontorla, Ëi je dan˝ hr·Ë VIP !!! na kupu VIP Domu!!!!
-			
+
   				if(PlayerInfo[playerid][Cash] >= HouseInfo[HouseEnter[playerid]][price]) // Kontrolujem, Ëi dan˝ hr·Ë m· dostatok penazÌ na k˙pu
 		  		{
 					format(HouseInfo[HouseEnter[playerid]][owner], MAX_PLAYER_NAME + 1, "%s", PlayerName(playerid)); // NastavÌm majitela do premennej
 					GivePlayerMoneyEx(playerid, -HouseInfo[HouseEnter[playerid]][price]); // odobere peniaze
                     HouseInfo[HouseEnter[playerid]][isOwned] = true;  // nastavÌ, ûe je niekto majitel,
-                    
+
                     RenderHouse(HouseEnter[playerid]); // vyrenderujem znova 3dtext ( updatujem ho )
 
 				}
