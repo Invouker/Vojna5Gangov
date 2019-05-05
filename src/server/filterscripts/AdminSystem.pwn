@@ -6,6 +6,9 @@
 
 #include <foreach>
 
+#define CONTROLLABLE 1
+#define UNCONTROLLABLE 0
+
 /*
 TO-DO for Admin Sysetm
 LEVEL 0: /admins /cdotaz  --- /vips /vip
@@ -20,7 +23,7 @@ LEVEL 6: /setlvl /setvip /hydra /addvehicle ( to - player )
 */
 new MuteTime[MAX_PLAYERS];
 
-enum E_PLAYER_HELP {
+enum E_PLAYER_HELP { // /pomoc /solved /apomoc
 	helpName[32],
 	helpContent[1024],
 	
@@ -297,7 +300,7 @@ CMD:warn(playerid, params[])
 
 		if(AdminInfo[pid][varns] >= 3)
 		{
-			KickEx(playerid, text);
+			KickEx(playerid);
 	 	}
 
 
@@ -323,6 +326,74 @@ CMD:mute(playerid, params[])
 	return 1;
 }
 
+CMD:unmute(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
+    {
+        new pid;
+		if(sscanf(params, "i",pid)) return SendClientMessage(playerid, -1, "/unmute <playerid>");
+		if(!IsPlayerConnected(pid)) return SendClientMessage(playerid, COLOR_RED, "Hr·Ë moment·lne nieje online!");
+
+		AdminInfo[pid][isMuted] = false;
+        MuteTime[pid] = gettime();
+
+		new string[128];
+		format(string, sizeof(string), "Administr·tor %s(%d) odmlËal hr·Ëa %s(%i).",PlayerName(playerid), playerid,PlayerName(pid), pid);
+		SendClientMessageToAll(COLOR_LIGHTBLUE, string);
+	}
+	return 1;
+}
+
+CMD:freeze(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
+    {
+        new pid,time, reason[128];
+		if(sscanf(params, "iis[128]",pid,time, reason)) return SendClientMessage(playerid, -1, "/freze <playerid> <min˙ty> <reason>");
+		if(!IsPlayerConnected(pid)) return SendClientMessage(playerid, COLOR_RED, "Hr·Ë moment·lne nieje online!");
+
+		AdminInfo[pid][isFreezed] = true;
+		SetTimerEx("unfreeze", 1000*time, false, "i", pid);
+
+		TogglePlayerControllable(pid, UNCONTROLLABLE);
+		format(reason, sizeof(reason), "Administr·tor %s(%d) zmrazil hr·Ëa %s(%i) na %i min˙t, za %s.",PlayerName(playerid), playerid,PlayerName(pid), pid, time,reason);
+		SendClientMessageToAll(COLOR_LIGHTBLUE, reason);
+	}
+	return 1;
+}
+
+forward unfreeze(playerid);
+public unfreeze(playerid)
+{
+	new string[128];
+	format(string, sizeof(string), "Prebehol Ëas a odmrazil si sa!");
+	SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
+	
+	AdminInfo[playerid][isFreezed] = false;
+	
+    TogglePlayerControllable(playerid, CONTROLLABLE);
+	return 1;
+}
+
+CMD:unfreeze(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
+    {
+    	new pid;
+		if(sscanf(params, "i",pid)) return SendClientMessage(playerid, -1, "/unfreeze <playerid>");
+		if(!AdminInfo[playerid][isFreezed]) return SendClientMessage(playerid, -1, "Hr·Ë nieje zmrazen˝!");
+
+		if(!IsPlayerConnected(pid)) return SendClientMessage(playerid, COLOR_RED, "Hr·Ë moment·lne nieje online!");
+
+		AdminInfo[pid][isFreezed] = false;
+
+		new string[128];
+		format(string, sizeof(string), "Administr·tor %s(%d) odmrazil hr·Ëa %s(%i).",PlayerName(playerid), playerid,PlayerName(pid), pid);
+		SendClientMessageToAll(COLOR_LIGHTBLUE, string);
+	}
+	return 1;
+}
+
 CMD:goto(playerid, params[])
 {
     if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
@@ -338,15 +409,163 @@ CMD:goto(playerid, params[])
 		new Float:pos[3];
 		GetPlayerPos(pid, pos[0],pos[1],pos[2]);
 
-  		if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT || PLAYER_STATE_DRIVER)  {
-       		new getv = GetPlayerVehicleID(playerid);
-       		SetVehiclePos(getv,pos[0],pos[1],pos[2]);
-       		PutPlayerInVehicle(playerid,getv,0);
-       		SetVehicleVirtualWorld(getv, GetPlayerVirtualWorld(pid));
-       	}
+  		SetPlayerPosEx(playerid,  GetPlayerVirtualWorld(pid), pos[0],pos[1],pos[2]);
+	}
+	return 1;
+}
 
-       	SetPlayerVirtualWorld(playerid,  GetPlayerVirtualWorld(pid));
-       	SetPlayerPos(playerid, pos[0],pos[1],pos[2]);
+CMD:get(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
+    {
+        new pid;
+		if(sscanf(params, "i",pid)) return SendClientMessage(playerid, -1, "/get <playerid>");
+		if(!IsPlayerConnected(pid)) return SendClientMessage(playerid, COLOR_RED, "Hr·Ë moment·lne nieje online!");
+		if(pid == playerid) return SendClientMessage(playerid, COLOR_RED, "NemÙûeö portnuù s·m na seba!");
+
+		new str[128];
+		format(str, sizeof(str), "Administr·tor %s(%d) ùa portol k sebe.",PlayerName(playerid), playerid);
+		SendClientMessage(pid, COLOR_LIGHTBLUE, str);
+		new Float:pos[3];
+		GetPlayerPos(playerid, pos[0],pos[1],pos[2]);
+
+  		SetPlayerPosEx(pid, GetPlayerVirtualWorld(pid), pos[0],pos[1],pos[2]);
+	}
+	return 1;
+}
+
+CMD:heal(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 2 || IsPlayerAdmin(playerid))
+    {
+        new pid;
+		if(sscanf(params, "i",pid))
+		{
+		    SetPlayerHealth(playerid, 100);
+	 		SendClientMessage(playerid, -1, "Udravil si samÈho seba.");
+		}else {
+			if(!IsPlayerConnected(pid)) return SendClientMessage(playerid, COLOR_RED, "Hr·Ë moment·lne nieje online!");
+
+			new str[128];
+			format(str, sizeof(str), "Administr·tor %s(%d) ùa uzdravil.",PlayerName(playerid), playerid);
+			SendClientMessage(pid, COLOR_LIGHTBLUE, str);
+			
+			SetPlayerHealth(pid, 100);
+  		}
+	}
+	return 1;
+}
+
+CMD:healr(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 2 || IsPlayerAdmin(playerid))
+    {
+        new radius;
+        if(sscanf(params, "i", radius)) return SendClientMessage(playerid, COLOR_LIGHTBLUE, "Usage: /healr <radius>");
+        if(radius > 50 || radius < 0) return SendClientMessage(playerid, COLOR_LIGHTBLUE, "Rozmedzie r·diusa je od 0 po 50");
+        foreach(new p : Player)
+       	{
+			if(!IsPlayerConnected(p)) return 1;
+			new Float:pos[3];
+			GetPlayerPos(playerid, pos[0],pos[1],pos[2]);
+			if(IsPlayerInSphere(p, radius, pos[0],pos[1],pos[2]))
+			{
+				new str[128];
+				format(str, sizeof(str), "Administr·tor %s(%d) ùa uzdravil.",PlayerName(playerid), playerid);
+				SendClientMessage(p, COLOR_LIGHTBLUE, str);
+
+				SetPlayerHealth(p, 100);
+			}
+		}
+	}
+	return 1;
+}
+
+CMD:clearchat(playerid, params[])
+{
+	cmd_cc(playerid, params);
+	return 1;
+}
+
+CMD:cc(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 2 || IsPlayerAdmin(playerid))
+    {
+       	for(new i = 0; i < 50; i++) SendClientMessageToAll(COLOR_WHITE," ");
+       	new str[128];
+		format(str, sizeof(str), "Administr·tor %s(%d) premazal chat.",PlayerName(playerid), playerid);
+		SendClientMessageToAll(COLOR_RED, str);
+	}
+	return 1;
+}
+
+CMD:kick(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
+    {
+        new pid,reason[128];
+		if(sscanf(params, "is[128]",pid, reason)) return SendClientMessage(playerid, -1, "/kick <playerid> <reason>");
+		if(!IsPlayerConnected(pid)) return SendClientMessage(playerid, COLOR_RED, "Hr·Ë moment·lne nieje online!");
+		if(pid == playerid) return SendClientMessage(playerid, COLOR_RED, "NemÙûeö vyhodiù samÈho seba!");
+
+		new str[128];
+		format(str, sizeof(str), "Administr·tor %s(%d) vyhodil zo servera hr·Ëa %s(%d) za %s.",PlayerName(playerid), playerid,PlayerName(pid), pid, reason);
+		SendClientMessageToAll(COLOR_LIGHTBLUE, str);
+
+		KickEx(pid);
+	}
+	return 1;
+}
+
+CMD:respawnveh(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
+    {
+        new reason[128];
+		if(sscanf(params, "s[128]", reason)) return SendClientMessage(playerid, -1, "/respawnveh <reason>");
+		
+	 	for(new v=0; v < MAX_VEHICLES; v++) SetVehicleToRespawn(v);
+		
+		new str[128];
+		format(str, sizeof(str), "Administr·tor %s(%d) respawnoval vöetk˝ aut· na servery z dÙvodu %s",PlayerName(playerid), playerid, reason);
+		SendClientMessageToAll(COLOR_RED, str);
+	}
+	return 1;
+}
+
+CMD:respawnvehr(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 1 || IsPlayerAdmin(playerid))
+    {
+        new radius, reason[128];
+		if(sscanf(params, "is[128]",radius, reason)) return SendClientMessage(playerid, -1, "/respawnveh <radius> <reason>");
+
+	 	for(new v=0; v < MAX_VEHICLES; v++)
+		{
+		    new Float:pos[3];
+		    GetVehiclePos(v, pos[0], pos[1], pos[2]);
+			if(IsPlayerInSphere(playerid, radius, pos[0], pos[1], pos[2])) SetVehicleToRespawn(v);
+		}
+		new str[128];
+		format(str, sizeof(str), "Administr·tor %s(%d) respawnoval vöetk˝ aut· v radiusu %d, z dÙvodu %s",PlayerName(playerid), playerid, radius, reason);
+		SendClientMessageToAll(COLOR_RED, str);
+	}
+	return 1;
+}
+
+CMD:kill(playerid, params[])
+{
+    if(GetAdminLevel(playerid) >= 2 || IsPlayerAdmin(playerid))
+    {
+        new pid;
+		if(sscanf(params, "i",pid)) return SendClientMessage(pid, COLOR_RED, "Usage: /akill <playerid>");
+		if(!IsPlayerConnected(pid)) return SendClientMessage(playerid, COLOR_RED, "Hr·Ë moment·lne nieje online!");
+
+		new str[128];
+		format(str, sizeof(str), "Administr·tor %s(%d) ùa zabil.",PlayerName(playerid), playerid);
+		SendClientMessage(pid, COLOR_LIGHTBLUE, str);
+
+		SetPlayerHealth(pid, 0);
 	}
 	return 1;
 }
@@ -418,7 +637,8 @@ public OnPlayerText(playerid)
 
 public OnPlayerDisconnect(playerid, reason)
 {
-    AdminInfo[playerid][varns] = 0;
+	new null[E_PLAYER_DATA_ADMIN];
+	AdminInfo[playerid] = null;
     SetAdminLevel(playerid, 0);
 	return 1;
 }
@@ -466,5 +686,17 @@ stock GetAdminLevel(playerid)
 stock SetAdminLevel(playerid, level)
 {
 	PlayerInfo[playerid][adminLevel] = level;
+}
+
+stock SetPlayerPosEx(playerid, vw, Float:x, Float:y, Float:z)
+{
+    SetPlayerVirtualWorld(playerid, vw);
+   	SetPlayerPos(playerid,x, y, z);
+	if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT || PLAYER_STATE_DRIVER)  {
+		new getv = GetPlayerVehicleID(playerid);
+		SetVehiclePos(getv,x, y, z);
+		PutPlayerInVehicle(playerid,getv,0);
+		SetVehicleVirtualWorld(getv, vw);
+ 	}
 }
 

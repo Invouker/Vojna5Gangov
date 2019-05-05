@@ -20,7 +20,11 @@
 #undef MAX_PLAYERS
 #define MAX_PLAYERS 	100
 
+#define MAX_BANKS 10
+
 #define strcpy(%0,%1,%2) strcat((%0[0] = '\0', %0), %1, %2)
+
+#define IsPlayerInSphere(%0,%1,%2,%3,%4) IsPlayerInRangeOfPoint(%0,%4,%1,%2,%3)
 
 #define isnull(%1) \
     ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
@@ -42,6 +46,7 @@ enum E_PLAYER_DATA
     Deaths,
     Score,
     Cash,
+    Bank, // UKLADAT
     Cache: Player_Cache, // neukladat
     bool:LoggedIn, // neukladat
     adminLevel, // TREBA NASTAVIT UKLADANIE 
@@ -55,9 +60,23 @@ enum E_PLAYER_DATA_ADMIN // neukladať, dočasné premenné !
 {
 	varns, // neukladat - počet varnov od admina 1/3 - 2/3 - 3/3
     bool:aVisible, // pre admina visible - neukladat
-    bool:isMuted // ak je umlčany
+    bool:isMuted, // ak je umlčany
+    bool:isFreezed // ak je hráč zmrazený 
 }
 new AdminInfo[MAX_PLAYERS][E_PLAYER_DATA_ADMIN];
+
+enum E_BANK_INFO {	
+	Float:bankX,
+	Float:bankY,
+	Float:bankZ,
+
+	MapIcon,
+	CP,
+	Text3D:label,
+	Pickup
+};
+
+new BankInfo[MAX_BANKS][E_BANK_INFO];
 
 stock PlayerName(playerid)
 {
@@ -66,9 +85,8 @@ stock PlayerName(playerid)
 	return name;
 }
 
-stock KickEx(playerid, reason[])
+stock KickEx(playerid)
 {
-	SendClientMessage(playerid, COLOR_RED, reason);
 	SetTimerEx("KickTimed", 500, false, "i", playerid);
 }
 
