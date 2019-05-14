@@ -69,6 +69,7 @@ stock split(const strsrc[], strdest[][], delimiter)
 		i++;
 	}
 	return 1;
+}
 
 stock LoadStaticVehiclesFromFile(const filename[])
 {

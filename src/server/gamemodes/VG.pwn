@@ -1,7 +1,7 @@
 #include <a_samp>
 #include <vg5>
-#include <vg5callbacks>
-#include <vg5languages>
+#include <vg5_callbacks>
+#include <vg5_languages>
 #include <vg5gui>
 #include <a_mysql>
 #include <sscanf2>
