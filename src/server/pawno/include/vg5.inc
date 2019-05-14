@@ -3,8 +3,10 @@
 #include <streamer>
 #include <sscanf2>
 #include <izcmd>
+
 #include <vg5_callbacks>
 #include <vg5_colors>
+#include <vg5_gui>
 
 
 #define MYSQL_HOST "casa1.fakaheda.eu"
@@ -18,7 +20,11 @@
 #undef MAX_PLAYERS
 #define MAX_PLAYERS 	100
 
+#define MAX_BANKS 10
+
 #define strcpy(%0,%1,%2) strcat((%0[0] = '\0', %0), %1, %2)
+
+#define IsPlayerInSphere(%0,%1,%2,%3,%4) IsPlayerInRangeOfPoint(%0,%4,%1,%2,%3)
 
 #define isnull(%1) \
     ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
@@ -35,23 +41,60 @@ enum E_PLAYER_DATA
     ID,
     PName[25],
     Password[65],
-    PasswordFails,
+    PasswordFails, // neukladat
     Kills,
     Deaths,
     Score,
     Cash,
-    Cache: Player_Cache,
-    bool:LoggedIn,
-    vip,
-    bool:isInvisible
+    Bank, // UKLADAT
+    Cache: Player_Cache, // neukladat
+    bool:LoggedIn, // neukladat
+    adminLevel, // TREBA NASTAVIT UKLADANIE 
+    vip,  // -||-
+    vipTimeto, // -||-
+    bool:isInvisible // neukldat
 }
 new PlayerInfo[MAX_PLAYERS][E_PLAYER_DATA];
+
+enum E_PLAYER_DATA_ADMIN // neukladať, dočasné premenné !
+{
+	varns, // neukladat - počet varnov od admina 1/3 - 2/3 - 3/3
+    bool:aVisible, // pre admina visible - neukladat
+    bool:isMuted, // ak je umlčany
+    bool:isFreezed // ak je hráč zmrazený 
+}
+new AdminInfo[MAX_PLAYERS][E_PLAYER_DATA_ADMIN];
+
+enum E_BANK_INFO {	
+	Float:bankX,
+	Float:bankY,
+	Float:bankZ,
+
+	MapIcon,
+	CP,
+	Text3D:label,
+	Pickup
+};
+
+new BankInfo[MAX_BANKS][E_BANK_INFO];
 
 stock PlayerName(playerid)
 {
 	new name[MAX_PLAYER_NAME];
 	GetPlayerName(playerid,name,sizeof(name));
 	return name;
+}
+
+stock KickEx(playerid)
+{
+	SetTimerEx("KickTimed", 500, false, "i", playerid);
+}
+
+forward KickTimed(playerid);
+public KickTimed(playerid)
+{
+	Kick(playerid);
+	return 1;	
 }
 
 stock split(const strsrc[], strdest[][], delimiter)
@@ -152,4 +195,36 @@ stock token_by_delim(const string[], return_str[], delim, start_index)
 	return_str[x] = EOS;
 	if(string[start_index] == EOS) start_index = (-1);
 	return start_index;
+}
+
+stock AddCommasToInt(number)
+{
+    new
+        tStr[16]; // Up to 9,999,999,999,999
+
+    new number2 = number;
+    if(number < 0) number = number * -1;
+
+    format(tStr, sizeof(tStr), "%d", number);
+
+    if(strlen(tStr) < 4)
+ 	return tStr;
+
+    new
+        iPos = strlen(tStr),
+        iCount = 1;
+
+    while(iPos > 0)
+    {
+	if(iCount == 4)
+	{
+	    iCount = 0;
+	    strins(tStr, ",", iPos, 1);
+		iPos++;
+    }
+    iCount++;
+    iPos--;
+    }
+    if(number2 < 0) format(tStr, sizeof(tStr), "-%s", tStr);
+    return tStr;
 }

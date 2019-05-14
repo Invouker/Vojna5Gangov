@@ -1,0 +1,7 @@
+
+*.log
+src/server/pawno/settings.ini
+src/server/logs/plugins/mysql.log
+src/server/logs/log-core.log
+src/server/server_log.txt
+src/server/logs/plugins/mysql.log
